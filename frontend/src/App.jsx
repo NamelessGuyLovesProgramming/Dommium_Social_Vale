@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 import Team from './pages/Team'
@@ -28,6 +29,8 @@ function App() {
             <Route path="/services/cybersecurity" element={<div className="page">Cybersecurity</div>} />
           </Routes>
         </main>
+
+        <Footer />
       </div>
     </Router>
   )
