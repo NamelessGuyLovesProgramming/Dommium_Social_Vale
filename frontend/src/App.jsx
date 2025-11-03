@@ -9,6 +9,7 @@ import Warenkorb from './pages/Warenkorb'
 import WarenkorbDemo from './pages/WarenkorbDemo'
 import Erfolg from './pages/Erfolg'
 import SocialMediaConsulting from './pages/SocialMediaConsulting'
+import ContentCreation from './pages/ContentCreation'
 import './App.css'
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
 
             {/* Service Routes */}
             <Route path="/services/social-media" element={<SocialMediaConsulting />} />
-            <Route path="/services/content" element={<div className="page">Content Creation</div>} />
+            <Route path="/services/content" element={<ContentCreation />} />
             <Route path="/services/trends" element={<div className="page">Trendanalyse</div>} />
             <Route path="/services/cybersecurity" element={<div className="page">Cybersecurity</div>} />
           </Routes>
