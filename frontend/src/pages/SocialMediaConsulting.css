@@ -290,6 +290,21 @@
   }
 }
 
+/* Flying Cart Animation */
+.flying-cart-icon {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  color: #667eea;
+  transform: translate(-50%, -50%);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 1;
+}
+
+.flying-cart-icon svg {
+  filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.8));
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .hero-container {
