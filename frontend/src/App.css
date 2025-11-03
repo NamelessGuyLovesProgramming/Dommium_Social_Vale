@@ -1,0 +1,44 @@
+/* App Layout */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Page Styling */
+.page {
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.page h1 {
+  color: #1A1A1A;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.page p {
+  color: #4A4A4A;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
