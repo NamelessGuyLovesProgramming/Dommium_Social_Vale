@@ -8,6 +8,7 @@ import Kontakt from './pages/Kontakt'
 import Warenkorb from './pages/Warenkorb'
 import WarenkorbDemo from './pages/WarenkorbDemo'
 import Erfolg from './pages/Erfolg'
+import SocialMediaConsulting from './pages/SocialMediaConsulting'
 import './App.css'
 
 function App() {
@@ -26,8 +27,8 @@ function App() {
             <Route path="/warenkorb-demo" element={<WarenkorbDemo />} />
             <Route path="/erfolg" element={<Erfolg />} />
 
-            {/* Service Routes (später) */}
-            <Route path="/services/social-media" element={<div className="page">Social Media Beratung</div>} />
+            {/* Service Routes */}
+            <Route path="/services/social-media" element={<SocialMediaConsulting />} />
             <Route path="/services/content" element={<div className="page">Content Creation</div>} />
             <Route path="/services/trends" element={<div className="page">Trendanalyse</div>} />
             <Route path="/services/cybersecurity" element={<div className="page">Cybersecurity</div>} />
