@@ -31,8 +31,9 @@
 }
 
 .logo-img {
-  height: 40px;
+  height: 180px;
   width: auto;
+  margin: -40px 0;
 }
 
 /* Navigation */
