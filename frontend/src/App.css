@@ -9,10 +9,15 @@
 .main-content {
   flex: 1;
   min-height: auto;
-  max-width: 1400px;
   width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Nur für Home-Seite: Scroll Snap aktivieren */
+.main-content:has(.home-container) {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 /* Page Styling */

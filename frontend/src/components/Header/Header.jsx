@@ -19,12 +19,22 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 50
+      const scrollY = window.scrollY
+      const isScrolled = scrollY > 10 // Ziemlich schnell: nur 10px scrollen!
+
+      console.log('Header Scroll:', scrollY, 'isScrolled:', isScrolled)
+
       setScrolled(isScrolled)
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    console.log('Header: addEventListener für scroll')
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initial call
+
+    return () => {
+      console.log('Header: removeEventListener für scroll')
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
 
   const services = [
