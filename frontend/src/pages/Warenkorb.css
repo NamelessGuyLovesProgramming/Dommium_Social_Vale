@@ -1,0 +1,95 @@
+.warenkorb-page {
+  min-height: calc(100vh - 200px);
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #f9fafb 0%, #ffffff 100%);
+}
+
+.warenkorb-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.warenkorb-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 40px 0;
+  text-align: center;
+}
+
+.warenkorb-items {
+  margin-bottom: 32px;
+}
+
+/* Empty State */
+.warenkorb-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.warenkorb-empty svg {
+  margin-bottom: 24px;
+  opacity: 0.5;
+}
+
+.warenkorb-empty h1 {
+  font-size: 28px;
+  color: #111827;
+  margin: 0 0 12px 0;
+}
+
+.warenkorb-empty p {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0 0 32px 0;
+}
+
+.back-button {
+  padding: 12px 32px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.back-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .warenkorb-page {
+    padding: 40px 16px;
+  }
+
+  .warenkorb-title {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .warenkorb-empty {
+    padding: 60px 20px;
+  }
+
+  .warenkorb-empty h1 {
+    font-size: 24px;
+  }
+
+  .warenkorb-empty p {
+    font-size: 15px;
+  }
+}
