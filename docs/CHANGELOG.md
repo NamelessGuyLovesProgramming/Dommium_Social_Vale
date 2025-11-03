@@ -2,6 +2,58 @@
 
 Alle wichtigen Änderungen werden hier dokumentiert.
 
+## [0.3.0] - 2025-11-03
+
+### 🎨 Kontaktseite - Premium Split-Screen Design
+
+**Layout & Design**
+- ✅ Premium Split-Screen Layout (40% Info-Card / 60% Formular)
+- ✅ Glassmorphism-Effekt auf Info-Card mit Backdrop-Blur
+- ✅ Gradient-Überschrift mit Animation (Purple → Blue)
+- ✅ Smooth Hover-Animationen auf allen Elementen
+- ✅ Icon-Wrapper mit Gradient-Background & Rotate-Animation
+- ✅ Social Media Links (Instagram, LinkedIn, Twitter)
+- ✅ Sticky Info-Card auf Desktop
+
+**Features**
+- ✅ Vollständiges Kontaktformular (Name, E-Mail, Telefon, Nachricht)
+- ✅ Echtzeit-Formular-Validierung (E-Mail-Check, Pflichtfelder)
+- ✅ Error-States mit rotem Border & Fehlermeldungen
+- ✅ Submit-Animation mit "Wird gesendet..."-State
+- ✅ Success-Message mit Slide-Down-Animation
+- ✅ Response-Zeit-Hinweis (24h)
+
+**Kontakt-Informationen**
+- 📍 Standorte: Hildesheim / Hannover
+- 🌐 Reichweite: Deutschlandweit
+- ✉️ E-Mail: info@dominium-sociale.de
+- 📞 Telefon: +49 151 1234 5678
+- ⏱️ Antwortzeit: 24 Stunden
+
+**Design-Details**
+- Gradient: #667eea → #764ba2 (Purple/Blue)
+- Glassmorphism mit rgba Backgrounds
+- Box-Shadows mit Color-Tinting
+- Micro-Interactions beim Hover & Focus
+- Form-Inputs mit Focus-Lift-Effekt
+
+**Responsive Design**
+- Desktop: Split-Screen mit Sticky-Card
+- Tablet (< 1024px): Stacked Layout
+- Mobile (< 768px): Optimierte Padding & Font-Sizes
+- Small Mobile (< 480px): Kompakte Card-Größen
+
+**Technische Details**
+- `Kontakt.jsx` - React Component mit useState für Form-Handling
+- `Kontakt.css` - Premium CSS mit Animations & Transitions
+- Lucide Icons: MapPin, Globe, Mail, Phone, Instagram, Linkedin, Twitter, Send, Clock
+- Form-Validierung mit Regex für E-Mail
+- Simulated API Call mit 1.5s Delay
+
+**Dateien**
+- `frontend/src/pages/Kontakt.jsx` - Komplett neu implementiert
+- `frontend/src/pages/Kontakt.css` - Neu erstellt
+
 ## [0.2.0] - 2025-11-03
 
 ### 🎨 Team-Seite modernisiert
