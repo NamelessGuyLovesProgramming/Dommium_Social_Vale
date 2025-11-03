@@ -3,21 +3,16 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
 }
 
 /* Main Content Area */
 .main-content {
   flex: 1;
-  min-height: 100vh;
+  min-height: auto;
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   padding: 2rem;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 /* Page Styling */

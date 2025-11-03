@@ -2,6 +2,44 @@
 
 Alle wichtigen Änderungen werden hier dokumentiert.
 
+## [0.2.0] - 2025-11-03
+
+### 🎨 Team-Seite modernisiert
+
+**Layout & Design**
+- ✅ Standort-Header mit Icons (Hildesheim/Hannover, Deutschlandweit)
+- ✅ 4 Team-Mitglieder mit alternierendem Layout (links/rechts)
+- ✅ Moderne Karten mit Hover-Effekten
+- ✅ Gold-Gradient Trennlinien zwischen Personen
+- ✅ Responsive Design für Mobile & Tablet
+- ✅ Smooth Animations beim Laden
+
+**Team-Mitglieder**
+- Sarah Müller - Creative Director
+- Michael Wagner - Lead Data Analyst
+- Lisa Schmidt - Content Strategist
+- Tom Becker - Growth Hacker
+
+**Technische Details**
+- `Team.jsx` - React Component mit Lucide Icons (MapPin, Globe)
+- `Team.css` - Modernes CSS mit Grid Layout & Animations
+- Placeholder-Bilder von Unsplash
+- Komplett responsive (Desktop → Tablet → Mobile)
+
+### 🐛 Bugfixes
+
+**Scroll & Layout Bugs behoben**
+- ❌ Entfernt: scroll-snap aus App.css (verursachte Überlappungen)
+- ❌ Entfernt: min-height: 100vh von main-content
+- ❌ Entfernt: min-height: 100vh von Footer
+- ✅ Resultat: Footer erscheint jetzt korrekt unten ohne ins Layout zu "buggen"
+
+**Dateien geändert**
+- `frontend/src/App.css` - Layout-Fix
+- `frontend/src/components/Footer/Footer.css` - Height-Fix
+- `frontend/src/pages/Team.jsx` - Komplett neu gestaltet
+- `frontend/src/pages/Team.css` - Neu erstellt
+
 ## [0.1.0] - 2025-11-03
 
 ### ✨ Projekt Setup
