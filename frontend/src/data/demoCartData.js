@@ -11,7 +11,8 @@ export const demoCartItems = [
       'Social Media Integration',
       '3 Monate Betreuung'
     ],
-    price: 899
+    price: 899,
+    quantity: 1
   },
   {
     id: 'marketing-beratung-pro',
@@ -23,7 +24,8 @@ export const demoCartItems = [
       'Konkurrenzanalyse',
       'Monatliche Reports'
     ],
-    price: 1299
+    price: 1299,
+    quantity: 1
   },
   {
     id: 'trend-analyse-enterprise',
@@ -35,7 +37,8 @@ export const demoCartItems = [
       'Custom Dashboards',
       'Priority Support'
     ],
-    price: 499
+    price: 499,
+    quantity: 1
   }
 ]
 

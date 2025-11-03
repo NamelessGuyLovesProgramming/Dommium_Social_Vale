@@ -6,7 +6,7 @@ const Home = () => {
         justifyContent: 'center',
         alignItems: 'center',
         padding: '0rem',
-        paddingTop: '0rem',
+        paddingTop: '2rem',
         minHeight: '80vh'
       }}>
         <video
