@@ -8,10 +8,13 @@ import {
   Shield,
   ChevronDown
 } from 'lucide-react'
+import { useCart } from '../../context/CartContext'
 import './Header.css'
 
 const Header = () => {
   const [servicesOpen, setServicesOpen] = useState(false)
+  const { getItemCount } = useCart()
+  const itemCount = getItemCount()
 
   const services = [
     {
@@ -92,6 +95,9 @@ const Header = () => {
           {/* Cart */}
           <Link to="/warenkorb" className="nav-link cart-link">
             <ShoppingCart size={24} />
+            {itemCount > 0 && (
+              <span className="cart-badge">{itemCount}</span>
+            )}
           </Link>
         </nav>
       </div>

@@ -13,8 +13,48 @@ const SocialMediaConsulting = () => {
     category: 'Beratung'
   }
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (e) => {
+    // Item zum Warenkorb hinzufügen
     addToCart(consultingPackage)
+
+    // Animation starten
+    const button = e.currentTarget
+    const buttonRect = button.getBoundingClientRect()
+    const cartIcon = document.querySelector('.cart-link')
+
+    if (cartIcon) {
+      const cartRect = cartIcon.getBoundingClientRect()
+
+      // Fliegendes Icon erstellen
+      const flyingIcon = document.createElement('div')
+      flyingIcon.className = 'flying-cart-icon'
+      flyingIcon.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+      `
+
+      // Startposition (Button-Position)
+      flyingIcon.style.left = `${buttonRect.left + buttonRect.width / 2}px`
+      flyingIcon.style.top = `${buttonRect.top + buttonRect.height / 2}px`
+
+      document.body.appendChild(flyingIcon)
+
+      // Nach kurzer Verzögerung zur Zielposition animieren
+      setTimeout(() => {
+        flyingIcon.style.left = `${cartRect.left + cartRect.width / 2}px`
+        flyingIcon.style.top = `${cartRect.top + cartRect.height / 2}px`
+        flyingIcon.style.transform = 'translate(-50%, -50%) scale(0.3)'
+        flyingIcon.style.opacity = '0'
+      }, 10)
+
+      // Nach Animation entfernen
+      setTimeout(() => {
+        flyingIcon.remove()
+      }, 800)
+    }
   }
 
   return (
