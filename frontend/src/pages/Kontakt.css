@@ -1,0 +1,399 @@
+/* Kontakt Page - Premium Split-Screen Design */
+
+.kontakt-page {
+  min-height: calc(100vh - 200px);
+  padding: 3rem 2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Header Section */
+.kontakt-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.kontakt-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.kontakt-subtitle {
+  font-size: 1.25rem;
+  color: #6B7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main Container - Split Screen */
+.kontakt-container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Left Side - Info Card with Glassmorphism */
+.kontakt-info-card {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.kontakt-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
+}
+
+.info-section {
+  margin-bottom: 2.5rem;
+  animation: slideInLeft 0.5s ease;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.info-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.info-section:hover .info-icon-wrapper {
+  transform: rotate(5deg) scale(1.1);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.info-icon {
+  color: white;
+  width: 24px;
+  height: 24px;
+}
+
+.info-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1F2937;
+  margin-bottom: 0.5rem;
+}
+
+.info-section p {
+  color: #6B7280;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.info-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.info-link:hover {
+  color: #764ba2;
+  transform: translateX(3px);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.social-link {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Right Side - Form Wrapper */
+.kontakt-form-wrapper {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  animation: slideInRight 0.5s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Success Message */
+.success-message {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Styling */
+.kontakt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #1F2937;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.875rem 1rem;
+  border: 2px solid #E5E7EB;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: #F9FAFB;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: #D1D5DB;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #EF4444;
+  background: #FEF2F2;
+}
+
+.error-text {
+  color: #EF4444;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Submit Button with Gradient */
+.submit-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .kontakt-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .kontakt-info-card {
+    position: relative;
+    top: 0;
+  }
+
+  .kontakt-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .kontakt-page {
+    padding: 2rem 1rem;
+  }
+
+  .kontakt-header {
+    margin-bottom: 3rem;
+  }
+
+  .kontakt-title {
+    font-size: 2rem;
+  }
+
+  .kontakt-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .kontakt-info-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .kontakt-form-wrapper {
+    padding: 2rem 1.5rem;
+  }
+
+  .info-section {
+    margin-bottom: 2rem;
+  }
+
+  .social-links {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .kontakt-title {
+    font-size: 1.75rem;
+  }
+
+  .kontakt-subtitle {
+    font-size: 1rem;
+  }
+
+  .kontakt-info-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .kontakt-form-wrapper {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .info-icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  .info-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .social-link {
+    width: 44px;
+    height: 44px;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+/* Animation for page load */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
