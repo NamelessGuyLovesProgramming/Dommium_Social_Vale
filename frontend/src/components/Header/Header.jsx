@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ShoppingCart,
@@ -13,8 +13,19 @@ import './Header.css'
 
 const Header = () => {
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const { getItemCount } = useCart()
   const itemCount = getItemCount()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50
+      setScrolled(isScrolled)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const services = [
     {
@@ -40,7 +51,7 @@ const Header = () => {
   ]
 
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         {/* Logo */}
         <Link to="/" className="logo">

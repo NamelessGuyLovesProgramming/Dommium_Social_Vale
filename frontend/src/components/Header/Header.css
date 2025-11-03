@@ -7,6 +7,7 @@
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .header-container {
@@ -16,6 +17,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Scrolled State - Minimiert */
+.header.scrolled .header-container {
+  padding: 0.25rem 2rem;
+}
+
+.header.scrolled .logo-img {
+  height: 50px;
+  margin: 0;
 }
 
 /* Logo */
@@ -34,6 +46,7 @@
   height: 180px;
   width: auto;
   margin: -40px 0;
+  transition: all 0.3s ease;
 }
 
 /* Navigation */
