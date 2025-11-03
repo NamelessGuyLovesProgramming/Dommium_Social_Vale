@@ -8,7 +8,7 @@ import { ShoppingCart } from 'lucide-react'
 import './Warenkorb.css'
 
 const Warenkorb = () => {
-  const { cartItems, removeFromCart, clearCart } = useCart()
+  const { cartItems, removeFromCart, clearCart, updateQuantity } = useCart()
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
 
@@ -59,6 +59,7 @@ const Warenkorb = () => {
               key={item.id}
               item={item}
               onRemove={removeFromCart}
+              onUpdateQuantity={updateQuantity}
             />
           ))}
         </div>
