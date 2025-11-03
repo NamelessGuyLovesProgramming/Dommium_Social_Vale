@@ -1,12 +1,12 @@
 const Home = () => {
   return (
-    <div className="page">
+    <div className="page" style={{ padding: 0, margin: '-2rem' }}>
       <div style={{
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: '2rem',
-        paddingTop: '8rem',
+        padding: '0rem',
+        paddingTop: '0rem',
         minHeight: '80vh'
       }}>
         <video
