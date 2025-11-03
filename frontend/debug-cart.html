@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Warenkorb Debug</title>
+  <style>
+    body {
+      font-family: monospace;
+      padding: 20px;
+      background: #1a1a1a;
+      color: #00ff00;
+    }
+    pre {
+      background: #000;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .info {
+      margin: 10px 0;
+      padding: 10px;
+      background: #2a2a2a;
+      border-left: 3px solid #00ff00;
+    }
+  </style>
+</head>
+<body>
+  <h1>🛒 Warenkorb Debug Info</h1>
+
+  <div id="output"></div>
+
+  <script>
+    const output = document.getElementById('output');
+
+    // LocalStorage laden
+    const cartData = localStorage.getItem('dominium-cart');
+
+    if (!cartData) {
+      output.innerHTML = '<div class="info">⚠️ Kein Warenkorb gefunden in localStorage</div>';
+    } else {
+      const cartItems = JSON.parse(cartData);
+
+      // Anzahl berechnen wie in CartContext
+      const itemCount = cartItems.reduce((count, item) => count + (item.quantity || 1), 0);
+      const productCount = cartItems.length;
+
+      let html = `
+        <div class="info">
+          <strong>📊 Statistik:</strong><br>
+          Anzahl verschiedener Produkte: ${productCount}<br>
+          Gesamtanzahl Items (mit quantity): ${itemCount}
+        </div>
+
+        <div class="info">
+          <strong>📦 Produkte im Warenkorb:</strong><br>
+        `;
+
+      cartItems.forEach((item, index) => {
+        html += `<br>${index + 1}. ${item.title} (quantity: ${item.quantity || 1})`;
+        if (item.items && item.items.length > 0) {
+          html += ` - hat ${item.items.length} Sub-Items`;
+        }
+      });
+
+      html += `</div>
+        <div class="info">
+          <strong>🔍 Raw Data:</strong>
+          <pre>${JSON.stringify(cartItems, null, 2)}</pre>
+        </div>
+      `;
+
+      output.innerHTML = html;
+    }
+  </script>
+</body>
+</html>

@@ -10,6 +10,8 @@ import WarenkorbDemo from './pages/WarenkorbDemo'
 import Erfolg from './pages/Erfolg'
 import SocialMediaConsulting from './pages/SocialMediaConsulting'
 import ContentCreation from './pages/ContentCreation'
+import Trendanalyse from './pages/Trendanalyse'
+import Cybersecurity from './pages/Cybersecurity'
 import './App.css'
 
 function App() {
@@ -31,8 +33,8 @@ function App() {
             {/* Service Routes */}
             <Route path="/services/social-media" element={<SocialMediaConsulting />} />
             <Route path="/services/content" element={<ContentCreation />} />
-            <Route path="/services/trends" element={<div className="page">Trendanalyse</div>} />
-            <Route path="/services/cybersecurity" element={<div className="page">Cybersecurity</div>} />
+            <Route path="/services/trends" element={<Trendanalyse />} />
+            <Route path="/services/cybersecurity" element={<Cybersecurity />} />
           </Routes>
         </main>
 
