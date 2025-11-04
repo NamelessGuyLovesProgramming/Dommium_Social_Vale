@@ -9,7 +9,7 @@ const SocialMediaConsulting = () => {
     id: 'social-media-consulting',
     title: 'Social Media Consulting',
     price: 299,
-    description: 'Professionelle Social Media Beratung für Ihr Unternehmen',
+    description: 'Individuelle 1:1 Beratung mit Social Media Experten: Wir analysieren Ihre aktuelle Präsenz, identifizieren Wachstumspotenziale und entwickeln eine maßgeschneiderte Strategie für messbaren Erfolg.',
     category: 'Beratung'
   }
 

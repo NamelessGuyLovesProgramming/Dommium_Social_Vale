@@ -48,6 +48,14 @@ const Warenkorb = () => {
     )
   }
 
+  // Gesamtpreis berechnen
+  const totalPrice = cartItems.reduce((sum, item) => {
+    const itemTotal = item.price ? item.price * (item.quantity || 1) : 0
+    return sum + itemTotal
+  }, 0)
+
+  const hasNonPriceItems = cartItems.some(item => !item.price)
+
   return (
     <div className="warenkorb-page">
       <div className="warenkorb-container">
@@ -62,6 +70,29 @@ const Warenkorb = () => {
               onUpdateQuantity={updateQuantity}
             />
           ))}
+        </div>
+
+        {/* Preissumme */}
+        <div className="warenkorb-summary">
+          <div className="summary-row">
+            <span className="summary-label">Zwischensumme:</span>
+            <span className="summary-value">
+              {totalPrice > 0 ? `${totalPrice.toLocaleString('de-DE')}€` : '0€'}
+            </span>
+          </div>
+          {hasNonPriceItems && (
+            <div className="summary-note">
+              + Artikel mit individueller Preisgestaltung
+            </div>
+          )}
+          <div className="summary-row summary-total">
+            <span className="summary-label">Gesamtpreis:</span>
+            <span className="summary-value">
+              {hasNonPriceItems
+                ? 'Auf Anfrage'
+                : `${totalPrice.toLocaleString('de-DE')}€`}
+            </span>
+          </div>
         </div>
 
         <ContactForm onSubmit={handleSubmit} isLoading={isLoading} />

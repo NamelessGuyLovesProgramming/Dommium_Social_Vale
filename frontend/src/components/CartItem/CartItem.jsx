@@ -30,12 +30,21 @@ const CartItem = ({ item, onRemove, onUpdateQuantity }) => {
           </div>
           <div className="cart-item-details">
             <h3 className="cart-item-title">{item.title}</h3>
+            {item.tier && (
+              <span className="cart-item-tier">{item.tier} Paket</span>
+            )}
+            {item.description && (
+              <p className="cart-item-description">{item.description}</p>
+            )}
             {item.items && item.items.length > 0 && (
-              <ul className="cart-item-list">
-                {item.items.map((subItem, index) => (
-                  <li key={index}>{subItem}</li>
-                ))}
-              </ul>
+              <div className="cart-item-details-section">
+                <h4 className="details-heading">Leistungsumfang:</h4>
+                <ul className="cart-item-list">
+                  {item.items.map((subItem, index) => (
+                    <li key={index}>{subItem}</li>
+                  ))}
+                </ul>
+              </div>
             )}
           </div>
         </div>

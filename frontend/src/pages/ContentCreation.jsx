@@ -11,9 +11,11 @@ const ContentCreation = () => {
   const packages = [
     {
       id: 'content-basic',
+      title: 'Content Creation Basic',
       tier: 'Basic',
       price: 499,
       category: 'Content Creation',
+      description: 'Perfekt für Einsteiger, die ihre Social Media Präsenz professionell aufbauen möchten - ohne selbst Zeit in Content-Erstellung zu investieren.',
       highlights: [
         { icon: Instagram, text: 'Social Media Posts' },
         { icon: MessageCircle, text: 'Captions & Hashtags' },
@@ -23,13 +25,21 @@ const ContentCreation = () => {
         '10 Posts pro Monat (Instagram/Facebook)',
         'Fertig formulierte Texte mit Hashtags',
         'Canva-Template Design'
+      ],
+      items: [
+        '10 professionell gestaltete Social Media Posts pro Monat',
+        'Fertige Texte mit strategisch ausgewählten Hashtags',
+        'Design-Vorlagen im Canva-Stil für Ihre Brand',
+        'Posting-Plan für optimale Reichweite'
       ]
     },
     {
       id: 'content-intermediate',
+      title: 'Content Creation Intermediate',
       tier: 'Intermediate',
       price: 999,
       category: 'Content Creation',
+      description: 'Für ambitionierte Marken, die mit Videos & strategischer Planung ihre Reichweite verdoppeln und mit ihrer Community aktiv interagieren wollen.',
       highlights: [
         { icon: Instagram, text: 'Social Media Posts' },
         { icon: MessageCircle, text: 'Captions & Hashtags' },
@@ -43,13 +53,22 @@ const ContentCreation = () => {
         '+ 2 Reels/TikToks pro Monat',
         '+ Monatsplanung & Content-Strategie',
         '+ Kommentar-Antworten (5h/Monat)'
+      ],
+      items: [
+        'Alle Leistungen aus dem Basic Paket',
+        '2 professionell geschnittene Reels oder TikToks pro Monat',
+        'Strategischer Content-Kalender mit Monatsplanung',
+        'Community Management: Beantwortung von Kommentaren (5h/Monat)',
+        'Wöchentlicher Performance-Check Ihrer Posts'
       ]
     },
     {
       id: 'content-grand',
+      title: 'Content Creation Grand',
       tier: 'Grand',
       price: 1999,
       category: 'Content Creation',
+      description: 'Die Premium-Lösung für Unternehmen, die viral gehen wollen: Mit Trend-Analyse, Performance-Tracking und Influencer-Partnerschaften zum maximalen Erfolg.',
       highlights: [
         { icon: Instagram, text: 'Social Media Posts' },
         { icon: MessageCircle, text: 'Captions & Hashtags' },
@@ -68,6 +87,15 @@ const ContentCreation = () => {
         '+ Monatliche Performance-Reports',
         '+ 1 Influencer-Kooperation/Monat Setup',
         '+ Professionelle Grafik- & Video-Bearbeitung'
+      ],
+      items: [
+        'Alle Leistungen aus dem Intermediate Paket',
+        'Wöchentliche Trend-Analyse mit sofortiger Content-Umsetzung',
+        'Monatliche Performance-Reports mit Handlungsempfehlungen',
+        '1 Influencer-Kooperation pro Monat (Recherche, Kontakt, Setup)',
+        'Premium Grafik- & Video-Bearbeitung mit professionellen Tools',
+        'Strategische Beratung: Monatliches Strategie-Meeting (60 Min.)',
+        'Hashtag-Recherche & A/B-Testing für maximale Reichweite'
       ]
     }
   ]
@@ -80,7 +108,15 @@ const ContentCreation = () => {
       description: 'Professioneller 60-90s Imagefilm inklusive Drehbuch, Dreh & Schnitt',
       price: 2499,
       icon: Video,
-      category: 'Add-On'
+      category: 'Add-On',
+      items: [
+        'Konzept-Entwicklung & Drehbuch-Erstellung',
+        'Professioneller Dreh mit 4K-Equipment (1 Tag)',
+        'Professioneller Schnitt & Color Grading',
+        'Lizenzfreie Musik & Sound Design',
+        '2 Korrekturschleifen inklusive',
+        'Finales Video in allen gängigen Formaten'
+      ]
     },
     {
       id: 'addon-fotoshooting',
@@ -88,7 +124,15 @@ const ContentCreation = () => {
       description: '4h Shooting mit professionellem Fotografen, 30 bearbeitete Bilder',
       price: 799,
       icon: Camera,
-      category: 'Add-On'
+      category: 'Add-On',
+      items: [
+        '4 Stunden Shooting mit professionellem Fotografen',
+        'Location-Beratung & Konzept-Planung',
+        '30 professionell bearbeitete Bilder in High-Res',
+        'Nutzungsrechte für Social Media & Website',
+        'Online-Galerie zum Download',
+        'Express-Lieferung innerhalb von 5 Werktagen'
+      ]
     },
     {
       id: 'addon-podcast',
@@ -96,7 +140,15 @@ const ContentCreation = () => {
       description: 'Komplette Podcast-Episode inkl. Schnitt, Intro/Outro, Transkript',
       price: 349,
       icon: Mic,
-      category: 'Add-On'
+      category: 'Add-On',
+      items: [
+        'Aufnahme-Beratung & Equipment-Empfehlungen',
+        'Professioneller Audio-Schnitt & Mastering',
+        'Individuelles Intro & Outro mit Musik',
+        'Vollständiges Transkript der Episode',
+        'Show Notes & Timestamps',
+        'Upload-fertige Dateien für alle Plattformen'
+      ]
     }
   ]
 

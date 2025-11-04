@@ -9,7 +9,7 @@ const Cybersecurity = () => {
     id: 'cybersecurity-audit',
     title: 'Cybersecurity Audit & Digitalisierung',
     price: 1499,
-    description: 'Umfassende Sicherheitsanalyse und Digitalisierungs-Beratung',
+    description: 'Schützen Sie Ihr Unternehmen vor Cyberangriffen: Wir prüfen Ihre IT-Infrastruktur auf Schwachstellen, führen Penetration Tests durch und entwickeln einen individuellen Sicherheitsfahrplan für Ihre digitale Transformation.',
     category: 'Cybersecurity'
   }
 
