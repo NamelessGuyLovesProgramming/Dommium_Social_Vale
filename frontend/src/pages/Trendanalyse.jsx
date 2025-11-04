@@ -9,7 +9,7 @@ const Trendanalyse = () => {
     id: 'trendanalyse-pro',
     title: 'Trendanalyse Pro',
     price: 599,
-    description: 'Datengestützte Trend-Analyse für Content & Produktentwicklung',
+    description: 'Seien Sie der Konkurrenz voraus: Wir analysieren aktuelle Social Media Trends, Verbraucherverhalten und Marktbewegungen, damit Sie zur richtigen Zeit die richtigen Inhalte und Produkte entwickeln.',
     category: 'Analyse'
   }
 
