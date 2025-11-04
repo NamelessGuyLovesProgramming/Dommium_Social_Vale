@@ -1,4 +1,10 @@
 @echo off
+REM Fenster IMMER offen halten - auch bei unerwarteten Fehlern
+if "%1"=="" (
+    cmd /k "%~f0" run
+    exit /b
+)
+
 title Dominium Sociale - Frontend Dev Server
 echo =====================================
 echo  Dominium Sociale - Frontend Starter
