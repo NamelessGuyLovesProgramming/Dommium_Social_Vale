@@ -46,3 +46,6 @@ build/
 *example*.avi
 *test*.mp4
 *test*.mov
+
+# AUSNAHME: Hero-Video für Home-Seite
+!frontend/public/videos/file_example_MP4_1280_10MG.mp4
