@@ -71,9 +71,19 @@ echo =====================================
 echo  Starte Dev-Server...
 echo =====================================
 echo.
-call npm run dev
+echo Server startet auf: http://localhost:5173
+echo Browser oeffnet sich in 5 Sekunden automatisch...
+echo.
+echo TIPP: Druecke STRG+C um den Server zu stoppen
+echo.
 
-REM Wenn npm run dev beendet wird, halte Fenster offen
+REM Öffne Browser nach 5 Sekunden im Hintergrund
+start /min cmd /c "timeout /t 5 /nobreak >nul && start http://localhost:5173"
+
+REM Starte Dev-Server (blockiert hier - zeigt Logs)
+npm run dev
+
+REM Wenn npm run dev beendet wird
 echo.
 echo Dev-Server wurde beendet.
 pause
