@@ -136,10 +136,7 @@
 /* Divider */
 .divider {
   height: 2px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    var(--accent-gold),
+  background: var(--color-background),
     transparent
   );
   margin: 2rem 0;
@@ -213,3 +210,6 @@
     font-size: 1.5rem;
   }
 }
+
+
+

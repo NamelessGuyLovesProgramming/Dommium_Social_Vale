@@ -26,9 +26,9 @@ const Home = () => {
       // Service 3: 300vh - 400vh (Sektion 3) - Mitte bei 350vh
       // Service 4: 400vh - 500vh (Sektion 4) - Mitte bei 450vh
 
-      // Wegweiser läuft von Start Sektion 1 (100vh) bis etwas vor Mitte Sektion 4
-      const startScroll = windowHeight // Start von Sektion 1 (100vh)
-      const endScroll = windowHeight * 4.0 // Ende von Sektion 3 (400vh)
+      // Wegweiser läuft vom Start (0vh) bis zum Ende (500vh)
+      const startScroll = 0 // Start vom Anfang (0vh)
+      const endScroll = windowHeight * 5.0 // Ende bei 500vh
 
       const scrollInRange = Math.max(0, Math.min(scrollTop - startScroll, endScroll - startScroll))
       const progress = scrollInRange / (endScroll - startScroll)
@@ -108,7 +108,7 @@ const Home = () => {
       icon: Sparkles,
       route: '/services/content',
       position: 'right', // Wegweiser links → Karte rechts
-      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+
       features: [
         'Social Media Posts & Reels',
         'Video-Produktion & Editing',
@@ -123,7 +123,7 @@ const Home = () => {
       icon: MessageCircle,
       route: '/services/social-media',
       position: 'left', // Wegweiser rechts → Karte links
-      gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+
       features: [
         'Strategische Analyse',
         'Zielgruppenforschung',
@@ -138,7 +138,7 @@ const Home = () => {
       icon: TrendingUp,
       route: '/services/trends',
       position: 'right', // Wegweiser links → Karte rechts
-      gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+
       features: [
         'Multi-Source Datenanalyse',
         'Wöchentliche Trend-Reports',
@@ -153,7 +153,7 @@ const Home = () => {
       icon: Shield,
       route: '/services/cybersecurity',
       position: 'left', // Wegweiser rechts → Karte links
-      gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+
       features: [
         'Sicherheits-Audit',
         'Penetration Testing',
@@ -197,12 +197,13 @@ const Home = () => {
 
   return (
     <div className="home-container" ref={containerRef}>
-      {/* SVG PFAD - Gemalt auf den Seiten - NUR AM RAND! */}
-      <svg className="journey-path" viewBox="0 0 100 400" preserveAspectRatio="none">
+      {/* SVG PFAD - Gemalt auf den Seiten - Startet im Video! */}
+      <svg className="journey-path" viewBox="0 0 100 500" preserveAspectRatio="none">
         {/* Hintergrund Pfad (unsichtbar, nur für getPointAtLength) */}
         <path
           ref={pathRef}
-          d="M 2 0
+          d="M 50 0
+             L 50 95
              L 2 95
              C 2 102, 10 104, 50 105
              C 90 106, 98 108, 98 115
@@ -212,7 +213,10 @@ const Home = () => {
              L 2 295
              C 2 302, 10 304, 50 305
              C 90 306, 98 308, 98 315
-             L 98 400"
+             L 98 395
+             C 98 402, 90 404, 50 405
+             C 10 406, 2 408, 2 415
+             L 2 500"
           fill="none"
           stroke="transparent"
           strokeWidth="6"
@@ -220,7 +224,8 @@ const Home = () => {
 
         {/* Aktiver Pfad (wächst mit Scroll - vom Pfeil "gezeichnet") */}
         <motion.path
-          d="M 2 0
+          d="M 50 0
+             L 50 95
              L 2 95
              C 2 102, 10 104, 50 105
              C 90 106, 98 108, 98 115
@@ -230,7 +235,10 @@ const Home = () => {
              L 2 295
              C 2 302, 10 304, 50 305
              C 90 306, 98 308, 98 315
-             L 98 400"
+             L 98 395
+             C 98 402, 90 404, 50 405
+             C 10 406, 2 408, 2 415
+             L 2 500"
           fill="none"
           stroke="url(#pathGradient)"
           strokeWidth="8"
@@ -256,7 +264,7 @@ const Home = () => {
         className="journey-arrow"
         style={{
           left: `${arrowPos.x}%`,
-          top: `calc(100vh + ${(arrowPos.y / 400) * 400}vh)`,
+          top: `${arrowPos.y}vh`,
           transform: `translate(-50%, -50%) rotate(${arrowPos.angle}deg)`
         }}
       >
@@ -310,7 +318,7 @@ const Home = () => {
             className={`home-section service-section ${service.position}`}
             data-section={sectionIndex}
             ref={el => observerRefs.current[sectionIndex] = el}
-            style={{ background: service.gradient }}
+
           >
             <AnimatePresence>
               {showContent[sectionIndex] && (

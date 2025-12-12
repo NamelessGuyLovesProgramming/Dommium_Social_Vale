@@ -1,8 +1,8 @@
 /* Header - Option B: Gold als Akzent */
 
 .header {
-  background: #1A1A1A;
-  border-bottom: 2px solid #D4AF37;
+  background: var(--color-background);
+  border-bottom: 2px solid #000000;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -66,7 +66,7 @@
 }
 
 .nav-link {
-  color: #F5F1E8;
+  color: var(--color-text);
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
@@ -76,7 +76,7 @@
 }
 
 .nav-link:hover {
-  color: #D4AF37;
+  color: var(--color-heading);
 }
 
 .nav-link::after {
@@ -86,7 +86,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: #D4AF37;
+  background: var(--color-heading);
   transition: width 0.3s ease;
 }
 
@@ -103,15 +103,15 @@
 }
 
 .cart-link:hover {
-  color: #D4AF37;
+  color: var(--color-heading);
 }
 
 .cart-badge {
   position: absolute;
   top: 0;
   right: 0;
-  background: #D4AF37;
-  color: #1A1A1A;
+  background: var(--color-heading);
+  color: var(--color-background);
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.15rem 0.4rem;
@@ -163,8 +163,8 @@
   position: absolute;
   top: calc(100% + 0.5rem);
   left: 0;
-  background: #1A1A1A;
-  border: 1px solid #D4AF37;
+  background: var(--color-background);
+  border: 1px solid var(--color-heading);
   border-radius: 8px;
   min-width: 280px;
   padding: 0.5rem;
@@ -198,7 +198,7 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  color: #F5F1E8;
+  color: var(--color-text);
   text-decoration: none;
   border-radius: 6px;
   transition: all 0.2s ease;
@@ -206,11 +206,11 @@
 
 .dropdown-item:hover {
   background: rgba(212, 175, 55, 0.1);
-  color: #D4AF37;
+  color: var(--color-heading);
 }
 
 .dropdown-icon {
-  color: #D4AF37;
+  color: var(--color-heading);
 }
 
 /* Responsive */

@@ -1,0 +1,46 @@
+/* Global Theme Tokens for Dominium Sociale */
+@font-face {
+  font-family: 'Braven';
+  src:
+    url('../assets/fonts/BravenRegular.woff2') format('woff2'),
+    url('../assets/fonts/BravenRegular.woff') format('woff'),
+    url('../assets/fonts/BravenRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Palette */
+  --color-background: #8d806e;
+  --color-surface: #dadada;      /* Service-Boxen */
+  --color-border: #757575;       /* Rahmen */
+  --color-text: #ffffff;         /* Standard Text */
+  --color-heading: #e4a358;      /* Header / Highlight */
+  --color-highlight: #e4a358;
+
+  /* Typography */
+  --font-base: 'Braven', 'Times New Roman', serif;
+  --line-height-base: 1.5;
+
+  /* Effects */
+  --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.2);
+  --radius-card: 16px;
+}
+
+/* Utility helpers */
+.bg-surface {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+}
+
+.text-heading {
+  color: var(--color-heading);
+}
+
+.text-default {
+  color: var(--color-text);
+}

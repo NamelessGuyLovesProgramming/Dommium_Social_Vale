@@ -1,7 +1,7 @@
 .erfolg-page {
   min-height: calc(100vh - 200px);
   padding: 80px 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--color-background);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,7 @@
 
 .erfolg-container {
   max-width: 700px;
-  background: white;
+  background: var(--color-surface);
   border-radius: 16px;
   padding: 60px 40px;
   text-align: center;
@@ -29,7 +29,7 @@
 }
 
 .erfolg-icon {
-  color: #10b981;
+  color: var(--color-heading);
   margin-bottom: 24px;
   animation: scaleIn 0.5s ease-out 0.2s both;
 }
@@ -48,19 +48,19 @@
 .erfolg-title {
   font-size: 32px;
   font-weight: 700;
-  color: #111827;
+  color: var(--color-text);
   margin: 0 0 16px 0;
 }
 
 .erfolg-message {
   font-size: 18px;
-  color: #6b7280;
+  color: var(--color-text);
   line-height: 1.6;
   margin: 0 0 40px 0;
 }
 
 .erfolg-info {
-  background: #f9fafb;
+  background: var(--color-surface);
   border-radius: 12px;
   padding: 32px;
   margin-bottom: 40px;
@@ -78,7 +78,7 @@
 .info-item h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #111827;
+  color: var(--color-text);
   margin: 0 0 12px 0;
 }
 
@@ -90,7 +90,7 @@
 
 .info-item li {
   font-size: 15px;
-  color: #6b7280;
+  color: var(--color-text);
   padding: 6px 0;
   padding-left: 24px;
   position: relative;
@@ -100,19 +100,19 @@
   content: "✓";
   position: absolute;
   left: 0;
-  color: #10b981;
+  color: var(--color-heading);
   font-weight: 700;
 }
 
 .info-item p {
   font-size: 15px;
-  color: #6b7280;
+  color: var(--color-text);
   line-height: 1.6;
   margin: 0;
 }
 
 .info-item a {
-  color: #667eea;
+  color: var(--color-heading);
   text-decoration: none;
   font-weight: 600;
 }
@@ -141,8 +141,8 @@
 }
 
 .primary-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: var(--color-heading);
+  color: var(--color-text);
   border: none;
 }
 
@@ -153,13 +153,13 @@
 
 .secondary-button {
   background: transparent;
-  color: #667eea;
-  border: 2px solid #667eea;
+  color: var(--color-heading);
+  border: 2px solid var(--color-heading);
 }
 
 .secondary-button:hover {
-  background: #667eea;
-  color: white;
+  background: var(--color-heading);
+  color: var(--color-text);
   transform: translateY(-2px);
 }
 
@@ -200,3 +200,5 @@
     justify-content: center;
   }
 }
+
+

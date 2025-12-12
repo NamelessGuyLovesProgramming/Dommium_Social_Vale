@@ -1,7 +1,7 @@
 .warenkorb-page {
   min-height: calc(100vh - 200px);
   padding: 60px 20px;
-  background: linear-gradient(to bottom, #f9fafb 0%, #ffffff 100%);
+  background: var(--color-background);
 }
 
 .warenkorb-container {
@@ -12,7 +12,7 @@
 .warenkorb-title {
   font-size: 36px;
   font-weight: 700;
-  color: #111827;
+  color: var(--color-text);
   margin: 0 0 40px 0;
   text-align: center;
 }
@@ -23,8 +23,8 @@
 
 /* Warenkorb Zusammenfassung */
 .warenkorb-summary {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-  border: 2px solid #e5e7eb;
+  background: var(--color-background);
+  border: 2px solid var(--color-border);
   border-radius: 12px;
   padding: 24px;
   margin-bottom: 32px;
@@ -39,39 +39,39 @@
 
 .summary-label {
   font-size: 16px;
-  color: #6b7280;
+  color: var(--color-text);
   font-weight: 500;
 }
 
 .summary-value {
   font-size: 18px;
-  color: #111827;
+  color: var(--color-text);
   font-weight: 600;
 }
 
 .summary-note {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--color-text);
   font-style: italic;
   padding: 8px 0;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--color-border);
 }
 
 .summary-total {
-  border-top: 2px solid #d1d5db;
+  border-top: 2px solid var(--color-border);
   margin-top: 8px;
   padding-top: 16px;
 }
 
 .summary-total .summary-label {
   font-size: 20px;
-  color: #111827;
+  color: var(--color-text);
   font-weight: 700;
 }
 
 .summary-total .summary-value {
   font-size: 28px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--color-heading);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -86,7 +86,7 @@
   justify-content: center;
   padding: 80px 20px;
   text-align: center;
-  color: #6b7280;
+  color: var(--color-text);
 }
 
 .warenkorb-empty svg {
@@ -96,20 +96,20 @@
 
 .warenkorb-empty h1 {
   font-size: 28px;
-  color: #111827;
+  color: var(--color-text);
   margin: 0 0 12px 0;
 }
 
 .warenkorb-empty p {
   font-size: 16px;
-  color: #6b7280;
+  color: var(--color-text);
   margin: 0 0 32px 0;
 }
 
 .back-button {
   padding: 12px 32px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: var(--color-heading);
+  color: var(--color-text);
   border: none;
   border-radius: 8px;
   font-size: 16px;
@@ -150,3 +150,6 @@
     font-size: 15px;
   }
 }
+
+
+
