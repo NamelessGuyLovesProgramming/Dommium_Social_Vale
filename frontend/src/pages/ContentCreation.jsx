@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useCart } from '../context/CartContext'
 import { ShoppingCart, Sparkles, Instagram, Video, Calendar, MessageCircle, TrendingUp, BarChart3, Users, Palette, Camera, Mic } from 'lucide-react'
+import LogoLoop from '../components/LogoLoop/LogoLoop'
 import './ContentCreation.css'
 
 const ContentCreation = () => {
@@ -198,6 +199,48 @@ const ContentCreation = () => {
 
   return (
     <div className="content-creation-page">
+      <div className="highlight-bar" aria-hidden="true">
+        <LogoLoop
+          logos={[
+            { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: 'Content Creation' },
+            { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: 'Content Creation' },
+            { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: 'Content Creation' }
+          ]}
+          direction="right"
+          speed={120}
+          logoHeight={28}
+          gap={48}
+          hoverSpeed={0}
+          fadeOut
+        />
+      </div>
+
+      {/* Intro Textbox unter dem Banner */}
+      <div className="service-intro-box">
+        <p>
+          Alle unsere Mitarbeiter in der Content Creation haben langjährige
+          Erfahrungen in der Produktion von videographischen Inhalten. Unser
+          Angebot deckt vor allem Real-Filme ab, jedoch sind wir in VFX,
+          Lightweight 3D und KI-Videoproduktion ebenso versiert. Unsere Stärken
+          liegen hier im Storytelling, dokumentarischen Darstellen und kreativen
+          Editing.
+          <br />
+          <br />
+          Wir spezialisieren uns auf geplante Drehs vor Ort, mit Vorgespräch der
+          Vorstellungen plus Umsetzung und, generell, Sichtung der Situation
+          bevor wir in die eigentliche Produktion gehen.
+          <br />
+          <br />
+          Equipment stellen wir; dennoch, je nach Auftrag, kann der Bedarf unser
+          Inventar überschreiten und müsste so angemietet werden von externen
+          Dienstleistern, was aber alles in den Vorgesprächen besprochen wird.
+          <br />
+          <br />
+          Zugriff auf ein Studio haben wir, jedoch zur Miete pro Auftrag
+          gerechnet.
+        </p>
+      </div>
+
       {/* Hero Section */}
       <section className="hero-section">
         <h1 className="page-title">Content Creation</h1>

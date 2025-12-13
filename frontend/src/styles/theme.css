@@ -15,6 +15,8 @@
   --color-background: #8d806e;
   --color-surface: #dadada;      /* Service-Boxen */
   --color-border: #757575;       /* Rahmen */
+  --color-secondary: #2c2c2c;    /* Dunkler Textbox-Hintergrund */
+  --color-tertiary: #b3b3b3;     /* Dezenter Rahmen (hellgrau) */
   --color-text: #ffffff;         /* Standard Text */
   --color-heading: #e4a358;      /* Header / Highlight */
   --color-highlight: #e4a358;
