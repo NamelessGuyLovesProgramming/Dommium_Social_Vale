@@ -192,3 +192,4 @@ src/
 - Backend: FastAPI + Python 3.x
 - Styling: Vanilla CSS (MSP-konform)
 - Icons: Lucide React
+\n## 2025-12-13\n- ContentCreation Seite: Pakete neu strukturiert (Content-Pieces/Community/Performance Blocks) und Karten mit vertikalem Stagger-RiseIn animiert (ähnlich reactbits animated content, direction vertical).\n
