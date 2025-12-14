@@ -536,6 +536,14 @@ const ContentCreation = () => {
           })}
         </div>
       </section>
+
+      <div className="policy-note">
+        <p>
+          Unsere Creation-Policy fokussiert sich darauf den besprochenen Content ab zu fertigen. Hier sind die Content-Tage
+          als Referenzwert gesetzt, kann aber, je nach Bedarf/Situation aber übersteigen. (Aufwand wird der Situation ausgewogen;
+          jedoch nicht mehr als den geplanten Tag(e) + Nach-Bedarfs-Tag (Wenn nötig) + einen Notfall-Tag.)
+        </p>
+      </div>
     </div>
   )
 }
