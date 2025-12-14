@@ -520,7 +520,10 @@ const ContentCreation = () => {
                     <Icon size={40} className="addon-icon" />
                   </div>
                   <div className="addon-info">
-                    <h3 className="addon-title">{addon.title}</h3>
+                    <div className="addon-title-row">
+                      <h3 className="addon-title">{addon.title}</h3>
+                      <div className="addon-title-separator" aria-hidden="true"></div>
+                    </div>
                     <p className="addon-description">{addon.description}</p>
                     <div className="addon-footer">
                       <div className="addon-price">
