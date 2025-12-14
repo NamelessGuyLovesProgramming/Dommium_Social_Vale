@@ -703,7 +703,7 @@
   background: var(--color-secondary);
   border: 2px solid var(--color-heading);
   border-radius: 20px;
-  padding: 1.6rem;
+  padding: 1.6rem 1.6rem 0.8rem;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   animation: fadeInUp 0.8s ease-out;
