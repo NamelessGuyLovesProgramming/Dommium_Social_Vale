@@ -35,28 +35,36 @@ const HighlightBand = () => (
 
 const VideoReelBand = ({ videoSources }) => (
   <div className="video-reel-section" aria-label="Content Beispielvideos">
-    <LogoLoop
-      logos={videoSources.map((src, index) => ({ src, title: `Reel Video ${index + 1}` }))}
-      renderItem={(item, key) => (
-        <video
-          key={key}
-          src={item.src}
-          muted
-          playsInline
-          autoPlay
-          loop
-          preload="metadata"
-          className="video-reel__item"
-        />
-      )}
-      direction="right"
-      speed={180}
-      logoHeight={240}
-      gap={0}
-      fadeOut={false}
-      ariaLabel="Laufband mit Beispiel Reels"
-      className="video-reel"
-    />
+    <div className="video-reel-header">
+      <div className="video-reel-title">Showreel</div>
+      <div className="video-reel-sub">Aktuelle Bewegtbild-Referenzen</div>
+    </div>
+    <div className="video-reel-shell">
+      <LogoLoop
+        logos={videoSources.map((src, index) => ({ src, title: `Reel Video ${index + 1}` }))}
+        renderItem={(item, key) => (
+          <video
+            key={key}
+            src={item.src}
+            muted
+            playsInline
+            autoPlay
+            loop
+            preload="metadata"
+            className="video-reel__item"
+          />
+        )}
+        direction="right"
+        speed={180}
+        logoHeight={240}
+        gap={0}
+        fadeOut={false}
+        ariaLabel="Laufband mit Beispiel Reels"
+        className="video-reel"
+      />
+      <div className="video-reel-gradient left" aria-hidden="true"></div>
+      <div className="video-reel-gradient right" aria-hidden="true"></div>
+    </div>
   </div>
 )
 
