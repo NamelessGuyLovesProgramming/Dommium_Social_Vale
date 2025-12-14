@@ -232,6 +232,36 @@ const ContentCreation = () => {
       ]
     },
     {
+      id: 'addon-event',
+      title: 'Eventbegleitung',
+      description: 'Wir begleiten Ihr Event – Stand- oder Bewegtbild oder beides.',
+      price: 1899,
+      icon: Calendar,
+      category: 'Add-On',
+      items: [
+        'Foto- und/oder Video-Team vor Ort',
+        'Highlight-Clip + Bildauswahl (retuschiert)',
+        'Tonaufnahmen für O-Töne/Statements',
+        'Schnelle Teaser (24h) für Social Media',
+        'Optional: Livestream-Setup (auf Anfrage)'
+      ]
+    },
+    {
+      id: 'addon-newsletter',
+      title: 'Newsletterkreation & Pflege',
+      description: 'Wir konzipieren und pflegen Ihren wiederkehrenden Newsletter, damit Sie wirklich ankommen.',
+      price: 899,
+      icon: MessageCircle,
+      category: 'Add-On',
+      items: [
+        'Template-Design passend zur Brand',
+        'Redaktionsplan & Themenfindung',
+        'Copywriting + visuelle Assets',
+        'Segmentierung & Versandsteuerung',
+        'Reporting (Öffnungen, CTR) mit Handlungsempfehlungen'
+      ]
+    },
+    {
       id: 'addon-podcast',
       title: 'Podcast-Produktion',
       description: 'Komplette Podcast-Episode inkl. Schnitt, Intro/Outro, Transkript',
