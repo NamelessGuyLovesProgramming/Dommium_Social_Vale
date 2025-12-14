@@ -482,10 +482,16 @@ const ContentCreation = () => {
         </div>
       </section>
 
-      <div className="policy-note">
-        <p>
-          Unsere Creation-Policy fokussiert sich darauf den besprochenen Content abzufertigen. Die genannten Content-Tage sind ein Referenzwert und koennen je nach Bedarf/Situation ueberschritten werden. (Aufwand wird der Situation ausgewogen; jedoch nicht mehr als den geplanten Tag(e) + Nach-Bedarfs-Tag (wenn noetig) + einen Notfall-Tag.)
+      <div className="policy-note fade-content" style=" --fade-delay: 0.4s; ">
+        <div className="policy-title">Creation Policy</div>
+        <p className="policy-sub">
+          Wir arbeiten Referenz-basiert und planen fair nach Aufwand.
         </p>
+        <ul className="policy-points">
+          <li>Besprochene Content-Tage = Referenzwert</li>
+          <li>Kann situativ leicht überschritten werden</li>
+          <li>Deckel: geplante Tage + Nach-Bedarfs-Tag (falls nötig) + 1 Notfall-Tag</li>
+        </ul>
       </div>
 
       <div className="section-divider">

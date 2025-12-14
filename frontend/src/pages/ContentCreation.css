@@ -636,6 +636,46 @@
   padding: 0 1.5rem;
 }
 
+.policy-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-heading);
+  margin-bottom: 0.4rem;
+}
+
+.policy-sub {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin: 0 auto 0.8rem;
+  max-width: 620px;
+}
+
+.policy-points {
+  list-style: none;
+  padding: 0;
+  margin: 0.3rem auto 0;
+  display: grid;
+  gap: 0.45rem;
+  max-width: 700px;
+}
+
+.policy-points li {
+  font-size: 1.05rem;
+  color: var(--color-text);
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.policy-points li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-heading);
+  font-weight: 900;
+}
+
 .addons-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
