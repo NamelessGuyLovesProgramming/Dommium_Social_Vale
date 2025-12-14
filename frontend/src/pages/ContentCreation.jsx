@@ -57,7 +57,7 @@ const VideoReelBand = ({ videoSources }) => (
             className="video-reel__item"
           />
         )}
-        direction="left"
+        direction="right"
         speed={180}
         hoverSpeed={60}
         forceJs
