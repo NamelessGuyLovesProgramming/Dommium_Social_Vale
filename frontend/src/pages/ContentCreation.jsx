@@ -15,6 +15,51 @@ import {
 import LogoLoop from "../components/LogoLoop/LogoLoop"
 import "./ContentCreation.css"
 
+const HighlightBand = () => (
+  <div className="highlight-bar" aria-hidden="true">
+    <LogoLoop
+      logos={[
+        { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: "Content Creation" },
+        { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: "Content Creation" },
+        { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: "Content Creation" }
+      ]}
+      direction="right"
+      speed={120}
+      logoHeight={28}
+      gap={48}
+      hoverSpeed={0}
+      fadeOut
+    />
+  </div>
+)
+
+const VideoReelBand = ({ videoSources }) => (
+  <div className="video-reel-section" aria-label="Content Beispielvideos">
+    <LogoLoop
+      logos={videoSources.map((src, index) => ({ src, title: `Reel Video ${index + 1}` }))}
+      renderItem={(item, key) => (
+        <video
+          key={key}
+          src={item.src}
+          muted
+          playsInline
+          autoPlay
+          loop
+          preload="metadata"
+          className="video-reel__item"
+        />
+      )}
+      direction="right"
+      speed={180}
+      logoHeight={240}
+      gap={0}
+      fadeOut={false}
+      ariaLabel="Laufband mit Beispiel Reels"
+      className="video-reel"
+    />
+  </div>
+)
+
 const ContentCreation = () => {
   const { addToCart } = useCart()
   const [hoveredCard, setHoveredCard] = useState(null)
@@ -223,21 +268,7 @@ const ContentCreation = () => {
 
   return (
     <div className="content-creation-page">
-      <div className="highlight-bar" aria-hidden="true">
-        <LogoLoop
-          logos={[
-            { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: "Content Creation" },
-            { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: "Content Creation" },
-            { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: "Content Creation" }
-          ]}
-          direction="right"
-          speed={120}
-          logoHeight={28}
-          gap={48}
-          hoverSpeed={0}
-          fadeOut
-        />
-      </div>
+      <HighlightBand />
 
       <div className="service-intro-box">
         <p>
@@ -246,21 +277,7 @@ const ContentCreation = () => {
         </p>
       </div>
 
-      <div className="video-reel-section" aria-label="Content Beispielvideos">
-        <LogoLoop
-          logos={videoSources.map((src, index) => ({ src, title: `Reel Video ${index + 1}` }))}
-          renderItem={(item, key) => (
-            <video key={key} src={item.src} muted playsInline autoPlay loop preload="metadata" className="video-reel__item" />
-          )}
-          direction="right"
-          speed={180}
-          logoHeight={240}
-          gap={0}
-          fadeOut={false}
-          ariaLabel="Laufband mit Beispiel Reels"
-          className="video-reel"
-        />
-      </div>
+      <VideoReelBand videoSources={videoSources} />
 
       <section className="pricing-section">
         <div ref={pricingRef} className={"pricing-container " + (cardsVisible ? "cards-visible" : "")}>
