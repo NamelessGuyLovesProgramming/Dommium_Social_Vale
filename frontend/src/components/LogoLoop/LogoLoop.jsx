@@ -82,7 +82,8 @@ const useAnimationLoop = (
   hoverSpeed,
   isVertical,
   disabled = false,
-  copyCount = 0
+  copyCount = 0,
+  startOffsetPx = 0
 ) => {
   const rafRef = useRef(null)
   const lastTimestampRef = useRef(null)
@@ -106,6 +107,10 @@ const useAnimationLoop = (
       // initialize offset so that for horizontal right-moving tracks we start with content visible on the left
       // for rightward (positive) motion, start offset multiple sequences to the left
       offsetRef.current = !isVertical && directionSign === 1 ? seqSize * Math.max(6, copyCount) : 0
+      // apply user-defined start offset (positive pushes content visually to the left)
+      if (!isVertical && startOffsetPx) {
+        offsetRef.current += startOffsetPx * (directionSign === 1 ? -1 : 1)
+      }
       prevSeqSizeRef.current = seqSize
     }
 
@@ -175,6 +180,7 @@ const LogoLoop = memo(
     fadeOut = false,
     fadeOutColor,
     scaleOnHover = false,
+    startOffset = 0,
     renderItem,
     ariaLabel = 'Partner logos',
     className,
@@ -294,7 +300,8 @@ const LogoLoop = memo(
       effectiveHoverSpeed,
       isVertical,
       useCssMarquee, // disable JS loop when CSS marquee is active
-      copyCount
+      copyCount,
+      startOffset
     )
     }
 
