@@ -689,15 +689,15 @@
 
 .repertoire-heading {
   text-align: center;
-  font-size: 1.45rem;
-  font-weight: 800;
+  font-size: 1.65rem;
+  font-weight: 900;
   letter-spacing: 0.04em;
   color: var(--color-text);
   text-decoration: underline;
   text-decoration-color: var(--color-heading);
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
-  margin: 0 auto 3rem;
+  margin: 0 auto 4rem;
 }
 
 .fade-now {
