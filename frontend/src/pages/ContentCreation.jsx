@@ -482,6 +482,12 @@ const ContentCreation = () => {
         </div>
       </section>
 
+      <div className="policy-note">
+        <p>
+          Unsere Creation-Policy fokussiert sich darauf den besprochenen Content abzufertigen. Die genannten Content-Tage sind ein Referenzwert und koennen je nach Bedarf/Situation ueberschritten werden. (Aufwand wird der Situation ausgewogen; jedoch nicht mehr als den geplanten Tag(e) + Nach-Bedarfs-Tag (wenn noetig) + einen Notfall-Tag.)
+        </p>
+      </div>
+
       <div className="section-divider">
         <div className="divider-line"></div>
         <div className="divider-content">
@@ -537,13 +543,7 @@ const ContentCreation = () => {
         </div>
       </section>
 
-      <div className="policy-note">
-        <p>
-          Unsere Creation-Policy fokussiert sich darauf den besprochenen Content ab zu fertigen. Hier sind die Content-Tage
-          als Referenzwert gesetzt, kann aber, je nach Bedarf/Situation aber übersteigen. (Aufwand wird der Situation ausgewogen;
-          jedoch nicht mehr als den geplanten Tag(e) + Nach-Bedarfs-Tag (Wenn nötig) + einen Notfall-Tag.)
-        </p>
-      </div>
+      
     </div>
   )
 }
