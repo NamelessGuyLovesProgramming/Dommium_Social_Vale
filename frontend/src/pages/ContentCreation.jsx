@@ -64,7 +64,7 @@ const ContentCreation = () => {
         'Contentoptimierung von bis 2 Social Media Kan√§len',
         '1 x Meeting jeden Monat um weitere Schritte zu besprechen'
       ],
-      items: [],
+      items: ['Bleib dran ñ wir erweitern unser Angebot.'],
       goals: [
         'Erste professionelle Social Media Praesenz, um mehr Kommunikation nach au√üen zu betreiben und Engagement zu generieren',
         'Grundaktivitaeten sichern und sichtbar bleiben'
@@ -95,7 +95,7 @@ const ContentCreation = () => {
         'Keine Uebernahme fuer dienstleistungs-/produktspezifischen Support',
         '1x Meeting im Monat um weitere Schritte zu besprechen'
       ],
-      items: [],
+      items: ['Bleib dran ñ wir erweitern unser Angebot.'],
       goals: ['Social Media als Wachstumsgenerator nutzen und die Online-Praesenz optimieren']
     },
     {
@@ -131,7 +131,7 @@ const ContentCreation = () => {
         { icon: BarChart3, text: 'Umgang mit der g√§ngigen Online-Kommunikationsweise', isCheck: true },
         { icon: BarChart3, text: 'Einfaches beantworten der Standardfragen', isCheck: true }
       ],
-      items: [],
+      items: ['Bleib dran ñ wir erweitern unser Angebot.'],
       goals: [
         'Wir uebernehmen Ihre Content Production - Alles von __Analyse__, __Planung__, __Kreation__ und __Auswertung__ um Ihre Online Praesenz zu optimieren, Wachstum zu generieren und den Umsatz zu steigern.'
       ]
@@ -146,14 +146,7 @@ const ContentCreation = () => {
       price: 2499,
       icon: Video,
       category: 'Add-On',
-      items: [
-        'Konzept-Entwicklung & Drehbuch-Erstellung',
-        'Professioneller Dreh mit 4K-Equipment (1 Tag)',
-        'Professioneller Schnitt & Color Grading',
-        'Lizenzfreie Musik & Sound Design',
-        '2 Korrekturschleifen inklusive',
-        'Finales Video in allen g√§ngigen Formaten'
-      ]
+      items: ['Bleib dran ñ wir erweitern unser Angebot.']
     },
     {
       id: 'addon-werbevideo',
@@ -162,13 +155,7 @@ const ContentCreation = () => {
       price: 1999,
       icon: Video,
       category: 'Add-On',
-      items: [
-        'Kampagnen-Konzept & Storyboard',
-        'Dreh mit 2-Cam Setup + Licht',
-        'Schnitt, Motion Graphics, Color Grading',
-        'Formate fuÃàr Social + Website',
-        '2 Feedbackschleifen inklusive'
-      ]
+      items: ['Bleib dran ñ wir erweitern unser Angebot.']
     },
     {
       id: 'addon-produktvideo',
@@ -177,13 +164,7 @@ const ContentCreation = () => {
       price: 1499,
       icon: Video,
       category: 'Add-On',
-      items: [
-        'Produktinszenierung & Macro-Shots',
-        'Studio- oder Location-Setup',
-        'Produkt-spezifische Sounddesigns',
-        '1x Hauptvideo + 3 Kurzformate',
-        'Colour Grading passend zur Brand'
-      ]
+      items: ['Bleib dran ñ wir erweitern unser Angebot.']
     },
     {
       id: 'addon-fotoshooting',
@@ -192,14 +173,7 @@ const ContentCreation = () => {
       price: 799,
       icon: Camera,
       category: 'Add-On',
-      items: [
-        '4 Stunden Shooting mit professionellem Fotografen',
-        'Location-Beratung & Konzept-Planung',
-        '30 professionell bearbeitete Bilder in High-Res',
-        'Nutzungsrechte f√ºr Social Media & Website',
-        'Online-Galerie zum Download',
-        'Express-Lieferung innerhalb von 5 Werktagen'
-      ]
+      items: ['Bleib dran ñ wir erweitern unser Angebot.']
     },
     {
       id: 'addon-musikvideo',
@@ -208,13 +182,7 @@ const ContentCreation = () => {
       price: 2999,
       icon: Video,
       category: 'Add-On',
-      items: [
-        'Creative Direction & Treatment',
-        'Location-Scouting & Lichtkonzept',
-        'Dreh mit Stabilizer/Drohne nach Bedarf',
-        'Schnitt, VFX-Light, Color Grading',
-        'Social Cuts (3 St√ºck) inklusive'
-      ]
+      items: ['Bleib dran ñ wir erweitern unser Angebot.']
     },
     {
       id: 'addon-interview',
@@ -223,13 +191,7 @@ const ContentCreation = () => {
       price: 1199,
       icon: Video,
       category: 'Add-On',
-      items: [
-        'Interview-Setup mit 2 Kameras + Tonangel/Lav',
-        'Fragenkatalog & Ablaufplanung',
-        'B-Roll Dreh on Location',
-        'Schnitt mit Untertiteln und Bauchbinden',
-        '1 Kurzfassung (60-90s) fuÃàr Social Media'
-      ]
+      items: ['Bleib dran ñ wir erweitern unser Angebot.']
     },
     {
       id: 'addon-event',
@@ -238,13 +200,7 @@ const ContentCreation = () => {
       price: 1899,
       icon: Calendar,
       category: 'Add-On',
-      items: [
-        'Foto- und/oder Video-Team vor Ort',
-        'Highlight-Clip + Bildauswahl (retuschiert)',
-        'Tonaufnahmen fuÃàr O-T√∂ne/Statements',
-        'Schnelle Teaser (24h) fuÃàr Social Media',
-        'Optional: Livestream-Setup (auf Anfrage)'
-      ]
+      items: ['Bleib dran ñ wir erweitern unser Angebot.']
     },
     {
       id: 'addon-newsletter',
@@ -253,29 +209,16 @@ const ContentCreation = () => {
       price: 899,
       icon: MessageCircle,
       category: 'Add-On',
-      items: [
-        'Template-Design passend zur Brand',
-        'Redaktionsplan & Themenfindung',
-        'Copywriting + visuelle Assets',
-        'Segmentierung & Versandsteuerung',
-        'Reporting (√ñffnungen, CTR) mit Handlungsempfehlungen'
-      ]
+      items: ['Bleib dran ñ wir erweitern unser Angebot.']
     },
     {
-      id: 'addon-podcast',
-      title: 'Podcast-Produktion',
-      description: 'Komplette Podcast-Episode inkl. Schnitt, Intro/Outro, Transkript',
-      price: 349,
-      icon: Mic,
+      id: 'addon-coming-soon',
+      title: 'Coming Soon',
+      description: 'Weitere Add-Ons sind in Planung. Bald verfuegbar.',
+      price: 0,
+      icon: Sparkles,
       category: 'Add-On',
-      items: [
-        'Aufnahme-Beratung & Equipment-Empfehlungen',
-        'Professioneller Audio-Schnitt & Mastering',
-        'Individuelles Intro & Outro mit Musik',
-        'Vollst√§ndiges Transkript der Episode',
-        'Show Notes & Timestamps',
-        'Upload-fertige Dateien f√ºr alle Plattformen'
-      ]
+      items: ['Bleib dran ñ wir erweitern unser Angebot.']
     }
   ]
   const videoSources = [
