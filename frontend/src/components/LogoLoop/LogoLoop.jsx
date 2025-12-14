@@ -83,7 +83,7 @@ const useAnimationLoop = (
   isVertical,
   disabled = false,
   copyCount = 0,
-  startOffsetPx = 0
+  containerSize = 0
 ) => {
   const rafRef = useRef(null)
   const lastTimestampRef = useRef(null)
@@ -104,12 +104,11 @@ const useAnimationLoop = (
     const seqSize = isVertical ? seqHeight : seqWidth
 
     if (seqSize !== prevSeqSizeRef.current) {
-      // initialize offset so that for horizontal right-moving tracks we start with content visible on the left
-      // for rightward (positive) motion, start offset multiple sequences to the left
-      offsetRef.current = !isVertical && directionSign === 1 ? seqSize * Math.max(6, copyCount) : 0
-      // apply user-defined start offset (positive pushes content visually to the left)
-      if (!isVertical && startOffsetPx) {
-        offsetRef.current += startOffsetPx * (directionSign === 1 ? -1 : 1)
+      // for rightward motion: start so that the tail ends exactly at the right edge (no gap on the left)
+      if (!isVertical && directionSign === 1) {
+        offsetRef.current = Math.max(seqSize - containerSize, 0)
+      } else {
+        offsetRef.current = 0
       }
       prevSeqSizeRef.current = seqSize
     }
@@ -194,6 +193,7 @@ const LogoLoop = memo(
     const [seqHeight, setSeqHeight] = useState(0)
     const [copyCount, setCopyCount] = useState(ANIMATION_CONFIG.MIN_COPIES)
     const [isHovered, setIsHovered] = useState(false)
+    const [containerSize, setContainerSize] = useState(0)
 
     const effectiveHoverSpeed = useMemo(() => {
       const absHover = hoverSpeed !== undefined ? Math.abs(hoverSpeed) : undefined
@@ -218,6 +218,7 @@ const LogoLoop = memo(
 
     const updateDimensions = useCallback(() => {
       const containerWidth = containerRef.current?.clientWidth ?? 0
+      setContainerSize(containerWidth)
       const sequenceRect = seqRef.current?.getBoundingClientRect?.()
       const sequenceWidth = sequenceRect?.width ?? 0
       const sequenceHeight = sequenceRect?.height ?? 0
@@ -301,7 +302,7 @@ const LogoLoop = memo(
       isVertical,
       useCssMarquee, // disable JS loop when CSS marquee is active
       copyCount,
-      startOffset
+      containerSize
     )
     }
 
