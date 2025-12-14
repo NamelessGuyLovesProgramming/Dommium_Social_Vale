@@ -33,7 +33,8 @@ const LogoLoop = memo(
       track.style.setProperty('--logo-gap', `${gap}px`)
       track.style.setProperty('--logo-height', `${logoHeight}px`)
       track.style.setProperty('--loop-duration', `${duration}s`)
-      track.style.setProperty('--loop-direction', dirSign === 1 ? 'normal' : 'reverse')
+      // Keyframes move from 0 -> -50%. To move content to the right, run animation in reverse.
+      track.style.setProperty('--loop-direction', dirSign === 1 ? 'reverse' : 'normal')
     }, [gap, logoHeight, duration, dirSign])
 
     useEffect(() => {
