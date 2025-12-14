@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
-import { useCart } from '../context/CartContext'
+﻿import { useEffect, useRef, useState } from "react"
+import { useCart } from "../context/CartContext"
 import {
   ShoppingCart,
   Sparkles,
@@ -7,15 +7,12 @@ import {
   Video,
   Calendar,
   MessageCircle,
-  TrendingUp,
   BarChart3,
-  Users,
-  Palette,
   Camera,
   Mic
-} from 'lucide-react'
-import LogoLoop from '../components/LogoLoop/LogoLoop'
-import './ContentCreation.css'
+} from "lucide-react"
+import LogoLoop from "../components/LogoLoop/LogoLoop"
+import "./ContentCreation.css"
 
 const ContentCreation = () => {
   const { addToCart } = useCart()
@@ -29,9 +26,7 @@ const ContentCreation = () => {
     let lastIndex = 0
     let match
     while ((match = regex.exec(goal)) !== null) {
-      if (match.index > lastIndex) {
-        parts.push(goal.slice(lastIndex, match.index))
-      }
+      if (match.index > lastIndex) parts.push(goal.slice(lastIndex, match.index))
       parts.push(
         <span key={parts.length} className="goal-underline">
           {match[1]}
@@ -39,200 +34,173 @@ const ContentCreation = () => {
       )
       lastIndex = regex.lastIndex
     }
-    if (lastIndex < goal.length) {
-      parts.push(goal.slice(lastIndex))
-    }
+    if (lastIndex < goal.length) parts.push(goal.slice(lastIndex))
     return parts
   }
 
   const packages = [
     {
-      id: 'content-basic',
-      title: 'Eintritt zu Social Media Paket',
-      tier: 'Eintritt zu Social Media Paket',
+      id: "content-basic",
+      title: "Eintritt zu Social Media Paket",
+      tier: "Eintritt zu Social Media Paket",
       price: 499,
-      category: 'Content Creation',
-      description: '',
+      category: "Content Creation",
       highlights: [],
       details: [
-        'Erstgespräch für die Planung + Umsetzung',
-        'Oberflächliche Nichen Analyse',
-        '1x monatliche Trendanalyse(light) mit resultierenden identifizierten Contentformat Vorschlägen',
-        'Bis zu 3 Kurzformat Videos (Bis 60 Sekunden)',
-        'Bis zu 4 Posts/Carousells',
-        'Copywriting für den Content',
-        'Contentoptimierung von bis 2 Social Media Kanälen',
-        '1 x Meeting jeden Monat um weitere Schritte zu besprechen'
+        "Erstgespraech fuer Planung + Umsetzung",
+        "Oberflaechliche Nischen-Analyse",
+        "1x monatliche Trendanalyse (light)",
+        "Bis zu 3 Kurzformat-Videos (bis 60s)",
+        "Bis zu 4 Posts/Carousels",
+        "Copywriting fuer den Content",
+        "Optimierung von bis zu 2 Kanaelen",
+        "1 Meeting pro Monat"
       ],
-      items: ['Bleib dran � wir erweitern unser Angebot.'],
       goals: [
-        'Erste professionelle Social Media Praesenz, um mehr Kommunikation nach außen zu betreiben und Engagement zu generieren',
-        'Grundaktivitaeten sichern und sichtbar bleiben'
+        "Erste professionelle Social Media Praesenz",
+        "Grundaktivitaeten sichern und sichtbar bleiben"
       ]
     },
     {
-      id: 'content-intermediate',
-      title: 'Wachstums Social Media Paket',
-      tier: 'Wachstums Social Media Paket',
+      id: "content-intermediate",
+      title: "Wachstums Social Media Paket",
+      tier: "Wachstums Social Media Paket",
       price: 999,
-      category: 'Content Creation',
-      description: '12 Content-Pieces plus Reporting und leichtes Community Management fuer spuerbares Wachstum.',
+      category: "Content Creation",
       highlights: [
-        { icon: Instagram, text: 'Posts & Carousels' },
-        { icon: Video, text: 'Kurzformat Videos (bis 60s, max 6)' },
-        { icon: Camera, text: 'Behind the scenes / Stories' },
-        { icon: BarChart3, text: 'Performance Report' },
-        { icon: BarChart3, text: 'KPI-Analyse' },
-        { icon: BarChart3, text: 'Sentiment Analyse' },
-        { icon: MessageCircle, text: 'Community Management Light' },
-        { icon: MessageCircle, text: 'Interaktion 2x/Woche' }
+        { icon: Instagram, text: "Posts & Carousels" },
+        { icon: Video, text: "Kurzformat Videos (bis 60s, max 6)" },
+        { icon: Camera, text: "Behind the scenes / Stories" },
+        { icon: BarChart3, text: "Performance Report" },
+        { icon: BarChart3, text: "KPI-Analyse" },
+        { icon: MessageCircle, text: "Community Management Light" }
       ],
       details: [
-        '12 Content-Pieces Gesamt',
-        '1x Performance Report Meeting: Analyse der individuellen Metrics - was hat unser Aufwand bewirkt?',
-        'Umgang mit der gaengigen Online-Kommunikationsweise',
-        'Einfaches Beantworten der Standardfragen',
-        'Keine Uebernahme fuer dienstleistungs-/produktspezifischen Support',
-        '1x Meeting im Monat um weitere Schritte zu besprechen'
+        "12 Content-Pieces gesamt",
+        "1x Performance Report Meeting",
+        "Einfache Beantwortung von Standardfragen",
+        "Keine Uebernahme fuer produktspezifischen Support",
+        "1x Monats-Meeting fuer naechste Schritte"
       ],
-      items: ['Bleib dran � wir erweitern unser Angebot.'],
-      goals: ['Social Media als Wachstumsgenerator nutzen und die Online-Praesenz optimieren']
+      goals: ["Social Media als Wachstumsgenerator nutzen"]
     },
     {
-      id: 'content-grand',
-      title: 'All-Out Social Media Content Abteilung',
-      tier: 'All-Out Social Media Content Abteilung',
+      id: "content-grand",
+      title: "All-Out Social Media Content Abteilung",
+      tier: "All-Out Social Media Content Abteilung",
       price: 2499,
-      category: 'Content Creation',
-      description: 'All-in Content-Abteilung mit hohem Volumen, Ads-Begleitung und taeglichem Community-Touch.',
+      category: "Content Creation",
       highlights: [],
       contentPieces: [
-        { icon: Instagram, text: 'Posts/Caroussels - ~3 pro Woche' },
-        { icon: Video, text: 'Kurzformat Videos - Bis 60 Sekunden ; ~3 pro Woche' },
-        { icon: Video, text: 'In depth Produkt/Dienstleistung Video - ~1 pro Woche' },
-        { icon: Camera, text: 'Behind the scenes/Stories -' },
-        {
-          icon: BarChart3,
-          text: 'Social Ads - von Konzeptionierung bis Refinement, ohne Ads Budget - ~1-2 pro Woche'
-        },
-        { icon: null, text: 'Zielsetzung (Funnel, Leads, Branding, Sales, Retargeting etc.)' },
-        { icon: null, text: 'A/B Testing' },
-        { icon: null, text: 'Refinement von Was funktioniert' }
+        { icon: Instagram, text: "Posts/Carousels ~3 pro Woche" },
+        { icon: Video, text: "Kurzformat Videos ~3 pro Woche" },
+        { icon: Video, text: "In-depth Video ~1 pro Woche" },
+        { icon: Camera, text: "Behind the scenes / Stories" },
+        { icon: BarChart3, text: "Social Ads Konzeption bis Refinement" },
+        { icon: null, text: "Zielsetzung (Funnel/Leads/Branding etc.)" },
+        { icon: null, text: "A/B Testing" },
+        { icon: null, text: "Refinement von funktionierendem Content" }
       ],
       performance: [
-        { icon: BarChart3, text: '1x Performance Report Meeting:' },
-        { icon: BarChart3, text: 'Analyse der Individuellen Metrics - Was hat unser Aufwand bewirkt' },
-        { icon: BarChart3, text: 'KPI-Analyse' },
-        { icon: BarChart3, text: 'Sentiment Analyse' }
+        { icon: BarChart3, text: "1x Performance Report Meeting" },
+        { icon: BarChart3, text: "Analyse individueller KPIs" },
+        { icon: BarChart3, text: "Sentiment Analyse" }
       ],
-      details: [],
       community: [
-        { icon: BarChart3, text: 'Interaktionen herstellen und gewährleisten (1x pro Tag)', isCheck: true },
-        { icon: BarChart3, text: 'Umgang mit der gängigen Online-Kommunikationsweise', isCheck: true },
-        { icon: BarChart3, text: 'Einfaches beantworten der Standardfragen', isCheck: true }
+        { icon: BarChart3, text: "Taegliche Interaktion (1x/Tag)", isCheck: true },
+        { icon: BarChart3, text: "Gängige Online-Kommunikation", isCheck: true },
+        { icon: BarChart3, text: "Standardfragen beantworten", isCheck: true }
       ],
-      items: ['Bleib dran � wir erweitern unser Angebot.'],
       goals: [
-        'Wir uebernehmen Ihre Content Production - Alles von __Analyse__, __Planung__, __Kreation__ und __Auswertung__ um Ihre Online Praesenz zu optimieren, Wachstum zu generieren und den Umsatz zu steigern.'
+        "Wir uebernehmen Analyse, Planung, Kreation und Auswertung fuer Ihre Online-Praesenz."
       ]
     }
   ]
 
   const addOns = [
     {
-      id: 'addon-imagefilm',
-      title: 'Imagefilm',
-      description: 'Ihr Unternehmen, Ihre Person, Ihre Visionen - Wir halten Sie im besten Licht fest.',
+      id: "addon-imagefilm",
+      title: "Imagefilm",
+      description: "Ihr Unternehmen, Ihre Person, Ihre Visionen - wir halten Sie im besten Licht fest.",
       price: 2499,
       icon: Video,
-      category: 'Add-On',
-      items: ['Bleib dran � wir erweitern unser Angebot.']
+      category: "Add-On"
     },
     {
-      id: 'addon-werbevideo',
-      title: 'Werbevideo',
-      description: 'Wir setzen Ihre Werbekampagne um - kreativ und seriös.',
+      id: "addon-werbevideo",
+      title: "Werbevideo",
+      description: "Wir setzen Ihre Werbekampagne um - kreativ und serioes.",
       price: 1999,
       icon: Video,
-      category: 'Add-On',
-      items: ['Bleib dran � wir erweitern unser Angebot.']
+      category: "Add-On"
     },
     {
-      id: 'addon-produktvideo',
-      title: 'Produktvideo',
-      description: 'Wir kreieren atemberaubende Visuals für Ihr Produkt.',
+      id: "addon-produktvideo",
+      title: "Produktvideo",
+      description: "Wir kreieren atemberaubende Visuals fuer Ihr Produkt.",
       price: 1499,
       icon: Video,
-      category: 'Add-On',
-      items: ['Bleib dran � wir erweitern unser Angebot.']
+      category: "Add-On"
     },
     {
-      id: 'addon-fotoshooting',
-      title: 'Fotoshooting',
-      description: 'Wir knipsen was Sie möchten - und lassen Sie dabei gut aussehen.',
+      id: "addon-fotoshooting",
+      title: "Fotoshooting",
+      description: "Wir knipsen, was Sie moechten - und lassen Sie dabei gut aussehen.",
       price: 799,
       icon: Camera,
-      category: 'Add-On',
-      items: ['Bleib dran � wir erweitern unser Angebot.']
+      category: "Add-On"
     },
     {
-      id: 'addon-musikvideo',
-      title: 'Musikvideo',
-      description: 'Full Scale Leitung für Ihr Musikvideo - Schnittstelle für Kunst und Technik.',
+      id: "addon-musikvideo",
+      title: "Musikvideo",
+      description: "Full Scale Leitung fuer Ihr Musikvideo - Schnittstelle fuer Kunst und Technik.",
       price: 2999,
       icon: Video,
-      category: 'Add-On',
-      items: ['Bleib dran � wir erweitern unser Angebot.']
+      category: "Add-On"
     },
     {
-      id: 'addon-interview',
-      title: 'Interview / Dokumentation',
-      description: 'Lassen Sie uns Ihre Message festhalten oder Ihr Vorhaben dokumentieren.',
+      id: "addon-interview",
+      title: "Interview / Dokumentation",
+      description: "Lassen Sie uns Ihre Message festhalten oder Ihr Vorhaben dokumentieren.",
       price: 1199,
       icon: Video,
-      category: 'Add-On',
-      items: ['Bleib dran � wir erweitern unser Angebot.']
+      category: "Add-On"
     },
     {
-      id: 'addon-event',
-      title: 'Eventbegleitung',
-      description: 'Wir begleiten Ihr Event – Stand- oder Bewegtbild oder beides.',
+      id: "addon-event",
+      title: "Eventbegleitung",
+      description: "Wir begleiten Ihr Event - Stand- oder Bewegtbild oder beides.",
       price: 1899,
       icon: Calendar,
-      category: 'Add-On',
-      items: ['Bleib dran � wir erweitern unser Angebot.']
+      category: "Add-On"
     },
     {
-      id: 'addon-newsletter',
-      title: 'Newsletterkreation & Pflege',
-      description: 'Wir konzipieren und pflegen Ihren wiederkehrenden Newsletter, damit Sie wirklich ankommen.',
+      id: "addon-newsletter",
+      title: "Newsletterkreation & Pflege",
+      description: "Wir konzipieren und pflegen Ihren Newsletter, damit Sie wirklich ankommen.",
       price: 899,
       icon: MessageCircle,
-      category: 'Add-On',
-      items: ['Bleib dran � wir erweitern unser Angebot.']
+      category: "Add-On"
     },
     {
-      id: 'addon-coming-soon',
-      title: 'Coming Soon',
-      description: 'Weitere Add-Ons sind in Planung. Bald verfuegbar.',
+      id: "addon-coming-soon",
+      title: "Coming Soon",
+      description: "Weitere Add-Ons sind in Planung. Bald verfuegbar.",
       price: 0,
       icon: Sparkles,
-      category: 'Add-On',
-      items: ['Bleib dran � wir erweitern unser Angebot.']
+      category: "Add-On"
     }
   ]
-  const videoSources = [
-    '/videos/13889899_2160_3840_30fps.mp4',
-    '/videos/14993748-uhd_1296_2304_30fps.mp4',
-    '/videos/13889899_2160_3840_30fps.mp4', // einmal doppelt, aber nicht direkt an Rand
-    '/videos/17687288-uhd_2160_3840_30fps.mp4',
-    '/videos/17687289-uhd_2160_3840_30fps.mp4'
+
+  const videoSources = [
+    "/videos/13889899_2160_3840_30fps.mp4",
+    "/videos/14993748-uhd_1296_2304_30fps.mp4",
+    "/videos/17687288-uhd_2160_3840_30fps.mp4"
   ]
 
   useEffect(() => {
     const container = pricingRef.current
     if (!container) return
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -244,40 +212,12 @@ const ContentCreation = () => {
       },
       { threshold: 0.25 }
     )
-
     observer.observe(container)
     return () => observer.disconnect()
   }, [])
 
-  const handleAddToCart = (item, e) => {
+  const handleAddToCart = (item) => {
     addToCart(item)
-    const button = e.currentTarget
-    const buttonRect = button.getBoundingClientRect()
-    const cartIcon = document.querySelector('.cart-link')
-    if (cartIcon) {
-      const cartRect = cartIcon.getBoundingClientRect()
-      const flyingIcon = document.createElement('div')
-      flyingIcon.className = 'flying-cart-icon'
-      flyingIcon.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-        </svg>
-      `
-      flyingIcon.style.left = `${buttonRect.left + buttonRect.width / 2}px`
-      flyingIcon.style.top = `${buttonRect.top + buttonRect.height / 2}px`
-      document.body.appendChild(flyingIcon)
-      setTimeout(() => {
-        flyingIcon.style.left = `${cartRect.left + cartRect.width / 2}px`
-        flyingIcon.style.top = `${cartRect.top + cartRect.height / 2}px`
-        flyingIcon.style.transform = 'translate(-50%, -50%) scale(0.3)'
-        flyingIcon.style.opacity = '0'
-      }, 10)
-      setTimeout(() => {
-        flyingIcon.remove()
-      }, 800)
-    }
   }
 
   return (
@@ -285,9 +225,9 @@ const ContentCreation = () => {
       <div className="highlight-bar" aria-hidden="true">
         <LogoLoop
           logos={[
-            { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: 'Content Creation' },
-            { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: 'Content Creation' },
-            { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: 'Content Creation' }
+            { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: "Content Creation" },
+            { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: "Content Creation" },
+            { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: "Content Creation" }
           ]}
           direction="right"
           speed={120}
@@ -300,21 +240,8 @@ const ContentCreation = () => {
 
       <div className="service-intro-box">
         <p>
-          Alle unsere Mitarbeiter in der Content Creation haben langjährige Erfahrungen in der Produktion von
-          videographischen Inhalten. Unser Angebot deckt vor allem Real-Filme ab, jedoch sind wir in VFX, Lightweight 3D
-          und KI-Videoproduktion ebenso versiert. Unsere Stärken liegen hier im Storytelling, dokumentarischen Darstellen
-          und kreativen Editing.
-          <br />
-          <br />
-          Wir spezialisieren uns auf geplante Drehs vor Ort, mit Vorgespräch der Vorstellungen plus Umsetzung und,
-          generell, Sichtung der Situation bevor wir in die eigentliche Produktion gehen.
-          <br />
-          <br />
-          Equipment stellen wir; dennoch, je nach Auftrag, kann der Bedarf unser Inventar überschreiten und müsste so
-          angemietet werden von externen Dienstleistern, was aber alles in den Vorgesprächen besprochen wird.
-          <br />
-          <br />
-          Zugriff auf ein Studio haben wir, jedoch zur Miete pro Auftrag gerechnet.
+          Alle unsere Mitarbeiter in der Content Creation haben langjaehrige Erfahrungen in der Produktion von
+          videographischen Inhalten. Unsere Staerken liegen im Storytelling, dokumentarischen Darstellen und kreativen Editing.
         </p>
       </div>
 
@@ -322,16 +249,7 @@ const ContentCreation = () => {
         <LogoLoop
           logos={videoSources.map((src, index) => ({ src, title: `Reel Video ${index + 1}` }))}
           renderItem={(item, key) => (
-            <video
-              key={key}
-              src={item.src}
-              muted
-              playsInline
-              autoPlay
-              loop
-              preload="metadata"
-              className="video-reel__item"
-            />
+            <video key={key} src={item.src} muted playsInline autoPlay loop preload="metadata" className="video-reel__item" />
           )}
           direction="right"
           speed={180}
@@ -344,43 +262,34 @@ const ContentCreation = () => {
       </div>
 
       <section className="pricing-section">
-        <div
-          ref={pricingRef}
-          className={"pricing-container " + (cardsVisible ? 'cards-visible' : '')}
-        >
+        <div ref={pricingRef} className={"pricing-container " + (cardsVisible ? "cards-visible" : "")}>
           {packages.map((pkg, idx) => {
-            const isEntry = pkg.id === 'content-basic'
-            const isGrowth = pkg.id === 'content-intermediate'
-            const isGrand = pkg.id === 'content-grand'
+            const isEntry = pkg.id === "content-basic"
+            const isGrowth = pkg.id === "content-intermediate"
+            const isGrand = pkg.id === "content-grand"
             const cardDelay = idx * 0.5
-            const displayPrice = isEntry
-              ? '499 - 699'
-              : isGrowth
-                ? '999 - 1500'
-                : isGrand
-                  ? '2499 - 4999+'
-                  : pkg.price
+            const displayPrice = isEntry ? "499 - 699" : isGrowth ? "999 - 1500" : isGrand ? "2499 - 4999+" : pkg.price
 
             return (
               <div
                 key={pkg.id}
-                className={`pricing-card ${isEntry ? 'entry-card' : ''} ${isGrowth ? 'growth-card' : ''} ${isGrand ? 'premium-card' : ''} ${hoveredCard === pkg.id ? 'expanded' : ''}`}
+                className={`pricing-card ${isEntry ? "entry-card" : ""} ${isGrowth ? "growth-card" : ""} ${isGrand ? "premium-card" : ""} ${hoveredCard === pkg.id ? "expanded" : ""}`}
                 onMouseEnter={() => setHoveredCard(pkg.id)}
                 onMouseLeave={() => setHoveredCard(null)}
-                style={{ '--card-delay': `${cardDelay}s` }}
+                style={{ "--card-delay": `${cardDelay}s` }}
               >
                 <div className="card-header">
                   <h2 className="tier-name">{pkg.tier}</h2>
                 </div>
 
                 <div className="card-highlights">
-                  {pkg.highlights.map((highlight, index) => {
+                  {pkg.highlights?.map((highlight, index) => {
                     const Icon = highlight.icon
                     return (
                       <div
                         key={index}
                         className="highlight-item fade-content"
-                        style={{ '--fade-delay': `${cardDelay + 0.8 + index * 0.08}s` }}
+                        style={{ "--fade-delay": `${cardDelay + 0.8 + index * 0.08}s` }}
                       >
                         <Icon size={20} className="highlight-icon" />
                         <span className="highlight-text">{highlight.text}</span>
@@ -393,15 +302,15 @@ const ContentCreation = () => {
                   <div className="card-details">
                     <div className="details-heading">Content-Pieces</div>
                     <ul className="details-list nested">
-                      {pkg.contentPieces.map((item, idx) => {
+                      {pkg.contentPieces.map((item, idx2) => {
                         const Icon = item.icon
                         return (
                           <li
-                            key={idx}
-                            className={`details-item-with-icon ${Icon ? '' : 'details-item-arrow'} fade-content`}
-                            style={{ '--fade-delay': `${cardDelay + 1 + idx * 0.07}s` }}
+                            key={idx2}
+                            className={`details-item-with-icon ${Icon ? "" : "details-item-arrow"} fade-content`}
+                            style={{ "--fade-delay": `${cardDelay + 1 + idx2 * 0.07}s` }}
                           >
-                            {Icon ? <Icon size={18} className="details-icon" /> : <span className="details-arrow">?</span>}
+                            {Icon ? <Icon size={18} className="details-icon" /> : <span className="details-arrow">→</span>}
                             <span>{item.text}</span>
                           </li>
                         )
@@ -414,18 +323,16 @@ const ContentCreation = () => {
                   <div className="card-details">
                     <div className="details-heading">Community Management</div>
                     <ul className="details-list nested">
-                      {pkg.community.map((item, idx) => {
-                        return (
-                          <li
-                            key={idx}
-                            className="details-item-with-icon fade-content"
-                            style={{ '--fade-delay': `${cardDelay + 1 + idx * 0.07}s` }}
-                          >
-                            <span className="details-check">&#10003;</span>
-                            <span>{item.text}</span>
-                          </li>
-                        )
-                      })}
+                      {pkg.community.map((item, idx3) => (
+                        <li
+                          key={idx3}
+                          className="details-item-with-icon fade-content"
+                          style={{ "--fade-delay": `${cardDelay + 1 + idx3 * 0.07}s` }}
+                        >
+                          <span className="details-check">✔</span>
+                          <span>{item.text}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 )}
@@ -434,11 +341,7 @@ const ContentCreation = () => {
                   <div className="card-details">
                     <ul className="details-list">
                       {pkg.details.map((detail, index) => (
-                        <li
-                          key={index}
-                          className="fade-content"
-                          style={{ '--fade-delay': `${cardDelay + 0.9 + index * 0.06}s` }}
-                        >
+                        <li key={index} className="fade-content" style={{ "--fade-delay": `${cardDelay + 0.9 + index * 0.06}s` }}>
                           {detail}
                         </li>
                       ))}
@@ -456,7 +359,7 @@ const ContentCreation = () => {
                           <li
                             key={index}
                             className="details-item-with-icon fade-content"
-                            style={{ '--fade-delay': `${cardDelay + 1 + index * 0.07}s` }}
+                            style={{ "--fade-delay": `${cardDelay + 1 + index * 0.07}s` }}
                           >
                             <Icon size={18} className="details-icon" />
                             <span>{item.text}</span>
@@ -472,11 +375,7 @@ const ContentCreation = () => {
                     <div className="goals-title">Ziele</div>
                     <ul className="goals-list">
                       {pkg.goals.map((goal, index) => (
-                        <li
-                          key={index}
-                          className="fade-content"
-                          style={{ '--fade-delay': `${cardDelay + 1.1 + index * 0.08}s` }}
-                        >
+                        <li key={index} className="fade-content" style={{ "--fade-delay": `${cardDelay + 1.1 + index * 0.08}s` }}>
                           {renderGoal(goal)}
                         </li>
                       ))}
@@ -484,27 +383,24 @@ const ContentCreation = () => {
                   </div>
                 )}
 
-                <div className="card-footer fade-content" style={{ '--fade-delay': `${cardDelay + 1.2}s` }}>
+                <div className="card-footer fade-content" style={{ "--fade-delay": `${cardDelay + 1.2}s` }}>
                   <div className="price-display">
-                    <span className="price-currency">�</span>
+                    <span className="price-currency">€</span>
                     <span className="price-amount">{displayPrice}</span>
                     <span className="price-period">/Monat</span>
                   </div>
                   <button
                     className="cart-button"
                     onClick={(e) =>
-                      handleAddToCart(
-                        {
-                          id: pkg.id,
-                          title: `Content Creation - ${pkg.tier}`,
-                          price: pkg.price,
-                          description: `${pkg.tier} Paket`,
-                          category: pkg.category
-                        },
-                        e
-                      )
+                      handleAddToCart({
+                        id: pkg.id,
+                        title: `Content Creation - ${pkg.tier}`,
+                        price: pkg.price,
+                        description: `${pkg.tier} Paket`,
+                        category: pkg.category
+                      })
                     }
-                    aria-label="Zum Warenkorb hinzufügen"
+                    aria-label="Zum Warenkorb hinzufuegen"
                   >
                     <ShoppingCart size={20} />
                   </button>
@@ -515,17 +411,14 @@ const ContentCreation = () => {
         </div>
       </section>
 
-      <div className="policy-note fade-content fade-now" style={{ '--fade-delay': '0.4s' }}>
+      <div className="policy-note fade-content fade-now" style={{ "--fade-delay": "0.4s" }}>
         <div className="policy-title">Creation Policy</div>
-        <p className="policy-sub">
-          Wir arbeiten Referenz-basiert und planen fair nach Aufwand.
-        </p>
+        <p className="policy-sub">Wir arbeiten Referenz-basiert und planen fair nach Aufwand.</p>
         <ul className="policy-points">
           <li>Besprochene Content-Tage = Referenzwert</li>
           <li>Kann situativ leicht ueberschritten werden</li>
           <li>
-            Deckel:&nbsp;
-            <span className="policy-formula">geplante Tage + Nach-Bedarfs-Tag (falls noetig) + 1 Notfall-Tag</span>
+            Deckel: <span className="policy-formula">geplante Tage + Nach-Bedarfs-Tag (falls noetig) + 1 Notfall-Tag</span>
           </li>
         </ul>
       </div>
@@ -565,21 +458,18 @@ const ContentCreation = () => {
                       </div>
                       <button
                         className="addon-cart-button"
-                        onClick={(e) =>
-                          handleAddToCart(
-                            {
-                              id: addon.id,
-                              title: addon.title,
-                              price: addon.price,
-                              description: addon.description,
-                              category: addon.category
-                            },
-                            e
-                          )
+                        onClick={() =>
+                          handleAddToCart({
+                            id: addon.id,
+                            title: addon.title,
+                            price: addon.price,
+                            description: addon.description,
+                            category: addon.category
+                          })
                         }
-                        aria-label="Zum Warenkorb hinzufügen"
+                        aria-label="Zum Warenkorb hinzufuegen"
                       >
-                        <ShoppingCart size={20} />
+                        <ShoppingCart size={18} color="#ffffff" strokeWidth={2.2} />
                       </button>
                     </div>
                   </div>
@@ -589,17 +479,8 @@ const ContentCreation = () => {
           })}
         </div>
       </section>
-
-      
     </div>
   )
 }
 
 export default ContentCreation
-
-
-
-
-
-
-
