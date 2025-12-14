@@ -637,7 +637,7 @@
 }
 
 .policy-title {
-  font-size: 1.5rem;
+  font-size: 1.65rem;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -646,7 +646,7 @@
 }
 
 .policy-sub {
-  font-size: 1.15rem;
+  font-size: 1.22rem;
   opacity: 0.9;
   margin: 0 auto 0.8rem;
   max-width: 620px;
@@ -662,7 +662,7 @@
 }
 
 .policy-points li {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: var(--color-text);
 }
 
