@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useCart } from '../context/CartContext'
 import {
   ShoppingCart,
@@ -55,18 +55,18 @@ const ContentCreation = () => {
       description: '',
       highlights: [],
       details: [
-        'ErstgesprÃ¤ch fÃ¼r die Planung + Umsetzung',
-        'OberflÃ¤chliche Nichen Analyse',
-        '1x monatliche Trendanalyse(light) mit resultierenden identifizierten Contentformat VorschlÃ¤gen',
+        'Erstgespräch für die Planung + Umsetzung',
+        'Oberflächliche Nichen Analyse',
+        '1x monatliche Trendanalyse(light) mit resultierenden identifizierten Contentformat Vorschlägen',
         'Bis zu 3 Kurzformat Videos (Bis 60 Sekunden)',
         'Bis zu 4 Posts/Carousells',
-        'Copywriting fÃ¼r den Content',
-        'Contentoptimierung von bis 2 Social Media KanÃ¤len',
+        'Copywriting für den Content',
+        'Contentoptimierung von bis 2 Social Media Kanälen',
         '1 x Meeting jeden Monat um weitere Schritte zu besprechen'
       ],
       items: [],
       goals: [
-        'Erste professionelle Social Media Praesenz, um mehr Kommunikation nach auÃŸen zu betreiben und Engagement zu generieren',
+        'Erste professionelle Social Media Praesenz, um mehr Kommunikation nach außen zu betreiben und Engagement zu generieren',
         'Grundaktivitaeten sichern und sichtbar bleiben'
       ]
     },
@@ -127,8 +127,8 @@ const ContentCreation = () => {
       ],
       details: [],
       community: [
-        { icon: BarChart3, text: 'Interaktionen herstellen und gewÃ¤hrleisten (1x pro Tag)', isCheck: true },
-        { icon: BarChart3, text: 'Umgang mit der gÃ¤ngigen Online-Kommunikationsweise', isCheck: true },
+        { icon: BarChart3, text: 'Interaktionen herstellen und gewährleisten (1x pro Tag)', isCheck: true },
+        { icon: BarChart3, text: 'Umgang mit der gängigen Online-Kommunikationsweise', isCheck: true },
         { icon: BarChart3, text: 'Einfaches beantworten der Standardfragen', isCheck: true }
       ],
       items: [],
@@ -152,7 +152,7 @@ const ContentCreation = () => {
         'Professioneller Schnitt & Color Grading',
         'Lizenzfreie Musik & Sound Design',
         '2 Korrekturschleifen inklusive',
-        'Finales Video in allen gÃ¤ngigen Formaten'
+        'Finales Video in allen gängigen Formaten'
       ]
     },
     {
@@ -166,7 +166,7 @@ const ContentCreation = () => {
         '4 Stunden Shooting mit professionellem Fotografen',
         'Location-Beratung & Konzept-Planung',
         '30 professionell bearbeitete Bilder in High-Res',
-        'Nutzungsrechte fÃ¼r Social Media & Website',
+        'Nutzungsrechte für Social Media & Website',
         'Online-Galerie zum Download',
         'Express-Lieferung innerhalb von 5 Werktagen'
       ]
@@ -182,9 +182,9 @@ const ContentCreation = () => {
         'Aufnahme-Beratung & Equipment-Empfehlungen',
         'Professioneller Audio-Schnitt & Mastering',
         'Individuelles Intro & Outro mit Musik',
-        'VollstÃ¤ndiges Transkript der Episode',
+        'Vollständiges Transkript der Episode',
         'Show Notes & Timestamps',
-        'Upload-fertige Dateien fÃ¼r alle Plattformen'
+        'Upload-fertige Dateien für alle Plattformen'
       ]
     }
   ]
@@ -267,18 +267,18 @@ const ContentCreation = () => {
 
       <div className="service-intro-box">
         <p>
-          Alle unsere Mitarbeiter in der Content Creation haben langjÃ¤hrige Erfahrungen in der Produktion von
+          Alle unsere Mitarbeiter in der Content Creation haben langjährige Erfahrungen in der Produktion von
           videographischen Inhalten. Unser Angebot deckt vor allem Real-Filme ab, jedoch sind wir in VFX, Lightweight 3D
-          und KI-Videoproduktion ebenso versiert. Unsere StÃ¤rken liegen hier im Storytelling, dokumentarischen Darstellen
+          und KI-Videoproduktion ebenso versiert. Unsere Stärken liegen hier im Storytelling, dokumentarischen Darstellen
           und kreativen Editing.
           <br />
           <br />
-          Wir spezialisieren uns auf geplante Drehs vor Ort, mit VorgesprÃ¤ch der Vorstellungen plus Umsetzung und,
+          Wir spezialisieren uns auf geplante Drehs vor Ort, mit Vorgespräch der Vorstellungen plus Umsetzung und,
           generell, Sichtung der Situation bevor wir in die eigentliche Produktion gehen.
           <br />
           <br />
-          Equipment stellen wir; dennoch, je nach Auftrag, kann der Bedarf unser Inventar Ã¼berschreiten und mÃ¼sste so
-          angemietet werden von externen Dienstleistern, was aber alles in den VorgesprÃ¤chen besprochen wird.
+          Equipment stellen wir; dennoch, je nach Auftrag, kann der Bedarf unser Inventar überschreiten und müsste so
+          angemietet werden von externen Dienstleistern, was aber alles in den Vorgesprächen besprochen wird.
           <br />
           <br />
           Zugriff auf ein Studio haben wir, jedoch zur Miete pro Auftrag gerechnet.
@@ -453,7 +453,7 @@ const ContentCreation = () => {
 
                 <div className="card-footer fade-content" style={{ '--fade-delay': `${cardDelay + 1.2}s` }}>
                   <div className="price-display">
-                    <span className="price-currency">€</span>
+                    <span className="price-currency">�</span>
                     <span className="price-amount">{displayPrice}</span>
                     <span className="price-period">/Monat</span>
                   </div>
@@ -471,7 +471,7 @@ const ContentCreation = () => {
                         e
                       )
                     }
-                    aria-label="Zum Warenkorb hinzufÃ¼gen"
+                    aria-label="Zum Warenkorb hinzufügen"
                   >
                     <ShoppingCart size={20} />
                   </button>
@@ -486,7 +486,7 @@ const ContentCreation = () => {
         <div className="divider-line"></div>
         <div className="divider-content">
           <Sparkles className="divider-icon" />
-          <span className="divider-text">Individuelle LÃ¶sungen / AddOns</span>
+          <span className="divider-text">Individuelle Lösungen / AddOns</span>
           <Sparkles className="divider-icon" />
         </div>
         <div className="divider-line"></div>
@@ -507,7 +507,7 @@ const ContentCreation = () => {
                     <p className="addon-description">{addon.description}</p>
                     <div className="addon-footer">
                       <div className="addon-price">
-                        <span className="addon-currency">â‚¬</span>
+                        <span className="addon-currency">€</span>
                         <span className="addon-amount">{addon.price}</span>
                       </div>
                       <button
@@ -524,7 +524,7 @@ const ContentCreation = () => {
                             e
                           )
                         }
-                        aria-label="Zum Warenkorb hinzufÃ¼gen"
+                        aria-label="Zum Warenkorb hinzufügen"
                       >
                         <ShoppingCart size={20} />
                       </button>
@@ -540,8 +540,8 @@ const ContentCreation = () => {
       <div className="policy-note">
         <p>
           Unsere Creation-Policy fokussiert sich darauf den besprochenen Content ab zu fertigen. Hier sind die Content-Tage
-          als Referenzwert gesetzt, kann aber, je nach Bedarf/Situation aber übersteigen. (Aufwand wird der Situation ausgewogen;
-          jedoch nicht mehr als den geplanten Tag(e) + Nach-Bedarfs-Tag (Wenn nötig) + einen Notfall-Tag.)
+          als Referenzwert gesetzt, kann aber, je nach Bedarf/Situation aber �bersteigen. (Aufwand wird der Situation ausgewogen;
+          jedoch nicht mehr als den geplanten Tag(e) + Nach-Bedarfs-Tag (Wenn n�tig) + einen Notfall-Tag.)
         </p>
       </div>
     </div>
