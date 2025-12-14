@@ -664,6 +664,7 @@
 .policy-points li {
   font-size: 1.32rem;
   color: var(--color-text);
+  letter-spacing: 0.01em;
 }
 
 .fade-now {
