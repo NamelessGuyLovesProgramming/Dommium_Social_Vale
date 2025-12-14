@@ -482,7 +482,7 @@ const ContentCreation = () => {
         </div>
       </section>
 
-      <div className="policy-note fade-content" style={{ '--fade-delay': '0.4s' }}>
+      <div className="policy-note fade-content fade-now" style={{ '--fade-delay': '0.4s' }}>
         <div className="policy-title">Creation Policy</div>
         <p className="policy-sub">
           Wir arbeiten Referenz-basiert und planen fair nach Aufwand.

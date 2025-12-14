@@ -676,6 +676,10 @@
   font-weight: 900;
 }
 
+.fade-now {
+  animation-play-state: running;
+}
+
 .addons-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
