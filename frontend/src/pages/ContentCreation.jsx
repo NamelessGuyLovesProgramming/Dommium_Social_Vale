@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+﻿import { useEffect, useRef, useState } from 'react'
 import { useCart } from '../context/CartContext'
 import {
   ShoppingCart,
@@ -20,6 +20,8 @@ import './ContentCreation.css'
 const ContentCreation = () => {
   const { addToCart } = useCart()
   const [hoveredCard, setHoveredCard] = useState(null)
+  const [cardsVisible, setCardsVisible] = useState(false)
+  const pricingRef = useRef(null)
 
   const renderGoal = (goal) => {
     const parts = []
@@ -186,14 +188,33 @@ const ContentCreation = () => {
       ]
     }
   ]
-
-  const videoSources = [
+  const videoSources = [
     '/videos/13889899_2160_3840_30fps.mp4',
     '/videos/14993748-uhd_1296_2304_30fps.mp4',
     '/videos/13889899_2160_3840_30fps.mp4', // einmal doppelt, aber nicht direkt an Rand
     '/videos/17687288-uhd_2160_3840_30fps.mp4',
     '/videos/17687289-uhd_2160_3840_30fps.mp4'
   ]
+
+  useEffect(() => {
+    const container = pricingRef.current
+    if (!container) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setCardsVisible(true)
+            observer.disconnect()
+          }
+        })
+      },
+      { threshold: 0.25 }
+    )
+
+    observer.observe(container)
+    return () => observer.disconnect()
+  }, [])
 
   const handleAddToCart = (item, e) => {
     addToCart(item)
@@ -290,7 +311,10 @@ const ContentCreation = () => {
       </div>
 
       <section className="pricing-section">
-        <div className="pricing-container">
+        <div
+          ref={pricingRef}
+          className={"pricing-container " + (cardsVisible ? 'cards-visible' : '')}
+        >
           {packages.map((pkg, idx) => {
             const isEntry = pkg.id === 'content-basic'
             const isGrowth = pkg.id === 'content-intermediate'
@@ -309,7 +333,7 @@ const ContentCreation = () => {
                 className={`pricing-card ${isEntry ? 'entry-card' : ''} ${isGrowth ? 'growth-card' : ''} ${isGrand ? 'premium-card' : ''} ${hoveredCard === pkg.id ? 'expanded' : ''}`}
                 onMouseEnter={() => setHoveredCard(pkg.id)}
                 onMouseLeave={() => setHoveredCard(null)}
-                style={{ '--card-delay': `${idx * 0.08}s` }}
+                style={{ '--card-delay': `${idx * 0.5}s` }}
               >
                 <div className="card-header">
                   <h2 className="tier-name">{pkg.tier}</h2>
@@ -335,7 +359,7 @@ const ContentCreation = () => {
                         const Icon = item.icon
                         return (
                           <li key={idx} className={`details-item-with-icon ${Icon ? '' : 'details-item-arrow'}`}>
-                            {Icon ? <Icon size={18} className="details-icon" /> : <span className="details-arrow">→</span>}
+                            {Icon ? <Icon size={18} className="details-icon" /> : <span className="details-arrow">?</span>}
                             <span>{item.text}</span>
                           </li>
                         )
@@ -488,6 +512,7 @@ const ContentCreation = () => {
 }
 
 export default ContentCreation
+
 
 
 

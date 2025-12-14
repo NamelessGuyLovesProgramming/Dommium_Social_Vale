@@ -57,14 +57,6 @@
   margin-right: 0;
 }
 
-.video-reel .logoloop__track {
-  animation-play-state: running;
-}
-
-.video-reel:hover .logoloop__track {
-  animation-play-state: paused;
-}
-
 .video-reel__item {
   height: var(--logoloop-logoHeight);
   aspect-ratio: 16 / 9;
@@ -127,7 +119,14 @@
   animation: riseIn 0.8s ease-out;
   animation-delay: var(--card-delay, 0s);
   animation-fill-mode: both;
+  animation-play-state: paused;
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
 }
+.pricing-container.cards-visible .pricing-card {
+  animation-play-state: running;
+}
+
 
 .pricing-card::before {
   content: '';
