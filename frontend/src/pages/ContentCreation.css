@@ -804,13 +804,19 @@
   border-radius: 50%;
   border: none;
   background: var(--color-heading);
-  color: var(--color-text);
+  color: #0d0f24; /* dunkles Icon auf orangem Button */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.28);
+}
+
+.addon-cart-button svg {
+  stroke: currentColor;
+  width: 20px;
+  height: 20px;
 }
 
 .addon-cart-button:hover {
