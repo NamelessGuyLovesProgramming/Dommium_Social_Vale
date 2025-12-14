@@ -810,30 +810,39 @@
   height: 46px;
   border-radius: 50%;
   border: none;
-  background: var(--color-heading);
-  color: #ffffff; /* helles Icon fuer maximale Sichtbarkeit */
+  background: transparent;
+  color: #ffffff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  position: relative;
+}
+
+.addon-cart-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--color-heading);
+  z-index: 1;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .addon-cart-button svg {
+  position: relative;
+  z-index: 2;
   width: 22px;
   height: 22px;
-}
-
-.addon-cart-button svg * {
   stroke: currentColor;
-  fill: currentColor;
-  stroke-width: 2.2;
+  fill: none;
+  stroke-width: 2.4;
 }
 
 .addon-cart-button:hover {
   transform: scale(1.06);
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.4);
 }
 
 .addon-cart-button:active {
