@@ -638,9 +638,9 @@
 }
 
 .policy-title {
-  font-size: 1.8rem;
-  font-weight: 900;
-  letter-spacing: 0.06em;
+  font-size: 2rem;
+  font-weight: 1000;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   color: var(--color-heading);
   margin-bottom: 0.4rem;
@@ -698,8 +698,50 @@
   gap: 2rem;
 }
 
+.addons-cta-empty {
+  margin: 4.5rem auto 0;
+  text-align: center;
+  color: var(--color-heading);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.addons-cta-empty h3 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  color: var(--color-heading);
+}
+
+.addons-cta-button {
+  background: var(--color-heading);
+  color: var(--color-secondary);
+  border: none;
+  padding: 1.15rem 2.4rem;
+  border-radius: 999px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.addons-cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.02);
+}
+
+.addons-cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+}
 /* Add-On Cards */
 .addon-card {
+  position: relative;
   background: var(--color-secondary);
   border: 2px solid var(--color-heading);
   border-radius: 16px;
@@ -708,35 +750,53 @@
   transition: all 0.3s ease;
   animation: fadeInUp 0.8s ease-out;
   display: flex;
+  z-index: 1;
 }
 
 .addon-card:hover {
   transform: translateY(-5px);
   border-color: var(--color-heading);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+  z-index: 50;
 }
 
 .addon-content {
   display: flex;
   gap: 1rem;
   flex: 1;
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 .addon-icon-wrapper {
   flex-shrink: 0;
   width: 68px;
   height: 68px;
-  background: var(--color-background);
+  background: radial-gradient(circle at 30% 30%, rgba(228, 163, 88, 0.18), rgba(44, 44, 44, 0.9));
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(228, 163, 88, 0.55);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.28),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  position: relative;
+  overflow: hidden;
 }
 
 .addon-icon {
   color: var(--color-heading);
+  filter: drop-shadow(0 2px 6px rgba(228, 163, 88, 0.35));
+}
+
+.addon-icon-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.06), transparent 55%);
+  pointer-events: none;
 }
 
 .addon-info {
@@ -776,63 +836,138 @@
   flex: 1;
 }
 
-.addon-footer {
+.addon-description-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-top: none;
-  margin-top: auto;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
 }
 
-.addon-price {
+.addon-description-row .addon-description {
+  margin: 0;
+  flex: 1;
+}
+
+.addon-actions {
   display: flex;
-  align-items: baseline;
-  gap: 0.35rem;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: flex-end;
 }
 
-.addon-currency {
-  font-size: 0.95rem;
-  font-weight: 600;
+.addon-info-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: transparent;
   color: var(--color-heading);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  line-height: 0;
+  z-index: 2;
 }
 
-.addon-amount {
-  font-size: 1.55rem;
-  font-weight: 700;
-  color: var(--color-heading);
-  line-height: 1;
+.addon-info-button svg {
+  stroke: currentColor;
+  fill: none;
+}
+
+.addon-info-button:hover {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+.addon-info-button:active {
+  transform: scale(0.92);
+}
+
+.addon-footer {
+  min-height: 0;
+  margin-top: auto;
+  display: grid;
+  gap: 0.4rem;
 }
 
 .addon-cart-button {
-  width: 46px;
-  height: 46px;
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  border: 2px solid var(--color-heading);
   border-radius: 50%;
-  border: none;
-  background: var(--color-heading);
-  color: #ffffff;
+  background: var(--color-secondary); /* same as addon card */
+  color: var(--color-heading);        /* icon inherits this */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  line-height: 0;
+  transition: all 0.2s ease;
 }
 
 .addon-cart-button svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   stroke: currentColor;
   fill: none;
-  stroke-width: 2.6;
+  stroke-width: 2.4;
+  display: block;
 }
 
 .addon-cart-button:hover {
-  transform: scale(1.06);
+  transform: scale(1.05);
+  filter: brightness(1.08);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+}
+.addon-cart-button:active {
+  transform: scale(0.9);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
-.addon-cart-button:active {
-  transform: scale(0.92);
+.addon-price-pop {
+  position: relative;
+  display: inline-block;
+}
+
+.addon-price-label {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  letter-spacing: 0.03em;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: help;
+}
+
+.addon-price-pop .addon-note {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 8px);
+  width: min(340px, 70vw);
+  z-index: 999;
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  background: rgba(34, 34, 34, 0.96);
+  border: 1px solid var(--color-heading);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
+}
+
+.addon-price-pop:hover .addon-note,
+.addon-price-pop:focus-within .addon-note {
+  display: block;
 }
 
 /* Flying Cart Animation */

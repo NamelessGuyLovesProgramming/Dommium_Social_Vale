@@ -9,7 +9,8 @@ import {
   MessageCircle,
   BarChart3,
   Camera,
-  Mic
+  Mic,
+  Info
 } from "lucide-react"
 import LogoLoop from "../components/LogoLoop/LogoLoop"
 import "./ContentCreation.css"
@@ -439,6 +440,8 @@ const ContentCreation = () => {
         <div className="addons-container">
           {addOns.map((addon) => {
             const Icon = addon.icon
+            const inquiryNote =
+              "Die oben genannten Leistungen können nicht pauschal im Vorhinein bespreist werden. Eine kurze Beschreibung Ihres Vorhabens erleichtert Kontaktaufnahme und Vorbereitung."
             return (
               <div key={addon.id} className="addon-card">
                 <div className="addon-content">
@@ -450,33 +453,43 @@ const ContentCreation = () => {
                       <h3 className="addon-title">{addon.title}</h3>
                       <div className="addon-title-separator" aria-hidden="true"></div>
                     </div>
-                    <p className="addon-description">{addon.description}</p>
-                    <div className="addon-footer">
-                      <div className="addon-price">
-                        <span className="addon-currency">€</span>
-                        <span className="addon-amount">{addon.price}</span>
+                    <div className="addon-description-row">
+                      <p className="addon-description">{addon.description}</p>
+                      <div className="addon-actions">
+                        <button
+                          className="addon-cart-button"
+                          onClick={() =>
+                            handleAddToCart({
+                              id: addon.id,
+                              title: addon.title,
+                              price: addon.price,
+                              description: inquiryNote,
+                              category: addon.category
+                            })
+                          }
+                          aria-label="Zum Warenkorb hinzufuegen"
+                        >
+                          <ShoppingCart size={18} strokeWidth={2.4} />
+                        </button>
+                        <div className="addon-price-pop">
+                          <button className="addon-price-label" type="button">
+                            Preis?
+                          </button>
+                          <div className="addon-note" role="note">{inquiryNote}</div>
+                        </div>
                       </div>
-                      <button
-                        className="addon-cart-button"
-                        onClick={() =>
-                          handleAddToCart({
-                            id: addon.id,
-                            title: addon.title,
-                            price: addon.price,
-                            description: addon.description,
-                            category: addon.category
-                          })
-                        }
-                        aria-label="Zum Warenkorb hinzufuegen"
-                      >
-                        <ShoppingCart size={18} color="#ffffff" strokeWidth={2.2} />
-                      </button>
                     </div>
+                    <div className="addon-footer"></div>
                   </div>
                 </div>
               </div>
             )
           })}
+        </div>
+
+        <div className="addons-cta-empty">
+          <h3>Nichts gefunden?</h3>
+          <a className="addons-cta-button" href="/kontakt">Individual Lösung anfragen</a>
         </div>
       </section>
     </div>
