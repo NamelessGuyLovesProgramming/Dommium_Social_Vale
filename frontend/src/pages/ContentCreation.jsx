@@ -44,7 +44,8 @@ const VideoReelBand = ({ videoSources }) => (
         logos={videoSources
           .flatMap((src, index) => [
             { src, title: `Reel Video ${index + 1}` },
-            { src, title: `Reel Video ${index + 1} (Alt)` }
+            { src, title: `Reel Video ${index + 1} (Alt)` },
+            { src, title: `Reel Video ${index + 1} (Alt 2)` }
           ])}
         renderItem={(item, key) => (
           <video
