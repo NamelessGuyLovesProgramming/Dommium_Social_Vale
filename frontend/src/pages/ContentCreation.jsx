@@ -319,6 +319,7 @@ const ContentCreation = () => {
             const isEntry = pkg.id === 'content-basic'
             const isGrowth = pkg.id === 'content-intermediate'
             const isGrand = pkg.id === 'content-grand'
+            const cardDelay = idx * 0.5
             const displayPrice = isEntry
               ? '499 - 699'
               : isGrowth
@@ -333,7 +334,7 @@ const ContentCreation = () => {
                 className={`pricing-card ${isEntry ? 'entry-card' : ''} ${isGrowth ? 'growth-card' : ''} ${isGrand ? 'premium-card' : ''} ${hoveredCard === pkg.id ? 'expanded' : ''}`}
                 onMouseEnter={() => setHoveredCard(pkg.id)}
                 onMouseLeave={() => setHoveredCard(null)}
-                style={{ '--card-delay': `${idx * 0.5}s` }}
+                style={{ '--card-delay': `${cardDelay}s` }}
               >
                 <div className="card-header">
                   <h2 className="tier-name">{pkg.tier}</h2>
@@ -346,7 +347,7 @@ const ContentCreation = () => {
                       <div
                         key={index}
                         className="highlight-item fade-content"
-                        style={{ '--fade-delay': `${0.1 + index * 0.08}s` }}
+                        style={{ '--fade-delay': `${cardDelay + 0.8 + index * 0.08}s` }}
                       >
                         <Icon size={20} className="highlight-icon" />
                         <span className="highlight-text">{highlight.text}</span>
@@ -365,7 +366,7 @@ const ContentCreation = () => {
                           <li
                             key={idx}
                             className={`details-item-with-icon ${Icon ? '' : 'details-item-arrow'} fade-content`}
-                            style={{ '--fade-delay': `${0.2 + idx * 0.07}s` }}
+                            style={{ '--fade-delay': `${cardDelay + 1 + idx * 0.07}s` }}
                           >
                             {Icon ? <Icon size={18} className="details-icon" /> : <span className="details-arrow">?</span>}
                             <span>{item.text}</span>
@@ -385,7 +386,7 @@ const ContentCreation = () => {
                           <li
                             key={idx}
                             className="details-item-with-icon fade-content"
-                            style={{ '--fade-delay': `${0.2 + idx * 0.07}s` }}
+                            style={{ '--fade-delay': `${cardDelay + 1 + idx * 0.07}s` }}
                           >
                             <span className="details-check">&#10003;</span>
                             <span>{item.text}</span>
@@ -403,7 +404,7 @@ const ContentCreation = () => {
                         <li
                           key={index}
                           className="fade-content"
-                          style={{ '--fade-delay': `${0.15 + index * 0.06}s` }}
+                          style={{ '--fade-delay': `${cardDelay + 0.9 + index * 0.06}s` }}
                         >
                           {detail}
                         </li>
@@ -422,7 +423,7 @@ const ContentCreation = () => {
                           <li
                             key={index}
                             className="details-item-with-icon fade-content"
-                            style={{ '--fade-delay': `${0.2 + index * 0.07}s` }}
+                            style={{ '--fade-delay': `${cardDelay + 1 + index * 0.07}s` }}
                           >
                             <Icon size={18} className="details-icon" />
                             <span>{item.text}</span>
@@ -441,7 +442,7 @@ const ContentCreation = () => {
                         <li
                           key={index}
                           className="fade-content"
-                          style={{ '--fade-delay': `${0.25 + index * 0.08}s` }}
+                          style={{ '--fade-delay': `${cardDelay + 1.1 + index * 0.08}s` }}
                         >
                           {renderGoal(goal)}
                         </li>
@@ -450,7 +451,7 @@ const ContentCreation = () => {
                   </div>
                 )}
 
-                <div className="card-footer fade-content" style={{ '--fade-delay': '0.35s' }}>
+                <div className="card-footer fade-content" style={{ '--fade-delay': `${cardDelay + 1.2}s` }}>
                   <div className="price-display">
                     <span className="price-currency">€</span>
                     <span className="price-amount">{displayPrice}</span>

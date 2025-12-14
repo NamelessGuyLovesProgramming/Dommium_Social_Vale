@@ -133,6 +133,7 @@
   animation: fadeContent 0.7s ease forwards;
   animation-delay: var(--fade-delay, 0s);
   animation-play-state: paused;
+  animation-fill-mode: both;
 }
 
 .pricing-container.cards-visible .fade-content {
