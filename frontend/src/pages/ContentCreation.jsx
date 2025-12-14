@@ -57,7 +57,7 @@ const VideoReelBand = ({ videoSources }) => (
         direction="right"
         speed={120}
         hoverSpeed={0}
-        gap={10}
+        gap={0}
         logoHeight={240}
         scaleOnHover={false}
         ariaLabel="Laufband mit Beispiel Reels"
