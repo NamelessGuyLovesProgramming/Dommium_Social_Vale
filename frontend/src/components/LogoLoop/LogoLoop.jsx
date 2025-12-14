@@ -103,7 +103,8 @@ const useAnimationLoop = (
 
     if (seqSize !== prevSeqSizeRef.current) {
       // initialize offset so that for horizontal right-moving tracks we start with content visible on the left
-      offsetRef.current = !isVertical && directionSign === 1 ? seqSize : 0
+      // for rightward (positive) motion, start offset one full sequence to the left
+      offsetRef.current = !isVertical && directionSign === 1 ? seqSize * 2 : 0
       prevSeqSizeRef.current = seqSize
     }
 
