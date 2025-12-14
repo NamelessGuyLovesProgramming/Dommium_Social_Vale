@@ -700,8 +700,8 @@
 
 /* Add-On Cards */
 .addon-card {
-  background: var(--color-secondary);
-  border: 2px solid var(--color-box-border);
+  background: linear-gradient(135deg, #d8a24a, #b67c2a);
+  border: 2px solid #d8a24a;
   border-radius: 20px;
   padding: 2rem;
   backdrop-filter: blur(10px);
@@ -724,12 +724,12 @@
   flex-shrink: 0;
   width: 80px;
   height: 80px;
-  background: var(--color-background);
+  background: rgba(0, 0, 0, 0.16);
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .addon-icon {
