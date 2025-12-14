@@ -81,7 +81,8 @@ const useAnimationLoop = (
   isHovered,
   hoverSpeed,
   isVertical,
-  disabled = false
+  disabled = false,
+  copyCount = 0
 ) => {
   const rafRef = useRef(null)
   const lastTimestampRef = useRef(null)
@@ -292,7 +293,8 @@ const LogoLoop = memo(
       isHovered,
       effectiveHoverSpeed,
       isVertical,
-      useCssMarquee // disable JS loop when CSS marquee is active
+      useCssMarquee, // disable JS loop when CSS marquee is active
+      copyCount
     )
     }
 
