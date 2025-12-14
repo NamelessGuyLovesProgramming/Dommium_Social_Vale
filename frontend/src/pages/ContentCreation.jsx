@@ -499,10 +499,6 @@ const ContentCreation = () => {
 
       <div className="policy-divider" aria-hidden="true"></div>
 
-      <div className="repertoire-heading fade-content fade-now" style={{ '--fade-delay': '0.2s' }}>
-        Unser Repertoire darueber hinaus
-      </div>
-
       <div className="section-divider">
         <div className="divider-line"></div>
         <div className="divider-content">

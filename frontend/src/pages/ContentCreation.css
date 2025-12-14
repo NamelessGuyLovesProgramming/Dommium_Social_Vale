@@ -612,11 +612,14 @@
 }
 
 .divider-text {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.45rem;
+  font-weight: 800;
   color: var(--color-heading);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2.4px;
+  text-decoration: underline;
+  text-decoration-color: var(--color-heading);
+  text-underline-offset: 4px;
 }
 
 /* Add-Ons Section */
@@ -685,19 +688,6 @@
   border-radius: 999px;
   background: var(--color-heading);
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
-}
-
-.repertoire-heading {
-  text-align: center;
-  font-size: 1.65rem;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  color: var(--color-text);
-  text-decoration: underline;
-  text-decoration-color: var(--color-heading);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 6px;
-  margin: 0 auto 4rem;
 }
 
 .fade-now {
