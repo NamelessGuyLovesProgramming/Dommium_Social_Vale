@@ -453,7 +453,7 @@ const ContentCreation = () => {
 
                 <div className="card-footer fade-content" style={{ '--fade-delay': `${cardDelay + 1.2}s` }}>
                   <div className="price-display">
-                    <span className="price-currency">€</span>
+                    <span className="price-currency">ï¿½</span>
                     <span className="price-amount">{displayPrice}</span>
                     <span className="price-period">/Monat</span>
                   </div>
@@ -482,15 +482,15 @@ const ContentCreation = () => {
         </div>
       </section>
 
-      <div className="policy-note fade-content" style=" --fade-delay: 0.4s; ">
+      <div className="policy-note fade-content" style={{ '--fade-delay': '0.4s' }}>
         <div className="policy-title">Creation Policy</div>
         <p className="policy-sub">
           Wir arbeiten Referenz-basiert und planen fair nach Aufwand.
         </p>
         <ul className="policy-points">
           <li>Besprochene Content-Tage = Referenzwert</li>
-          <li>Kann situativ leicht überschritten werden</li>
-          <li>Deckel: geplante Tage + Nach-Bedarfs-Tag (falls nötig) + 1 Notfall-Tag</li>
+          <li>Kann situativ leicht ueberschritten werden</li>
+          <li>Deckel: geplante Tage + Nach-Bedarfs-Tag (falls noetig) + 1 Notfall-Tag</li>
         </ul>
       </div>
 
@@ -498,7 +498,7 @@ const ContentCreation = () => {
         <div className="divider-line"></div>
         <div className="divider-content">
           <Sparkles className="divider-icon" />
-          <span className="divider-text">Individuelle LÃ¶sungen / AddOns</span>
+          <span className="divider-text">Individuelle Loesungen / AddOns</span>
           <Sparkles className="divider-icon" />
         </div>
         <div className="divider-line"></div>
