@@ -497,6 +497,8 @@ const ContentCreation = () => {
         </ul>
       </div>
 
+      <div className="policy-divider" aria-hidden="true"></div>
+
       <div className="section-divider">
         <div className="divider-line"></div>
         <div className="divider-content">

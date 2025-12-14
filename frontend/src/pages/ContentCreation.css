@@ -678,6 +678,15 @@
   letter-spacing: 0.02em;
 }
 
+.policy-divider {
+  width: min(420px, 60vw);
+  height: 6px;
+  margin: 2.5rem auto 3rem;
+  border-radius: 999px;
+  background: var(--color-heading);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
 .fade-now {
   animation-play-state: running;
 }
