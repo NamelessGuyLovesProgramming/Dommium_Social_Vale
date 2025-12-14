@@ -1,4 +1,4 @@
-.content-creation-page {
+﻿.content-creation-page {
   min-height: 100vh;
   background: var(--color-background);
   color: var(--color-text);
@@ -124,6 +124,18 @@
   transform: translateY(40px) scale(0.98);
 }
 .pricing-container.cards-visible .pricing-card {
+  animation-play-state: running;
+}
+
+.fade-content {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeContent 0.7s ease forwards;
+  animation-delay: var(--fade-delay, 0s);
+  animation-play-state: paused;
+}
+
+.pricing-container.cards-visible .fade-content {
   animation-play-state: running;
 }
 
@@ -350,7 +362,7 @@
 }
 
 .card-goals .goals-title::before {
-  content: '✪';
+  content: 'âœª';
   color: var(--color-heading);
   font-size: 1.15rem;
 }
@@ -444,7 +456,7 @@
 }
 
 .details-list li::before {
-  content: '→';
+  content: 'â†’';
   margin-right: 0.75rem;
   color: var(--color-heading);
   font-weight: 700;
@@ -778,6 +790,17 @@
   }
 }
 
+@keyframes fadeContent {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes sparkle {
   0%, 100% {
     opacity: 1;
@@ -868,3 +891,4 @@
     font-size: 1.5rem;
   }
 }
+

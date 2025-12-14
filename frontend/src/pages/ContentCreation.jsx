@@ -343,7 +343,11 @@ const ContentCreation = () => {
                   {pkg.highlights.map((highlight, index) => {
                     const Icon = highlight.icon
                     return (
-                      <div key={index} className="highlight-item">
+                      <div
+                        key={index}
+                        className="highlight-item fade-content"
+                        style={{ '--fade-delay': `${0.1 + index * 0.08}s` }}
+                      >
                         <Icon size={20} className="highlight-icon" />
                         <span className="highlight-text">{highlight.text}</span>
                       </div>
@@ -358,7 +362,11 @@ const ContentCreation = () => {
                       {pkg.contentPieces.map((item, idx) => {
                         const Icon = item.icon
                         return (
-                          <li key={idx} className={`details-item-with-icon ${Icon ? '' : 'details-item-arrow'}`}>
+                          <li
+                            key={idx}
+                            className={`details-item-with-icon ${Icon ? '' : 'details-item-arrow'} fade-content`}
+                            style={{ '--fade-delay': `${0.2 + idx * 0.07}s` }}
+                          >
                             {Icon ? <Icon size={18} className="details-icon" /> : <span className="details-arrow">?</span>}
                             <span>{item.text}</span>
                           </li>
@@ -374,7 +382,11 @@ const ContentCreation = () => {
                     <ul className="details-list nested">
                       {pkg.community.map((item, idx) => {
                         return (
-                          <li key={idx} className="details-item-with-icon">
+                          <li
+                            key={idx}
+                            className="details-item-with-icon fade-content"
+                            style={{ '--fade-delay': `${0.2 + idx * 0.07}s` }}
+                          >
                             <span className="details-check">&#10003;</span>
                             <span>{item.text}</span>
                           </li>
@@ -388,7 +400,13 @@ const ContentCreation = () => {
                   <div className="card-details">
                     <ul className="details-list">
                       {pkg.details.map((detail, index) => (
-                        <li key={index}>{detail}</li>
+                        <li
+                          key={index}
+                          className="fade-content"
+                          style={{ '--fade-delay': `${0.15 + index * 0.06}s` }}
+                        >
+                          {detail}
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -401,7 +419,11 @@ const ContentCreation = () => {
                       {pkg.performance.map((item, index) => {
                         const Icon = item.icon
                         return (
-                          <li key={index} className="details-item-with-icon">
+                          <li
+                            key={index}
+                            className="details-item-with-icon fade-content"
+                            style={{ '--fade-delay': `${0.2 + index * 0.07}s` }}
+                          >
                             <Icon size={18} className="details-icon" />
                             <span>{item.text}</span>
                           </li>
@@ -416,13 +438,19 @@ const ContentCreation = () => {
                     <div className="goals-title">Ziele</div>
                     <ul className="goals-list">
                       {pkg.goals.map((goal, index) => (
-                        <li key={index}>{renderGoal(goal)}</li>
+                        <li
+                          key={index}
+                          className="fade-content"
+                          style={{ '--fade-delay': `${0.25 + index * 0.08}s` }}
+                        >
+                          {renderGoal(goal)}
+                        </li>
                       ))}
                     </ul>
                   </div>
                 )}
 
-                <div className="card-footer">
+                <div className="card-footer fade-content" style={{ '--fade-delay': '0.35s' }}>
                   <div className="price-display">
                     <span className="price-currency">€</span>
                     <span className="price-amount">{displayPrice}</span>
