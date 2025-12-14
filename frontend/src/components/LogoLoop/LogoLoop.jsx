@@ -38,21 +38,17 @@ const LogoLoop = memo(
     }, [gap, logoHeight, duration, dirSign])
 
     useEffect(() => {
+      if (hoverSpeed <= 0) return
       const track = trackRef.current
       if (!track) return
       const handleEnter = () => {
         hoverRef.current = true
-        if (hoverSpeed <= 0) {
-          track.style.animationPlayState = 'paused'
-          return
-        }
         const totalWidth = logos.length * (logoHeight + gap)
         const newDuration = totalWidth / hoverSpeed
         track.style.setProperty('--loop-duration', `${newDuration}s`)
       }
       const handleLeave = () => {
         hoverRef.current = false
-        track.style.animationPlayState = 'running'
         track.style.setProperty('--loop-duration', `${duration}s`)
       }
       track.addEventListener('mouseenter', handleEnter)

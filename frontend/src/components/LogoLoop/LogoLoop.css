@@ -30,6 +30,10 @@
   transition: transform 0.25s ease;
 }
 
+.logo-loop:hover .logo-loop__track {
+  animation-play-state: paused;
+}
+
 @keyframes logo-loop {
   from {
     transform: translateX(0);
