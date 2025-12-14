@@ -41,12 +41,7 @@ const VideoReelBand = ({ videoSources }) => (
     </div>
     <div className="video-reel-shell">
       <LogoLoop
-        logos={videoSources
-          .flatMap((src, index) => [
-            { src, title: `Reel Video ${index + 1}` },
-            { src, title: `Reel Video ${index + 1} (Alt)` },
-            { src, title: `Reel Video ${index + 1} (Alt 2)` }
-          ])}
+        logos={videoSources.map((src, index) => ({ src, title: `Reel Video ${index + 1}` }))}
         renderItem={(item, key) => (
           <video
             key={key}
@@ -59,10 +54,9 @@ const VideoReelBand = ({ videoSources }) => (
             className="video-reel__item"
           />
         )}
-        direction="right"
+        direction="left"
         speed={180}
         hoverSpeed={60}
-        forceJs
         logoHeight={240}
         gap={0}
         fadeOut={false}
