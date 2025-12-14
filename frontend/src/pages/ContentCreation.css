@@ -810,35 +810,21 @@
   height: 46px;
   border-radius: 50%;
   border: none;
-  background: transparent;
+  background: var(--color-heading);
   color: #ffffff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  position: relative;
-}
-
-.addon-cart-button::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: var(--color-heading);
-  z-index: 1;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.28);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .addon-cart-button svg {
-  position: relative;
-  z-index: 2;
   width: 22px;
   height: 22px;
   stroke: currentColor;
   fill: none;
-  stroke-width: 2.4;
+  stroke-width: 2.6;
 }
 
 .addon-cart-button:hover {
