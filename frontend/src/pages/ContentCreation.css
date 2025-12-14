@@ -70,6 +70,15 @@
   border-radius: 16px;
 }
 
+.video-reel-shell.flip-x {
+  transform: rotateX(180deg);
+  transform-origin: center;
+}
+
+.video-reel-shell.flip-x .video-reel__item {
+  transform: rotateX(180deg);
+}
+
 .video-reel-gradient {
   position: absolute;
   top: 0;

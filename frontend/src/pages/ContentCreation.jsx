@@ -39,7 +39,7 @@ const VideoReelBand = ({ videoSources }) => (
       <div className="video-reel-title">Showreel</div>
       <div className="video-reel-sub">Aktuelle Bewegtbild-Referenzen</div>
     </div>
-    <div className="video-reel-shell">
+    <div className="video-reel-shell flip-x">
       <LogoLoop
         logos={videoSources.flatMap((src, index) => [
           { src, title: `Reel Video ${index + 1}` },
