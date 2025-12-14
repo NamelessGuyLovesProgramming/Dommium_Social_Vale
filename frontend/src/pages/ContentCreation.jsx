@@ -490,7 +490,10 @@ const ContentCreation = () => {
         <ul className="policy-points">
           <li>Besprochene Content-Tage = Referenzwert</li>
           <li>Kann situativ leicht ueberschritten werden</li>
-          <li>Deckel: geplante Tage + Nach-Bedarfs-Tag (falls noetig) + 1 Notfall-Tag</li>
+          <li>
+            Deckel:&nbsp;
+            <span className="policy-formula">geplante Tage + Nach-Bedarfs-Tag (falls noetig) + 1 Notfall-Tag</span>
+          </li>
         </ul>
       </div>
 
