@@ -86,6 +86,7 @@ const useAnimationLoop = (
   const rafRef = useRef(null)
   const lastTimestampRef = useRef(null)
   const offsetRef = useRef(0)
+  const prevSeqSizeRef = useRef(null)
   const velocityRef = useRef(0)
 
   useEffect(() => {
@@ -99,6 +100,11 @@ const useAnimationLoop = (
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
     const seqSize = isVertical ? seqHeight : seqWidth
+
+    if (seqSize !== prevSeqSizeRef.current) {
+      offsetRef.current = 0
+      prevSeqSizeRef.current = seqSize
+    }
 
     if (seqSize > 0) {
       offsetRef.current = ((offsetRef.current % seqSize) + seqSize) % seqSize
@@ -157,6 +163,7 @@ const LogoLoop = memo(
     logos,
     speed = 120,
     direction = 'left',
+    forceJs = false,
     width = '100%',
     logoHeight = 28,
     gap = 32,
@@ -184,12 +191,12 @@ const LogoLoop = memo(
       if (absHover !== undefined) return absHover
       if (pauseOnHover === true) return 0
       if (pauseOnHover === false) return undefined
-      return 0
+      return undefined
     }, [hoverSpeed, pauseOnHover])
 
     const isVertical = direction === 'up' || direction === 'down'
     // Für horizontale Variante nutzen wir CSS-Marquee (sauberer Spawn von links, Exit nach rechts)
-    const useCssMarquee = !isVertical
+    const useCssMarquee = !isVertical && !forceJs
 
     const directionSign = useMemo(() => {
       if (isVertical) {
@@ -222,6 +229,10 @@ const LogoLoop = memo(
       } else if (sequenceWidth > 0) {
         const roundedWidth = Math.ceil(sequenceWidth)
         setSeqWidth(roundedWidth)
+        if (!useCssMarquee) {
+          const track = trackRef.current
+          if (track) track.style.transform = 'translate3d(0, 0, 0)'
+        }
         // Stelle sicher, dass die Sequenz mindestens die Containerbreite plus Reserve abdeckt
         if (useCssMarquee) {
           const copiesNeeded = Math.max(
@@ -257,6 +268,17 @@ const LogoLoop = memo(
         track.style.removeProperty('--logoloop-shift')
       }
     }, [useCssMarquee, seqWidth, baseVelocity, direction])
+
+    // Hover-Speed für CSS-Marquee dynamisch anpassen
+    useEffect(() => {
+      if (!useCssMarquee) return
+      const track = trackRef.current
+      if (!track || seqWidth === 0) return
+      const targetVelocity =
+        isHovered && effectiveHoverSpeed !== undefined ? effectiveHoverSpeed : baseVelocity
+      const durationSeconds = seqWidth / Math.max(1, targetVelocity)
+      track.style.setProperty('--logoloop-duration', `${durationSeconds}s`)
+    }, [useCssMarquee, seqWidth, isHovered, effectiveHoverSpeed, baseVelocity])
 
     if (!useCssMarquee) {
     useAnimationLoop(

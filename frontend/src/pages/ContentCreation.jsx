@@ -187,6 +187,14 @@ const ContentCreation = () => {
     }
   ]
 
+  const videoSources = [
+    '/videos/13889899_2160_3840_30fps.mp4',
+    '/videos/14993748-uhd_1296_2304_30fps.mp4',
+    '/videos/13889899_2160_3840_30fps.mp4', // einmal doppelt, aber nicht direkt an Rand
+    '/videos/17687288-uhd_2160_3840_30fps.mp4',
+    '/videos/17687289-uhd_2160_3840_30fps.mp4'
+  ]
+
   const handleAddToCart = (item, e) => {
     addToCart(item)
     const button = e.currentTarget
@@ -254,6 +262,31 @@ const ContentCreation = () => {
           <br />
           Zugriff auf ein Studio haben wir, jedoch zur Miete pro Auftrag gerechnet.
         </p>
+      </div>
+
+      <div className="video-reel-section" aria-label="Content Beispielvideos">
+        <LogoLoop
+          logos={videoSources.map((src, index) => ({ src, title: `Reel Video ${index + 1}` }))}
+          renderItem={(item, key) => (
+            <video
+              key={key}
+              src={item.src}
+              muted
+              playsInline
+              autoPlay
+              loop
+              preload="metadata"
+              className="video-reel__item"
+            />
+          )}
+          direction="right"
+          speed={180}
+          logoHeight={240}
+          gap={0}
+          fadeOut={false}
+          ariaLabel="Laufband mit Beispiel Reels"
+          className="video-reel"
+        />
       </div>
 
       <section className="pricing-section">
