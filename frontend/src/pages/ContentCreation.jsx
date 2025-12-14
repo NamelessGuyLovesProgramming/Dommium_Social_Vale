@@ -142,7 +142,7 @@ const ContentCreation = () => {
     {
       id: 'addon-imagefilm',
       title: 'Imagefilm',
-      description: 'Professioneller 60-90s Imagefilm inklusive Drehbuch, Dreh & Schnitt',
+      description: 'Ihr Unternehmen, Ihre Person, Ihre Visionen - Wir halten Sie im besten Licht fest.',
       price: 2499,
       icon: Video,
       category: 'Add-On',
@@ -156,9 +156,39 @@ const ContentCreation = () => {
       ]
     },
     {
+      id: 'addon-werbevideo',
+      title: 'Werbevideo',
+      description: 'Wir setzen Ihre Werbekampagne um - kreativ und seriös.',
+      price: 1999,
+      icon: Video,
+      category: 'Add-On',
+      items: [
+        'Kampagnen-Konzept & Storyboard',
+        'Dreh mit 2-Cam Setup + Licht',
+        'Schnitt, Motion Graphics, Color Grading',
+        'Formate für Social + Website',
+        '2 Feedbackschleifen inklusive'
+      ]
+    },
+    {
+      id: 'addon-produktvideo',
+      title: 'Produktvideo',
+      description: 'Wir kreieren atemberaubende Visuals für Ihr Produkt.',
+      price: 1499,
+      icon: Video,
+      category: 'Add-On',
+      items: [
+        'Produktinszenierung & Macro-Shots',
+        'Studio- oder Location-Setup',
+        'Produkt-spezifische Sounddesigns',
+        '1x Hauptvideo + 3 Kurzformate',
+        'Colour Grading passend zur Brand'
+      ]
+    },
+    {
       id: 'addon-fotoshooting',
       title: 'Fotoshooting',
-      description: '4h Shooting mit professionellem Fotografen, 30 bearbeitete Bilder',
+      description: 'Wir knipsen was Sie möchten - und lassen Sie dabei gut aussehen.',
       price: 799,
       icon: Camera,
       category: 'Add-On',
@@ -169,6 +199,36 @@ const ContentCreation = () => {
         'Nutzungsrechte für Social Media & Website',
         'Online-Galerie zum Download',
         'Express-Lieferung innerhalb von 5 Werktagen'
+      ]
+    },
+    {
+      id: 'addon-musikvideo',
+      title: 'Musikvideo',
+      description: 'Full Scale Leitung für Ihr Musikvideo - Schnittstelle für Kunst und Technik.',
+      price: 2999,
+      icon: Video,
+      category: 'Add-On',
+      items: [
+        'Creative Direction & Treatment',
+        'Location-Scouting & Lichtkonzept',
+        'Dreh mit Stabilizer/Drohne nach Bedarf',
+        'Schnitt, VFX-Light, Color Grading',
+        'Social Cuts (3 Stück) inklusive'
+      ]
+    },
+    {
+      id: 'addon-interview',
+      title: 'Interview / Dokumentation',
+      description: 'Lassen Sie uns Ihre Message festhalten oder Ihr Vorhaben dokumentieren.',
+      price: 1199,
+      icon: Video,
+      category: 'Add-On',
+      items: [
+        'Interview-Setup mit 2 Kameras + Tonangel/Lav',
+        'Fragenkatalog & Ablaufplanung',
+        'B-Roll Dreh on Location',
+        'Schnitt mit Untertiteln und Bauchbinden',
+        '1 Kurzfassung (60-90s) für Social Media'
       ]
     },
     {
