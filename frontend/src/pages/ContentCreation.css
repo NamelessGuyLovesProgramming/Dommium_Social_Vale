@@ -815,10 +815,10 @@
 
 .addon-cart-button svg {
   stroke: currentColor;
-  fill: currentColor;
+  fill: none;
   width: 20px;
   height: 20px;
-  stroke-width: 0;
+  stroke-width: 2.4;
 }
 
 .addon-cart-button:hover {
