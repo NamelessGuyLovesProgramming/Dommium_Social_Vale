@@ -41,7 +41,11 @@ const VideoReelBand = ({ videoSources }) => (
     </div>
     <div className="video-reel-shell">
       <LogoLoop
-        logos={videoSources.map((src, index) => ({ src, title: `Reel Video ${index + 1}` }))}
+        logos={videoSources
+          .flatMap((src, index) => [
+            { src, title: `Reel Video ${index + 1}` },
+            { src, title: `Reel Video ${index + 1} (Alt)` }
+          ])}
         renderItem={(item, key) => (
           <video
             key={key}
