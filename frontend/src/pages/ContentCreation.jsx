@@ -520,6 +520,16 @@ const ContentCreation = () => {
           <h3>Nichts gefunden?</h3>
           <a className="addons-cta-button" href="/kontakt">Individual Lösung anfragen</a>
         </div>
+
+        <div className="section-divider fancy">
+          <div className="divider-line swoosh-left"></div>
+          <div className="divider-content">
+            <Sparkles className="divider-icon" />
+            <span className="divider-text">Wir finden deine Lösung</span>
+            <Sparkles className="divider-icon" />
+          </div>
+          <div className="divider-line swoosh-right"></div>
+        </div>
       </section>
     </div>
   )

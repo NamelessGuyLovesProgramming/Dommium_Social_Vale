@@ -642,6 +642,33 @@
   white-space: nowrap;
 }
 
+.section-divider.fancy .divider-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-divider.fancy .divider-line.swoosh-left::before,
+.section-divider.fancy .divider-line.swoosh-right::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 140%;
+  height: 120%;
+  background: radial-gradient(circle at var(--pos, 0%), rgba(228, 163, 88, 0.18), transparent 55%);
+  transform: translateY(-50%) scaleX(1.1);
+  filter: blur(6px);
+}
+
+.section-divider.fancy .divider-line.swoosh-left::before {
+  left: -20%;
+  --pos: 20%;
+}
+
+.section-divider.fancy .divider-line.swoosh-right::before {
+  right: -20%;
+  --pos: 80%;
+}
+
 .divider-icon {
   color: var(--color-heading);
   animation: sparkle 2s ease-in-out infinite;
