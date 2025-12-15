@@ -620,7 +620,7 @@
   align-items: center;
   gap: 2rem;
   max-width: 1400px;
-  margin: 12rem auto 3.5rem;
+  margin: 14rem auto 3rem;
   padding: 0 2rem;
 }
 
@@ -770,7 +770,7 @@
 }
 
 .addons-cta-empty {
-  margin: 5.5rem auto 1.2rem;
+  margin: 8rem auto 1.2rem;
   text-align: center;
   color: var(--color-heading);
   display: flex;
