@@ -1,0 +1,6 @@
+.animated-badge {
+  display: block;
+  width: 96px;
+  height: 96px;
+  image-rendering: auto;
+}

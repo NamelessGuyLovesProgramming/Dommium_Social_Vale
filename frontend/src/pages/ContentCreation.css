@@ -1,4 +1,4 @@
-﻿.content-creation-page {
+.content-creation-page {
   min-height: 100vh;
   background: var(--color-background);
   color: var(--color-text);
@@ -16,6 +16,22 @@
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.highlight-bar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 20px;
+}
+
+.highlight-bar-content .animated-badge {
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
 }
 
 .service-intro-box {
@@ -399,7 +415,7 @@
 }
 
 .card-goals .goals-title::before {
-  content: 'âœª';
+  content: '✪';
   color: var(--color-heading);
   font-size: 1.15rem;
 }
@@ -493,7 +509,7 @@
 }
 
 .details-list li::before {
-  content: 'â†’';
+  content: '→';
   margin-right: 0.75rem;
   color: var(--color-heading);
   font-weight: 700;
@@ -1191,4 +1207,5 @@
     font-size: 1.5rem;
   }
 }
+
 

@@ -13,30 +13,40 @@ import {
   Info
 } from "lucide-react"
 import LogoLoop from "../components/LogoLoop/LogoLoop"
+import AnimatedBadge from "../components/AnimatedBadge/AnimatedBadge"
 import "./ContentCreation.css"
 
 const HighlightBand = () => (
   <div className="highlight-bar" aria-hidden="true">
-    <LogoLoop
-      logos={[
-        { src: '', title: 'Content Creation', node: <span style={{ fontWeight: 700 }}>Content Creation</span> },
-        { src: '', title: 'Content Creation', node: <span style={{ fontWeight: 700 }}>Content Creation</span> },
-        { src: '', title: 'Content Creation', node: <span style={{ fontWeight: 700 }}>Content Creation</span> }
-      ]}
-      renderItem={(item, key) => (
-        <div className="highlight-item-node" key={key}>
-          {item.node}
-        </div>
-      )}
-      direction="right"
-      speed={20}
-      hoverSpeed={0}
-      gap={16}
-      logoHeight={28}
-      scaleOnHover={false}
-      style={{ '--logo-offset': '80px' }}
-      ariaLabel="Highlight Marquee"
-    />
+    <div className="highlight-bar-content">
+      <AnimatedBadge
+        webpSrc="/media/icon.14361827.webp"
+        firstFrame="/media/icon.14361827.webp"
+        width={96}
+        height={96}
+        alt="Content Creation Animated Icon"
+      />
+      <LogoLoop
+        logos={[
+          { src: '', title: 'Content Creation', node: <span style={{ fontWeight: 700 }}>Content Creation</span> },
+          { src: '', title: 'Content Creation', node: <span style={{ fontWeight: 700 }}>Content Creation</span> },
+          { src: '', title: 'Content Creation', node: <span style={{ fontWeight: 700 }}>Content Creation</span> }
+        ]}
+        renderItem={(item, key) => (
+          <div className="highlight-item-node" key={key}>
+            {item.node}
+          </div>
+        )}
+        direction="right"
+        speed={20}
+        hoverSpeed={0}
+        gap={16}
+        logoHeight={28}
+        scaleOnHover={false}
+        style={{ '--logo-offset': '80px' }}
+        ariaLabel="Highlight Marquee"
+      />
+    </div>
   </div>
 )
 
