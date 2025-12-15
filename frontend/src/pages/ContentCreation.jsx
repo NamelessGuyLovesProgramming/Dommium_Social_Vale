@@ -34,6 +34,7 @@ const HighlightBand = () => (
       gap={16}
       logoHeight={28}
       scaleOnHover={false}
+      style={{ '--logo-offset': '80px' }}
       ariaLabel="Highlight Marquee"
     />
   </div>

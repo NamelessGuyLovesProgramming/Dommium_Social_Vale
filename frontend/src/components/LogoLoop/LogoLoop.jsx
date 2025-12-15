@@ -62,7 +62,7 @@ const LogoLoop = memo(
     // repeat enough times to fill and overlap viewport
     const allLogos = useMemo(() => {
       if (!logos || logos.length === 0) return []
-      const repeat = 4
+      const repeat = 6
       return Array.from({ length: repeat }, (_, i) =>
         logos.map((item) => ({ ...item, _key: `${item.title || item.src || ''}-${i}` }))
       ).flat()
