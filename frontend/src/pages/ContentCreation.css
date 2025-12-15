@@ -647,6 +647,14 @@
   overflow: hidden;
 }
 
+.section-divider.no-text {
+  gap: 0;
+}
+
+.section-divider.no-text .divider-line {
+  flex: 1;
+}
+
 .section-divider.fancy .divider-line.swoosh-left::before,
 .section-divider.fancy .divider-line.swoosh-right::before {
   content: '';
