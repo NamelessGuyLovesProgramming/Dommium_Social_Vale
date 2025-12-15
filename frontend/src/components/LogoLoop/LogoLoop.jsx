@@ -59,13 +59,20 @@ const LogoLoop = memo(
       }
     }, [logos.length, logoHeight, gap, duration, hoverSpeed])
 
-    const allLogos = useMemo(() => [...logos, ...logos], [logos])
+    // repeat enough times to fill and overlap viewport
+    const allLogos = useMemo(() => {
+      if (!logos || logos.length === 0) return []
+      const repeat = 4
+      return Array.from({ length: repeat }, (_, i) =>
+        logos.map((item) => ({ ...item, _key: `${item.title || item.src || ''}-${i}` }))
+      ).flat()
+    }, [logos])
 
     return (
       <div className={`logo-loop ${className}`} aria-label={ariaLabel} ref={containerRef}>
         <div className={`logo-loop__track ${scaleOnHover ? 'logo-loop__track--scale' : ''}`} ref={trackRef}>
           {allLogos.map((item, idx) => (
-            <div className="logo-loop__item" key={idx} style={{ height: logoHeight, marginRight: gap }}>
+            <div className="logo-loop__item" key={item._key || idx} style={{ height: logoHeight, marginRight: gap }}>
               {renderItem ? renderItem(item, idx) : <img src={item.src} alt={item.title || ''} />}
             </div>
           ))}

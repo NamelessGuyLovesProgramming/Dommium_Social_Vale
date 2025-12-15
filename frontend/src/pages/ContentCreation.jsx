@@ -19,16 +19,22 @@ const HighlightBand = () => (
   <div className="highlight-bar" aria-hidden="true">
     <LogoLoop
       logos={[
-        { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: "Content Creation" },
-        { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: "Content Creation" },
-        { node: <span style={{ fontWeight: 700 }}>Content Creation</span>, title: "Content Creation" }
+        { src: '', title: 'Content Creation', node: <span style={{ fontWeight: 700 }}>Content Creation</span> },
+        { src: '', title: 'Content Creation', node: <span style={{ fontWeight: 700 }}>Content Creation</span> },
+        { src: '', title: 'Content Creation', node: <span style={{ fontWeight: 700 }}>Content Creation</span> }
       ]}
+      renderItem={(item, key) => (
+        <div className="highlight-item-node" key={key}>
+          {item.node}
+        </div>
+      )}
       direction="right"
-      speed={120}
-      logoHeight={28}
-      gap={48}
+      speed={80}
       hoverSpeed={0}
-      fadeOut
+      gap={16}
+      logoHeight={28}
+      scaleOnHover={false}
+      ariaLabel="Highlight Marquee"
     />
   </div>
 )
