@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -13,34 +13,47 @@ import SocialMediaConsulting from './pages/SocialMediaConsulting'
 import ContentCreation from './pages/ContentCreation'
 import Trendanalyse from './pages/Trendanalyse'
 import Cybersecurity from './pages/Cybersecurity'
+import ConsiliumSoftware from './pages/ConsiliumSoftware'
+import Ballpit from './pages/Ballpit'
 import './App.css'
+
+function AppShell() {
+  const location = useLocation()
+  const hideChrome = location.pathname === '/ballpit'
+
+  return (
+    <>
+      {!hideChrome && <Header />}
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/consilium-software" element={<ConsiliumSoftware />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/warenkorb" element={<Warenkorb />} />
+          <Route path="/warenkorb-demo" element={<WarenkorbDemo />} />
+          <Route path="/erfolg" element={<Erfolg />} />
+
+          {/* Service Routes */}
+          <Route path="/services/social-media" element={<SocialMediaConsulting />} />
+          <Route path="/services/content" element={<ContentCreation />} />
+          <Route path="/services/trends" element={<Trendanalyse />} />
+          <Route path="/services/cybersecurity" element={<Cybersecurity />} />
+          <Route path="/ballpit" element={<Ballpit />} />
+        </Routes>
+      </main>
+      {!hideChrome && <Footer />}
+    </>
+  )
+}
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <div className="App">
-        <Header />
-
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/kontakt" element={<Kontakt />} />
-            <Route path="/warenkorb" element={<Warenkorb />} />
-            <Route path="/warenkorb-demo" element={<WarenkorbDemo />} />
-            <Route path="/erfolg" element={<Erfolg />} />
-
-            {/* Service Routes */}
-            <Route path="/services/social-media" element={<SocialMediaConsulting />} />
-            <Route path="/services/content" element={<ContentCreation />} />
-            <Route path="/services/trends" element={<Trendanalyse />} />
-            <Route path="/services/cybersecurity" element={<Cybersecurity />} />
-          </Routes>
-        </main>
-
-        <Footer />
+        <AppShell />
       </div>
     </Router>
   )

@@ -104,7 +104,7 @@ const Home = () => {
     {
       id: 'content-creation',
       title: 'Content Creation',
-      subtitle: 'Professioneller Content, der Ihre Marke zum Leben erweckt',
+      subtitle: null,
       icon: Sparkles,
       route: '/services/content',
       position: 'right', // Wegweiser links → Karte rechts
@@ -352,14 +352,16 @@ const Home = () => {
                     {service.title}
                   </motion.h2>
 
-                  <motion.p
-                    className="service-subtitle"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5, duration: 0.5 }}
-                  >
-                    {service.subtitle}
-                  </motion.p>
+                  {service.subtitle && (
+                    <motion.p
+                      className="service-subtitle"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5, duration: 0.5 }}
+                    >
+                      {service.subtitle}
+                    </motion.p>
+                  )}
 
                   <motion.div
                     className="service-features"

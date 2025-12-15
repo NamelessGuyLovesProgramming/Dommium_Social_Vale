@@ -5,7 +5,6 @@ import {
   MessageSquare,
   Play,
   BrainCircuit,
-  Shield,
   ChevronDown
 } from 'lucide-react'
 import { useCart } from '../../context/CartContext'
@@ -27,36 +26,31 @@ const Header = () => {
       setScrolled(isScrolled)
     }
 
-    console.log('Header: addEventListener für scroll')
+    console.log('Header: addEventListener fuer scroll')
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll() // Initial call
 
     return () => {
-      console.log('Header: removeEventListener für scroll')
+      console.log('Header: removeEventListener fuer scroll')
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
   const services = [
     {
-      icon: MessageSquare,
-      title: 'Social Media Beratung',
-      link: '/services/social-media'
-    },
-    {
       icon: Play,
       title: 'Content Creation',
       link: '/services/content'
     },
     {
-      icon: BrainCircuit,
-      title: 'Trendanalyse',
-      link: '/services/trends'
+      icon: MessageSquare,
+      title: 'Beratung',
+      link: '/services/social-media'
     },
     {
-      icon: Shield,
-      title: 'Cybersecurity & Digitalisierung',
-      link: '/services/cybersecurity'
+      icon: BrainCircuit,
+      title: 'KI Loesungen',
+      link: '/services/trends'
     }
   ]
 
@@ -74,8 +68,6 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="nav">
-          <Link to="/" className="nav-link">Home</Link>
-
           {/* Services Dropdown */}
           <div
             className="nav-dropdown"
@@ -83,7 +75,7 @@ const Header = () => {
             onMouseLeave={() => setServicesOpen(false)}
           >
             <button className="nav-link dropdown-trigger">
-              Services
+              Leistungen
               <ChevronDown
                 size={16}
                 className={`chevron ${servicesOpen ? 'open' : ''}`}
@@ -109,6 +101,7 @@ const Header = () => {
             )}
           </div>
 
+          <Link to="/consilium-software" className="nav-link">Consilium Software</Link>
           <Link to="/portfolio" className="nav-link">Portfolio</Link>
           <Link to="/team" className="nav-link">Team</Link>
           <Link to="/kontakt" className="nav-link">Kontakt</Link>
