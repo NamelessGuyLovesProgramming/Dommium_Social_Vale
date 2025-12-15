@@ -29,7 +29,7 @@ const HighlightBand = () => (
         </div>
       )}
       direction="right"
-      speed={80}
+      speed={20}
       hoverSpeed={0}
       gap={16}
       logoHeight={28}
