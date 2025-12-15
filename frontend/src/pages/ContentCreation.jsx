@@ -42,10 +42,6 @@ const HighlightBand = () => (
 
 const VideoReelBand = ({ videoSources }) => (
   <div className="video-reel-section" aria-label="Content Beispielvideos">
-    <div className="video-reel-header">
-      <div className="video-reel-title">Showreel</div>
-      <div className="video-reel-sub">Aktuelle Bewegtbild-Referenzen</div>
-    </div>
     <div className="video-reel-shell flip-x">
       <LogoLoop
         logos={videoSources.map((src, index) => ({ src, title: `Reel Video ${index + 1}` }))}
