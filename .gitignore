@@ -34,7 +34,6 @@ env/
 # Frontend Build
 frontend/dist/
 frontend/.vite/
-frontend/public/videos/
 
 # Build outputs
 dist/
