@@ -62,7 +62,7 @@ const VideoReelBand = ({ videoSources }) => (
           />
         )}
         direction="right"
-        speed={120}
+        speed={40}
         hoverSpeed={0}
         gap={0}
         logoHeight={240}
