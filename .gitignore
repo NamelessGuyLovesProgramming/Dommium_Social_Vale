@@ -35,6 +35,9 @@ env/
 frontend/dist/
 frontend/.vite/
 
+# Local demo/hero videos
+frontend/public/videos/
+
 # Build outputs
 dist/
 build/
