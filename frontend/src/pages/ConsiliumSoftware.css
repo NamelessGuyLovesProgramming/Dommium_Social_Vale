@@ -1,0 +1,28 @@
+.consilium-software-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.consilium-software-page .page-container {
+  max-width: 900px;
+  background: var(--color-secondary, #1f1f2b);
+  color: var(--color-text, #f8f8ff);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.consilium-software-page h1 {
+  margin: 0 0 0.75rem;
+  font-size: 2rem;
+}
+
+.consilium-software-page p {
+  margin: 0;
+  line-height: 1.5;
+  color: rgba(248, 248, 255, 0.85);
+}
