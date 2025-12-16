@@ -99,7 +99,7 @@
   max-width: 60%;
   min-width: clamp(48vw, 56vw, 62vw);
   width: 100%;
-  align-self: stretch;
+  align-self: flex-start;
   margin-left: auto;
   box-sizing: border-box;
 }
@@ -113,9 +113,8 @@
   width: 100%;
   margin-left: 0;
   margin-right: 0;
-  background: transparent;
-  height: 100%;
-  max-height: 90vh;
+  aspect-ratio: 16 / 9;
+  height: auto;
 }
 
 .video-wrapper::before {
