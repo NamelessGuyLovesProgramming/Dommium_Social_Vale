@@ -125,11 +125,9 @@
   inset: 0;
   background: linear-gradient(90deg,
       var(--color-background) 0%,
-      var(--color-background) 6%,
-      rgba(15, 16, 31, 0) 18%,
-      rgba(15, 16, 31, 0) 82%,
-      var(--color-background) 94%,
-      var(--color-background) 100%);
+      var(--color-background) 16%,
+      rgba(15, 16, 31, 0) 38%,
+      rgba(15, 16, 31, 0) 100%);
   opacity: 1;
   pointer-events: none;
   z-index: 1;
