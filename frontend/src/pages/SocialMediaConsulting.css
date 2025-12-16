@@ -117,6 +117,16 @@
   height: auto;
 }
 
+.video-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 32%;
+  background: linear-gradient(90deg, var(--color-background) 0%, rgba(15, 16, 31, 0) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .video-wrapper:hover {
   transform: none;
 }
