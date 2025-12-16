@@ -107,10 +107,10 @@
 
 .video-wrapper {
   position: relative;
-  border-radius: 0;
+  border-radius: 0 !important;
   overflow: hidden;
-  box-shadow: none;
-  transition: transform 0.3s ease;
+  box-shadow: none !important;
+  transition: none;
   width: 100%;
   margin-left: 0;
   margin-right: 0;
@@ -125,10 +125,10 @@
   inset: 0;
   background: linear-gradient(90deg,
       var(--color-background) 0%,
-      var(--color-background) 8%,
-      rgba(15, 16, 31, 0) 22%,
-      rgba(15, 16, 31, 0) 78%,
-      var(--color-background) 92%,
+      var(--color-background) 6%,
+      rgba(15, 16, 31, 0) 18%,
+      rgba(15, 16, 31, 0) 82%,
+      var(--color-background) 94%,
       var(--color-background) 100%);
   opacity: 1;
   pointer-events: none;
@@ -149,6 +149,8 @@
   position: relative;
   z-index: 0;
   mask-image: none;
+  mix-blend-mode: normal;
+  background: var(--color-background);
 }
 
 /* Section Divider */
