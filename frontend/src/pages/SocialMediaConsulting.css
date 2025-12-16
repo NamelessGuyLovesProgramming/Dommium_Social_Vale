@@ -108,8 +108,8 @@
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
+  transition: transform 0.3s ease;
   width: 100%;
   margin-left: 0;
   margin-right: 0;
@@ -128,8 +128,7 @@
 }
 
 .video-wrapper:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 80px rgba(102, 126, 234, 0.4);
+  transform: translateY(-6px);
 }
 
 .hero-video {
