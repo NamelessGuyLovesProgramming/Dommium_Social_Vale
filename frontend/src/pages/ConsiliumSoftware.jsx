@@ -1,15 +1,36 @@
 import "./ConsiliumSoftware.css";
-import RippleGrid from "../components/RippleGrid/RippleGrid";
-import TargetCursor from "../components/TargetCursor/TargetCursor";
-import { useState } from "react";
 
 function ConsiliumSoftware() {
-  const [isRadarActive, setIsRadarActive] = useState(false);
+  // Koordinaten der Punkte (entsprechen dem clip-path im CSS)
+  const points = [
+    { x: "0%", y: "19%" },    // P1
+    { x: "5%", y: "15.5%" },  // P2
+    { x: "10%", y: "13.5%" }, // P3
+    { x: "15%", y: "11.0%" }, // P4
+    { x: "20%", y: "8.5%" },  // P5
+    { x: "30%", y: "4.0%" },  // P6
+    { x: "40%", y: "1.0%" },  // P7
+    { x: "50%", y: "0%" },    // P8 (Spitze Oben)
+    { x: "60%", y: "2.5%" },  // P9
+    { x: "70%", y: "7.5%" },  // P10
+    { x: "80%", y: "12%" },   // P11
+    { x: "85%", y: "13.5%" }, // P12
+    { x: "90%", y: "14.2%" }, // P13
+    { x: "95%", y: "14.8%" }, // P14
+    { x: "100%", y: "15%" },  // P15
+    { x: "85%", y: "90%" },   // P16
+    { x: "80%", y: "93%" },   // P17
+    { x: "70%", y: "90%" },   // P18
+    { x: "60%", y: "86%" },   // P19
+    { x: "50%", y: "84%" },   // P20 (Spitze Unten)
+    { x: "40%", y: "86%" },   // P21
+    { x: "30%", y: "90%" },   // P22
+    { x: "20%", y: "93%" },   // P23
+    { x: "15%", y: "90%" }    // P24
+  ];
 
   return (
     <div className="page consilium-software-page">
-      <TargetCursor visible={isRadarActive} />
-
       <div className="page-container">
         <header className="page-header">
           <h1>Consilium Software</h1>
@@ -20,71 +41,33 @@ function ConsiliumSoftware() {
           <div className="definition-card">
             <div className="definition-header">
               <span className="latin-term">cōnsilium</span>
-              <span className="grammar-info">
-                n (Gen: <i>cōnsiliī</i>)
-              </span>
+              <span className="grammar-info">n (Gen: <i>cōnsiliī</i>)</span>
             </div>
-
             <div className="definition-body">
-              <div className="meanings">
-                <p>
-                  <strong>1.</strong> Plan, Absicht, Entwurf
-                </p>
-                <p>
-                  <strong>2.</strong> Rat, Beratung, Beschluss
-                </p>
-              </div>
-
-              <div className="usage-example">
-                <span className="latin-phrase">capere consilium</span>
-                <span className="phrase-translation">
-                  einen Entschluss fassen
-                </span>
-              </div>
+              <p><strong>1.</strong> Plan, Absicht, Entwurf</p>
+              <p><strong>2.</strong> Rat, Beratung, Beschluss</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Die Radar-Flagge (Außerhalb des page-container für Full-Width) */}
-      <div
-        className="radar-flag-section"
-        onMouseEnter={() => setIsRadarActive(true)}
-        onMouseLeave={() => setIsRadarActive(false)}
-        style={{ cursor: isRadarActive ? "none" : "default" }}
-      >
-        <div className="radar-flag-shape">
-          <RippleGrid
-            gridColor="#e4a358"
-            rippleIntensity={0.06}
-            gridSize={7}
-            gridThickness={10}
-            fadeDistance={2.5}
-            glowIntensity={0.6}
-            opacity={1}
-            gridRotation={0}
-            mouseInteractionRadius={1.2}
-            mouseInteraction={true}
-            enableRainbow={false}
-          />
-
-          <div className="radar-content">
-            <span className="radar-word word-auf cursor-target">Auf</span>
-            <span className="radar-word word-die cursor-target">die</span>
-            <span className="radar-word word-wichtigen cursor-target">
-              wichtigen
-            </span>
-            <span className="radar-word word-dinge cursor-target">Dinge</span>
-            <span className="radar-word word-fokussieren cursor-target">
-              fokussieren
-            </span>
-
-            {/* Weiße Radar-Punkte */}
-            <div className="radar-dot dot-1"></div>
-            <div className="radar-dot dot-2"></div>
-            <div className="radar-dot dot-3"></div>
+      <div className="radar-wrapper">
+          <div className="radar-fan-container">
+              <div className="radar-fan-test-bg">
+                  {/* Test-Hintergrund */}
+              </div>
           </div>
-        </div>
+
+          {/* VISUELLE DEBUG-MARKER */}
+          {points.map((p, i) => (
+            <div 
+              key={i} 
+              className="debug-marker" 
+              style={{ left: p.x, top: p.y }}
+            >
+              {i + 1}
+            </div>
+          ))}
       </div>
     </div>
   );
