@@ -1,28 +1,241 @@
 .consilium-software-page {
-  min-height: 60vh;
+  min-height: 80vh;
   display: flex;
+  flex-direction: column; /* WICHTIG: Untereinander */
   align-items: center;
-  justify-content: center;
-  padding: 3rem 1.5rem;
+  justify-content: flex-start; /* Start oben, nicht mittig */
+  padding: 2rem;
+  background-color: var(--color-background);
 }
 
 .consilium-software-page .page-container {
   max-width: 900px;
-  background: var(--color-secondary, #1f1f2b);
-  color: var(--color-text, #f8f8ff);
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 2rem;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alles mittig */
+}
+
+/* Header Styling */
+.page-header {
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .consilium-software-page h1 {
-  margin: 0 0 0.75rem;
-  font-size: 2rem;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-heading);
 }
 
-.consilium-software-page p {
-  margin: 0;
-  line-height: 1.5;
-  color: rgba(248, 248, 255, 0.85);
+.header-line {
+  width: 60px;
+  height: 4px;
+  background: var(--color-divider-border);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Kompakte Definition Box */
+.definition-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem; /* Platz zum Radar unten */
+  width: 100%;
+}
+
+.definition-card {
+  background: var(--color-secondary);
+  border: 1px solid var(--color-box-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem 2rem;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+  z-index: 10; /* Über dem Grid, falls überlappend */
+}
+
+.definition-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--color-heading);
+}
+
+.definition-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.latin-term {
+  font-family: var(--font-base);
+  font-style: italic;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.grammar-info {
+  font-size: 0.85rem;
+  color: var(--color-tertiary);
+}
+
+.definition-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.meanings p {
+  margin: 0.4rem 0;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.meanings strong {
+  color: var(--color-heading);
+  margin-right: 8px;
+}
+
+.usage-example {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.9rem;
+}
+
+.latin-phrase {
+  display: block;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.phrase-translation {
+  color: var(--color-tertiary);
+  font-style: italic;
+}
+
+/* --- RADAR FLAGGE STYLING --- */
+
+.radar-flag-section {
+  /* Padding-Kompensation statt VW-Hack: */
+  /* Da .page 2rem Padding hat, ziehen wir die Box um 2rem raus */
+  width: calc(100% + 4rem); 
+  margin-left: -2rem;
+  margin-right: -2rem;
+  
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  
+  /* Der Screen-Rahmen */
+  border-top: 2px solid var(--color-heading);
+  border-bottom: 2px solid var(--color-heading);
+  background: #050505;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Verhindert, dass die Seite durch 100vw horizontal scrollt (Standard-Problem bei Browsern mit Scrollbars) */
+.consilium-software-page {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.radar-flag-shape {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+  
+  /* Die Radar-Fächerform - etwas breiter und flacher für den Screen */
+  clip-path: polygon(
+    0% 0%, 
+    100% 0%, 
+    100% 100%, 
+    0% 100%
+  );
+  /* Anmerkung: Wenn 'Flagge' gewünscht, dann clip-path aktivieren. 
+     Aber für 'Screen in Seite' ist rechteckig oft besser. 
+     Ich lasse es rechteckig für den Screen-Look, wie gewünscht. */
+
+  overflow: hidden;
+}
+
+/* Falls doch die Flaggenform gewünscht ist, hier die Klasse alternativ nutzen */
+.radar-flag-shape.shaped {
+    clip-path: polygon(0% 15%, 50% 0%, 100% 15%, 90% 100%, 50% 85%, 10% 100%);
+}
+
+.radar-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 20; /* WICHTIG: Über dem Gitter (z-index: 1) */
+}
+
+.radar-word {
+  position: absolute;
+  /* ... rest bleibt gleich ... */
+  color: #fff;
+  font-family: 'Braven', serif;
+  font-size: 2rem; /* Größer für den Screen */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  pointer-events: auto;
+  cursor: none;
+  opacity: 0.9;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+/* Positionierung relativ zur Mitte (dank Flex-Parent als Bezugspunkt, aber wir positionieren absolut) */
+/* Wir nutzen Prozentwerte, die sich auf den 1200px Container beziehen */
+
+.word-auf { top: 25%; left: 35%; }
+.word-die { top: 25%; right: 35%; }
+.word-wichtigen { top: 45%; left: 30%; }
+.word-dinge { top: 45%; right: 30%; }
+.word-fokussieren { bottom: 25%; left: 50%; transform: translateX(-50%); }
+
+/* ... rest ... */
+
+/* Radar Punkte */
+.radar-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fff;
+  animation: pulse 2s infinite;
+}
+
+.dot-1 { top: 30%; right: 20%; }
+.dot-2 { top: 60%; left: 25%; }
+.dot-3 { bottom: 30%; right: 35%; }
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
 }

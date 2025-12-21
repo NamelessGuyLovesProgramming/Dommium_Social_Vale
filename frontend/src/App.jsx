@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -36,9 +36,12 @@ function AppShell() {
           <Route path="/erfolg" element={<Erfolg />} />
 
           {/* Service Routes */}
-          <Route path="/services/social-media" element={<SocialMediaConsulting />} />
-          <Route path="/services/content" element={<ContentCreation />} />
-          <Route path="/services/trends" element={<Trendanalyse />} />
+          <Route path="/services/beratung" element={<SocialMediaConsulting />} />
+          <Route path="/services/social-media" element={<Navigate to="/services/beratung" replace />} />
+          <Route path="/content_creation" element={<ContentCreation />} />
+          <Route path="/services/content" element={<Navigate to="/content_creation" replace />} />
+          <Route path="/services/ki_loesungen" element={<Trendanalyse />} />
+          <Route path="/services/trends" element={<Navigate to="/services/ki_loesungen" replace />} />
           <Route path="/services/cybersecurity" element={<Cybersecurity />} />
           <Route path="/ballpit" element={<Ballpit />} />
         </Routes>

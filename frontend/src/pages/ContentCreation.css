@@ -207,7 +207,7 @@
 
 .pricing-card:hover {
   transform: translateY(-10px);
-  border-color: var(--color-heading);
+  border-color: var(--color-divider-border);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
@@ -217,7 +217,7 @@
 
 .pricing-card.expanded {
   transform: translateY(-10px);
-  border-color: var(--color-heading);
+  border-color: var(--color-divider-border);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
@@ -830,7 +830,7 @@
 .addon-card {
   position: relative;
   background: var(--color-secondary);
-  border: 2px solid var(--color-heading);
+  border: 2px solid var(--color-divider-border);
   border-radius: 16px;
   padding: 1.2rem 1.2rem 0.6rem;
   backdrop-filter: blur(10px);
@@ -842,7 +842,7 @@
 
 .addon-card:hover {
   transform: translateY(-5px);
-  border-color: var(--color-heading);
+  border-color: var(--color-divider-border);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
   z-index: 50;
 }
@@ -986,7 +986,7 @@
   width: 40px;
   height: 40px;
   padding: 6px;
-  border: 2px solid var(--color-heading);
+  border: 2px solid var(--color-divider-border);
   border-radius: 50%;
   background: var(--color-secondary); /* same as addon card */
   color: var(--color-heading);        /* icon inherits this */
@@ -1046,7 +1046,7 @@
   color: var(--color-text);
   line-height: 1.5;
   background: rgba(34, 34, 34, 0.96);
-  border: 1px solid var(--color-heading);
+  border: 1px solid var(--color-divider-border);
   border-radius: 10px;
   padding: 0.6rem 0.75rem;
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);

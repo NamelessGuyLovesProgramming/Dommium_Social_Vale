@@ -2,31 +2,31 @@
   min-height: 100vh;
   background: var(--color-background);
   color: var(--color-text);
-  padding: 3.5rem 2rem 0;
+  padding: 0rem 2rem 0;
   overflow-x: hidden;
 }
 
-.highlight-bar {
+.social-media-consulting-page .highlight-bar {
   position: relative;
   background: var(--color-highlight);
   color: #0d0f24;
   overflow: hidden;
-  margin: -1.5rem auto 1.5rem;
-  padding: 14px 0;
+  margin: 0 auto 1.5rem;
+  padding: 0;
   width: 100%;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: none;
 }
 
-.highlight-bar-content {
-  max-width: 1200px;
+.social-media-consulting-page .highlight-bar-content {
+  max-width: 960px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   gap: 18px;
-  padding: 0 20px;
+  padding: 0 20px 0;
 }
 
-.highlight-bar-content .animated-badge {
+.social-media-consulting-page .highlight-bar-content .animated-badge {
   flex-shrink: 0;
   width: 96px;
   height: 96px;
@@ -34,16 +34,16 @@
 }
 
 /* Hero Section */
-.hero-section {
+.social-media-consulting-page .hero-section {
   box-sizing: border-box;
-  padding: 2rem 0 5rem clamp(1.6rem, 3vw, 3.5rem);
+  padding: 0rem 0 5rem clamp(1.6rem, 3vw, 3.5rem);
   width: 100vw;
   max-width: 100vw;
   margin: 0;
   padding-right: clamp(0.9rem, 1.3vw, 1.8rem);
 }
 
-.hero-container {
+.social-media-consulting-page .hero-container {
   display: flex;
   flex-direction: row;
   gap: 2.5rem;
@@ -54,11 +54,11 @@
   position: static;
 }
 
-.hero-content {
+.social-media-consulting-page .hero-content {
   animation: fadeInLeft 0.8s ease-out;
   position: static;
-  flex: 0 0 40%;
-  max-width: 40%;
+  flex: 0 0 38%;
+  max-width: 38%;
   background: none;
   border: none;
   border-radius: 0;
@@ -68,36 +68,37 @@
   z-index: auto;
 }
 
-.hero-description p {
+.social-media-consulting-page .hero-description p {
   margin: 0;
 }
 
-.hero-title {
-  font-size: 4rem;
+.social-media-consulting-page .hero-title {
+  font-size: clamp(0.95rem, 2vw + 0.3rem, 1.6rem);
   font-weight: 700;
   background: var(--color-heading);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 2rem;
+  margin-bottom: 0.4rem;
   line-height: 1.2;
 }
 
-.hero-description {
+.social-media-consulting-page .hero-description {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  font-size: 2.2rem;
-  line-height: 1.35;
   color: var(--color-text);
-  max-width: 1100px;
+  font-size: clamp(0.9rem, 1.1vw + 0.4rem, 1.2rem);
+  line-height: 1.35;
+  max-width: 34vw;
 }
 
-.hero-media {
+
+.social-media-consulting-page .hero-media {
   animation: fadeInRight 0.8s ease-out;
-  flex: 0 0 60%;
-  max-width: 60%;
-  min-width: clamp(48vw, 56vw, 62vw);
+  flex: 0 0 62%;
+  max-width: 62%;
+  min-width: clamp(52vw, 58vw, 68vw);
   width: 100%;
   align-self: flex-start;
   margin-left: auto;
@@ -105,7 +106,7 @@
   background: var(--color-background);
 }
 
-.video-wrapper {
+.social-media-consulting-page .video-wrapper {
   position: relative;
   border-radius: 0 !important;
   overflow: hidden;
@@ -119,25 +120,26 @@
   background: transparent;
 }
 
-.video-wrapper::before {
+.social-media-consulting-page .video-wrapper::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg,
+  background: linear-gradient(
+      90deg,
       var(--color-background) 0%,
-      var(--color-background) 16%,
-      rgba(15, 16, 31, 0) 38%,
-      rgba(15, 16, 31, 0) 100%);
-  opacity: 1;
+      var(--color-background) 8%,
+      rgba(15, 16, 31, 0) 22%,
+      rgba(15, 16, 31, 0) 100%
+    );
   pointer-events: none;
   z-index: 1;
 }
 
-.video-wrapper:hover {
+.social-media-consulting-page .video-wrapper:hover {
   transform: none;
 }
 
-.hero-video {
+.social-media-consulting-page .hero-video {
   width: 100%;
   height: 100%;
   display: block;
@@ -152,37 +154,38 @@
 }
 
 /* Section Divider */
-.section-divider {
+.social-media-consulting-page .section-divider {
   display: flex;
   align-items: center;
   gap: 2rem;
-  max-width: 1200px;
-  margin: 6rem auto;
+  max-width: 960px;
+  margin: 1.5rem auto 1rem;
   padding: 0 2rem;
 }
 
-.divider-line {
+.social-media-consulting-page .divider-line {
   flex: 1;
   height: 2px;
-  background: var(--color-background);
+  background: var(--color-divider-border);
 }
 
-.divider-content {
+.social-media-consulting-page .divider-content {
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 1rem 2rem;
-  background: rgba(102, 126, 234, 0.1);
-  border-radius: 50px;
-  border: 2px solid rgba(102, 126, 234, 0.3);
+  background: var(--color-secondary);
+  border-radius: 16px;
+  border: 2px solid var(--color-divider-border);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.4);
 }
 
-.divider-icon {
+.social-media-consulting-page .divider-icon {
   color: var(--color-heading);
   animation: sparkle 2s ease-in-out infinite;
 }
 
-.divider-text {
+.social-media-consulting-page .divider-text {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--color-heading);
@@ -190,113 +193,365 @@
   letter-spacing: 2px;
 }
 
-/* Package Section */
-.package-section {
-  padding: 4rem 2rem 8rem;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Wachstums Social Media Paket (aus Content Creation) */
+.social-media-consulting-page .consulting-pricing {
+  max-width: 960px;
+  margin: 2.5rem auto 6rem;
+  padding: 0 1.5rem;
 }
 
-.package-container {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 30px;
-  padding: 4rem;
-  backdrop-filter: blur(10px);
+.social-media-consulting-page .consulting-pricing .pricing-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
-.package-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
+.social-media-consulting-page .consulting-pricing .pricing-card {
+  background: var(--color-secondary);
+  border: 2px solid var(--color-box-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-media-consulting-page .consulting-pricing .pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-heading);
+  opacity: 1;
+}
+
+.social-media-consulting-page .consulting-pricing .fade-content {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.social-media-consulting-page .consulting-pricing .card-header {
   text-align: center;
+  margin-bottom: 2rem;
+}
+
+.social-media-consulting-page .consulting-pricing .pricing-card {
+  align-items: center;
+}
+
+.social-media-consulting-page .consulting-pricing .tier-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin: 0;
+}
+
+.social-media-consulting-page .consulting-pricing .tier-sub {
+  margin: 0.75rem auto 0;
+  max-width: 44ch;
+  color: var(--color-text);
+  opacity: 0.95;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.social-media-consulting-page .consulting-pricing .details-heading {
+  margin: 0 0 0.75rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.social-media-consulting-page .consulting-pricing .audience-text {
+  margin: 0 auto 1.25rem;
+  max-width: 62ch;
+  color: var(--color-text);
+  opacity: 0.95;
+  line-height: 1.55;
+  font-size: 1rem;
+}
+
+.social-media-consulting-page .consulting-pricing .card-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-media-consulting-page .consulting-pricing .highlight-item {
+  display: inline-flex;
+  width: fit-content;
+  align-self: flex-start;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.social-media-consulting-page .consulting-pricing .highlight-icon {
+  color: var(--color-heading);
+  flex-shrink: 0;
+}
+
+.social-media-consulting-page .consulting-pricing .highlight-text {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* Consulting Pricing: center text (user request) */
+.social-media-consulting-page .consulting-pricing .pricing-card {
+  text-align: center;
+}
+
+.social-media-consulting-page .consulting-pricing .card-highlights {
+  align-items: center;
+}
+
+.social-media-consulting-page .consulting-pricing .highlight-item {
+  align-self: center;
+}
+
+.social-media-consulting-page .consulting-pricing .details-list {
+  text-align: center;
+}
+
+.social-media-consulting-page .consulting-pricing .details-list li {
+  text-align: center;
+}
+
+.social-media-consulting-page .consulting-pricing .details-list li::before {
+  content: '';
+  margin: 0;
+}
+
+.social-media-consulting-page .consulting-pricing .goals-title {
+  text-align: center;
+}
+
+.social-media-consulting-page .consulting-pricing .goals-list {
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.social-media-consulting-page .consulting-pricing .card-details {
+  margin-bottom: 1.75rem;
+  width: 100%;
+  max-width: 720px;
+}
+
+.social-media-consulting-page .consulting-pricing .details-list {
+  list-style: none;
+  padding: 1.25rem;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  border: 1px solid var(--color-box-border);
+}
+
+.social-media-consulting-page .consulting-pricing .details-list li {
+  padding: 0.75rem 0;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-media-consulting-page .consulting-pricing .details-list li:last-child {
+  border-bottom: 0;
+}
+
+.social-media-consulting-page .consulting-pricing .details-list li::before {
+  content: '›';
+  margin-right: 0.75rem;
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+.social-media-consulting-page .consulting-pricing .card-goals {
+  margin: 0 0 1.4rem;
+  padding: 1.1rem 1.25rem 1.25rem;
+  border: 1px solid var(--color-box-border);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(228, 163, 88, 0.12), rgba(44, 44, 44, 0.72));
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+  width: 100%;
+  max-width: 720px;
+}
+
+.social-media-consulting-page .consulting-pricing .goals-title {
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.6rem;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+}
+
+.social-media-consulting-page .consulting-pricing .goals-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.social-media-consulting-page .consulting-pricing .goals-list li::marker {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+.social-media-consulting-page .consulting-pricing .card-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 720px;
+}
+
+.social-media-consulting-page .consulting-pricing .price-display {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.social-media-consulting-page .consulting-pricing .price-currency {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.social-media-consulting-page .consulting-pricing .price-amount {
+  font-size: 2.6rem;
+  font-weight: 700;
   background: var(--color-heading);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  line-height: 1;
 }
 
-.package-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
+.social-media-consulting-page .consulting-pricing .price-period {
+  font-size: 0.95rem;
+  color: var(--color-text);
 }
 
-.feature-item {
+.social-media-consulting-page .consulting-pricing .cart-button {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-heading);
+  color: var(--color-text);
+  cursor: pointer;
   display: flex;
-  gap: 1.5rem;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.feature-item:hover {
-  transform: translateY(-5px);
-  background: rgba(102, 126, 234, 0.1);
-  border-color: rgba(102, 126, 234, 0.3);
+.social-media-consulting-page .consulting-pricing .cart-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
-.feature-icon {
-  font-size: 2.5rem;
-  flex-shrink: 0;
-}
-
-.feature-text h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
-}
-
-.feature-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--color-text);
-}
-
-/* Price & CTA */
-.package-cta {
+.social-media-consulting-page .price-header {
   display: flex;
   flex-direction: column;
+  gap: 0.6rem;
   align-items: center;
-  gap: 2rem;
-  padding: 3rem;
-  background: rgba(102, 126, 234, 0.05);
-  border-radius: 20px;
-  border: 2px solid rgba(102, 126, 234, 0.2);
 }
 
-.price-container {
+.social-media-consulting-page .price-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  padding: 0.65rem 1.05rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-divider-border);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.social-media-consulting-page .price-currency {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.social-media-consulting-page .price-amount {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.social-media-consulting-page .add-to-cart-btn.glow {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, var(--color-heading), #f0c372);
+  color: #0d0f24;
+}
+
+.social-media-consulting-page .add-to-cart-btn.glow .btn-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.2) 45%, transparent 60%);
+  transform: translateX(-100%);
+  animation: sheen 2.4s linear infinite;
+}
+
+.social-media-consulting-page .add-to-cart-btn.glow {
+  margin-top: auto;
+}
+
+.social-media-consulting-page .cta-note {
+  text-align: left;
+}
+
+.social-media-consulting-page .price-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
 }
 
-.price-label {
+.social-media-consulting-page .price-label {
   font-size: 1rem;
   color: var(--color-text);
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-.price-wrapper {
+.social-media-consulting-page .price-wrapper {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
 }
 
-.price-currency {
+.social-media-consulting-page .price-currency {
   font-size: 2rem;
   font-weight: 600;
   color: var(--color-heading);
   margin-top: 0.5rem;
 }
 
-.price-amount {
+.social-media-consulting-page .price-amount {
   font-size: 5rem;
   font-weight: 700;
   background: var(--color-heading);
@@ -306,12 +561,12 @@
   line-height: 1;
 }
 
-.price-note {
+.social-media-consulting-page .price-note {
   font-size: 1rem;
   color: var(--color-text);
 }
 
-.add-to-cart-btn {
+.social-media-consulting-page .add-to-cart-btn {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -327,21 +582,925 @@
   box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
 }
 
-.add-to-cart-btn:hover {
+.social-media-consulting-page .add-to-cart-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
 }
 
-.add-to-cart-btn:active {
+.social-media-consulting-page .add-to-cart-btn:active {
   transform: translateY(-1px);
 }
 
-.cta-note {
+.social-media-consulting-page .cta-note {
   text-align: center;
   font-size: 0.95rem;
   color: var(--color-text);
   max-width: 500px;
   line-height: 1.6;
+}
+
+/* Option 1 (Premium One-Card) overrides */
+.social-media-consulting-page .consulting-pricing.option-1 .tier-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .tier-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.15rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.22);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.9rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .meta-pill svg {
+  color: var(--color-heading);
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .card-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto 1.6rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .highlight-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 0.9rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .card-details {
+  width: 100%;
+  max-width: 720px;
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .details-grid {
+  list-style: none;
+  padding: 1.15rem;
+  margin: 0 auto 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid var(--color-box-border);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.2rem;
+  text-align: left;
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .details-grid li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .detail-check {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  color: var(--color-heading);
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .process-steps {
+  list-style: none;
+  margin: 0 auto 1.5rem;
+  padding: 0;
+  display: grid;
+  gap: 0.8rem;
+  text-align: left;
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .process-step {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.95rem 1.05rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .step-index {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: #0d0f24;
+  background: var(--color-heading);
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .step-text {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .cart-button.cta-button {
+  height: 56px;
+  padding: 0 1.15rem;
+  border-radius: 999px;
+  color: #0d0f24;
+  gap: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.social-media-consulting-page .consulting-pricing.option-1 .cart-button.cta-button svg {
+  color: #0d0f24;
+}
+
+@media (max-width: 720px) {
+  .social-media-consulting-page .consulting-pricing.option-1 .card-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .social-media-consulting-page .consulting-pricing.option-1 .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-media-consulting-page .consulting-pricing.option-1 .card-footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+/* Option 2 (Split-Landing) */
+.social-media-consulting-page .consulting-pricing.option-2 .pricing-container,
+.social-media-consulting-page .consulting-pricing.option-3 .pricing-container {
+  display: block;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .consulting-offer,
+.social-media-consulting-page .consulting-pricing.option-3 .consulting-offer {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .offer-left,
+.social-media-consulting-page .consulting-pricing.option-3 .offer-left {
+  text-align: left;
+  padding: 0.25rem 0.5rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .tier-eyebrow,
+.social-media-consulting-page .consulting-pricing.option-3 .tier-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .offer-title,
+.social-media-consulting-page .consulting-pricing.option-3 .offer-title {
+  margin: 0.9rem 0 0.6rem;
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.4rem);
+  line-height: 1.1;
+  font-weight: 900;
+  color: #fff;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .offer-lead,
+.social-media-consulting-page .consulting-pricing.option-3 .offer-lead {
+  margin: 0 0 1.4rem;
+  max-width: 58ch;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .offer-block,
+.social-media-consulting-page .consulting-pricing.option-3 .offer-block {
+  margin-top: 1.3rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .offer-heading,
+.social-media-consulting-page .consulting-pricing.option-3 .offer-heading {
+  margin: 0 0 0.55rem;
+  font-weight: 900;
+  color: var(--color-heading);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .offer-text,
+.social-media-consulting-page .consulting-pricing.option-3 .offer-text {
+  margin: 0;
+  max-width: 66ch;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.65;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .offer-points,
+.social-media-consulting-page .consulting-pricing.option-3 .offer-points {
+  list-style: none;
+  padding: 0;
+  margin: 0.2rem 0 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .offer-points li,
+.social-media-consulting-page .consulting-pricing.option-3 .offer-points li {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  padding: 0.85rem 0.95rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .offer-points svg,
+.social-media-consulting-page .consulting-pricing.option-3 .offer-points svg {
+  margin-top: 0.2rem;
+  color: var(--color-heading);
+  flex-shrink: 0;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .offer-note,
+.social-media-consulting-page .consulting-pricing.option-3 .offer-note {
+  margin-top: 1.4rem;
+  padding: 1rem 1.1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, rgba(228, 163, 88, 0.10), rgba(0, 0, 0, 0.25));
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.6;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .offer-right,
+.social-media-consulting-page .consulting-pricing.option-3 .offer-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .offer-card,
+.social-media-consulting-page .consulting-pricing.option-3 .offer-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .tier-meta,
+.social-media-consulting-page .consulting-pricing.option-3 .tier-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .meta-pill,
+.social-media-consulting-page .consulting-pricing.option-3 .meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.22);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.9rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .meta-pill svg,
+.social-media-consulting-page .consulting-pricing.option-3 .meta-pill svg {
+  color: var(--color-heading);
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .card-highlights,
+.social-media-consulting-page .consulting-pricing.option-3 .card-highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 1.5rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .highlight-item,
+.social-media-consulting-page .consulting-pricing.option-3 .highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 0.95rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .card-footer,
+.social-media-consulting-page .consulting-pricing.option-3 .card-footer {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .cart-button.cta-button,
+.social-media-consulting-page .consulting-pricing.option-3 .cart-button.cta-button {
+  height: 56px;
+  padding: 0 1.15rem;
+  border-radius: 999px;
+  color: #0d0f24;
+  gap: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .cart-button.cta-button svg,
+.social-media-consulting-page .consulting-pricing.option-3 .cart-button.cta-button svg {
+  color: #0d0f24;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .detail-card,
+.social-media-consulting-page .consulting-pricing.option-3 .detail-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 22px;
+  padding: 1.6rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .detail-side {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .details-heading {
+  margin: 0 0 1rem;
+  font-weight: 900;
+  color: var(--color-heading);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+  text-align: left;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .audience-text {
+  margin: 0;
+  max-width: none;
+  text-align: left;
+  line-height: 1.65;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .details-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .details-grid li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.85rem 0.95rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.18);
+  line-height: 1.55;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .detail-check {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  color: var(--color-heading);
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .process-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .process-step {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .step-index {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: #0d0f24;
+  background: var(--color-heading);
+}
+
+.social-media-consulting-page .consulting-pricing.option-2 .step-text {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 1024px) {
+  .social-media-consulting-page .consulting-pricing.option-2 .consulting-offer,
+  .social-media-consulting-page .consulting-pricing.option-3 .consulting-offer {
+    grid-template-columns: 1fr;
+  }
+
+  .social-media-consulting-page .consulting-pricing.option-2 .offer-right,
+  .social-media-consulting-page .consulting-pricing.option-3 .offer-right {
+    justify-content: center;
+  }
+
+  .social-media-consulting-page .consulting-pricing.option-2 .offer-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Option 3 (Tabs/Accordion Style) */
+.social-media-consulting-page .consulting-pricing.option-3 .offer-details {
+  margin-top: 2rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .detail-tabs-card {
+  padding: 1.25rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .tabs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .tab-button {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.20);
+  color: rgba(255, 255, 255, 0.90);
+  padding: 0.8rem 0.9rem;
+  border-radius: 14px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .tab-button:hover {
+  transform: translateY(-1px);
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .tab-button.active {
+  background: rgba(228, 163, 88, 0.14);
+  border-color: rgba(228, 163, 88, 0.35);
+  color: #fff;
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .tab-panel {
+  animation: tabFade 180ms ease-out;
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .details-heading {
+  margin: 0 0 1rem;
+  font-weight: 900;
+  color: var(--color-heading);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+  text-align: left;
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .details-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.1rem;
+  text-align: left;
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .details-grid li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.85rem 0.95rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.18);
+  line-height: 1.55;
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .detail-check {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  color: var(--color-heading);
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .process-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .process-step {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .step-index {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: #0d0f24;
+  background: var(--color-heading);
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .step-text {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.social-media-consulting-page .consulting-pricing.option-3 .audience-text {
+  margin: 0;
+  max-width: none;
+  text-align: left;
+  line-height: 1.65;
+}
+
+/* Option 4 – Edel Signature */
+.social-media-consulting-page .consulting-pricing.option-4 {
+  max-width: 1200px;
+  margin: 2.5rem auto 6rem;
+  padding: 0 1.5rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .option4-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .option4-hero-card {
+  background: linear-gradient(145deg, rgba(15, 16, 31, 0.9), rgba(15, 16, 31, 0.75));
+  border: 1px solid var(--color-divider-border);
+  border-radius: 24px;
+  padding: 2.2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .option4-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(228, 163, 88, 0.15);
+  color: var(--color-heading);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  border: 1px solid var(--color-divider-border);
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 h2 {
+  margin: 1rem 0 0.7rem;
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.4rem);
+  line-height: 1.2;
+  color: #fff;
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .option4-meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1.2rem 0 1.4rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-divider-border);
+  background: rgba(0, 0, 0, 0.18);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.9rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .option4-price {
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  margin: 1rem 0;
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .price-main {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .price-main .price-currency {
+  font-size: 1.6rem;
+  color: var(--color-heading);
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .price-main .price-amount {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .price-main .price-period {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .price-sub {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .price-sub .price-amount {
+  font-size: 1.6rem;
+  color: var(--color-heading);
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .option4-cta {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .option4-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .stack-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-divider-border);
+  border-radius: 18px;
+  padding: 1.4rem;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .stack-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--color-heading);
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+
+.social-media-consulting-page .consulting-pricing.option-4 .stack-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.55;
+}
+
+@media (max-width: 1024px) {
+  .social-media-consulting-page .consulting-pricing.option-4 .option4-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes tabFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .social-media-consulting-page .consulting-pricing.option-3 .tabs {
+    grid-template-columns: 1fr;
+  }
+
+.social-media-consulting-page .consulting-pricing.option-3 .details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Coming soon block */
+.social-media-consulting-page .coming-soon {
+  max-width: 960px;
+  margin: 2rem auto 6rem;
+  padding: 0 1.5rem;
+}
+
+.social-media-consulting-page .coming-card {
+  background: var(--color-secondary);
+  border: 2px solid var(--color-box-border);
+  border-radius: 20px;
+  padding: 1.8rem;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.social-media-consulting-page .coming-eyebrow {
+  display: inline-flex;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.social-media-consulting-page .coming-title {
+  margin: 0.2rem 0 0.5rem;
+  font-size: 1.55rem;
+  color: var(--color-heading);
+  font-weight: 800;
+}
+
+.social-media-consulting-page .coming-text {
+  margin: 0 auto;
+  max-width: 48ch;
+  color: var(--color-text);
+  opacity: 0.9;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Fancy divider (re-used from Content Creation) */
+.social-media-consulting-page .section-divider.fancy .divider-line {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-heading);
+}
+
+.social-media-consulting-page .section-divider.no-text {
+  gap: 0;
+}
+
+.social-media-consulting-page .section-divider.no-text .divider-line {
+  flex: 1;
+}
+
+.social-media-consulting-page .section-divider.fancy .divider-line.swoosh-left::before,
+.social-media-consulting-page .section-divider.fancy .divider-line.swoosh-right::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 140%;
+  height: 120%;
+  background: radial-gradient(circle at var(--pos, 0%), rgba(228, 163, 88, 0.18), transparent 55%);
+  transform: translateY(-50%) scaleX(1.1);
+  filter: blur(6px);
+}
+
+.social-media-consulting-page .section-divider.fancy .divider-line.swoosh-left::before {
+  left: -20%;
+  --pos: 20%;
+}
+
+.social-media-consulting-page .section-divider.fancy .divider-line.swoosh-right::before {
+  right: -20%;
+  --pos: 80%;
+}
+
+.social-media-consulting-page .section-divider.fancy.no-text {
+  margin-top: 1.4em;
+  margin-bottom: 6em;
+}
+
+/* Gold Borders for alle Optionen */
+.social-media-consulting-page .consulting-pricing .pricing-card,
+.social-media-consulting-page .consulting-pricing .highlight-item,
+.social-media-consulting-page .consulting-pricing .details-list,
+.social-media-consulting-page .consulting-pricing .card-goals,
+.social-media-consulting-page .consulting-pricing .details-grid,
+.social-media-consulting-page .consulting-pricing .details-grid li,
+.social-media-consulting-page .consulting-pricing .process-step,
+.social-media-consulting-page .consulting-pricing .offer-points li,
+.social-media-consulting-page .consulting-pricing .offer-note,
+.social-media-consulting-page .consulting-pricing .offer-card,
+.social-media-consulting-page .consulting-pricing .detail-card,
+.social-media-consulting-page .consulting-pricing .tabs .tab-button,
+.social-media-consulting-page .consulting-pricing .detail-tabs-card {
+  border-color: var(--color-divider-border) !important;
+}
+
+.social-media-consulting-page .consulting-pricing .tab-button.active {
+  border-color: var(--color-divider-border) !important;
+}
+
+/* Dunkle Boxen mit helleren Inner-Boxes */
+.social-media-consulting-page .consulting-pricing .pricing-card,
+.social-media-consulting-page .consulting-pricing .offer-card,
+.social-media-consulting-page .consulting-pricing .detail-card {
+  background: var(--color-secondary);
+}
+
+.social-media-consulting-page .consulting-pricing .highlight-item,
+.social-media-consulting-page .consulting-pricing .details-grid li,
+.social-media-consulting-page .consulting-pricing .process-step,
+.social-media-consulting-page .consulting-pricing .offer-points li {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Container fuer "Enthalten" & Co leicht absetzen */
+.social-media-consulting-page .consulting-pricing .details-grid,
+.social-media-consulting-page .consulting-pricing .details-list,
+.social-media-consulting-page .consulting-pricing .detail-card {
+  background: rgba(0, 0, 0, 0.25);
 }
 
 /* Animations */
@@ -378,8 +1537,17 @@
   }
 }
 
+@keyframes sheen {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
 /* Flying Cart Animation */
-.flying-cart-icon {
+.social-media-consulting-page .flying-cart-icon {
   position: fixed;
   z-index: 9999;
   pointer-events: none;
@@ -389,18 +1557,18 @@
   opacity: 1;
 }
 
-.flying-cart-icon svg {
+.social-media-consulting-page .flying-cart-icon svg {
   filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.8));
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .hero-container {
+  .social-media-consulting-page .hero-container {
     flex-direction: column;
     gap: 3rem;
   }
 
-  .hero-content {
+  .social-media-consulting-page .hero-content {
     position: static;
     max-width: none;
     background: transparent;
@@ -410,58 +1578,57 @@
     padding: 0;
   }
 
-  .hero-title {
+  .social-media-consulting-page .hero-section {
+    margin-top: -16px;
+  }
+
+  .social-media-consulting-page .hero-title {
     font-size: 3rem;
   }
 
-  .video-wrapper {
+  .social-media-consulting-page .video-wrapper {
     min-height: 50vh;
     width: 100%;
     margin: 0;
     border-radius: 0;
   }
-
-  .package-container {
-    padding: 3rem 2rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .hero-section {
-    padding: 6rem 1.5rem 4rem;
+  .social-media-consulting-page .hero-section {
+    padding: 1.5rem 1.5rem 4rem;
+    margin-top: -16px;
   }
 
-  .hero-title {
+  .social-media-consulting-page .hero-title {
     font-size: 2.5rem;
   }
 
-  .hero-description {
+  .social-media-consulting-page .hero-description {
     font-size: 1.1rem;
   }
 
-  .video-wrapper {
+  .social-media-consulting-page .video-wrapper {
     min-height: 45vh;
   }
 
-  .section-divider {
+  .social-media-consulting-page .section-divider {
     margin: 4rem auto;
   }
 
-  .divider-text {
+  .social-media-consulting-page .divider-text {
     font-size: 1rem;
   }
-
-  .package-features {
-    grid-template-columns: 1fr;
+  .social-media-consulting-page .consulting-pricing {
+    padding: 0 1rem;
   }
 
-  .price-amount {
-    font-size: 4rem;
+  .social-media-consulting-page .consulting-pricing .pricing-card {
+    padding: 1.75rem;
   }
 
-  .add-to-cart-btn {
-    font-size: 1.1rem;
-    padding: 1rem 2rem;
+  .social-media-consulting-page .consulting-pricing .price-amount {
+    font-size: 2.1rem;
   }
 }
 

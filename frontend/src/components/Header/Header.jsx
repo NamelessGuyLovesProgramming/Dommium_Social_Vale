@@ -40,22 +40,26 @@ const Header = () => {
     {
       icon: Play,
       title: 'Content Creation',
-      link: '/services/content'
+      link: '/content_creation'
     },
     {
       icon: MessageSquare,
       title: 'Beratung',
-      link: '/services/social-media'
+      link: '/services/beratung'
     },
     {
       icon: BrainCircuit,
       title: 'KI Loesungen',
-      link: '/services/trends'
+      link: '/services/ki_loesungen'
     }
   ]
 
+  const headerClass = `header ${scrolled ? 'scrolled' : ''} ${
+    servicesOpen ? 'dropdown-open' : ''
+  }`
+
   return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+    <header className={headerClass}>
       <div className="header-container">
         {/* Logo */}
         <Link to="/" className="logo">

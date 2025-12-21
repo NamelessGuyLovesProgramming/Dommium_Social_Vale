@@ -21,6 +21,7 @@
   --color-text: #ffffff;         /* Standard Text */
   --color-heading: #e4a358;      /* Header / Highlight */
   --color-highlight: #e4a358;
+  --color-divider-border: #e4a358; /* Akzent-Rahmen für Divider */
 
   /* Typography */
   --font-base: 'Braven', 'Times New Roman', serif;

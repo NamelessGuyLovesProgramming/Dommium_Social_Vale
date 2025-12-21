@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 
 button {
   border-radius: 8px;
-  border: 2px solid var(--color-heading);
+  border: 2px solid var(--color-divider-border);
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
@@ -52,7 +52,7 @@ button {
 
 button:hover {
   filter: brightness(1.05);
-  border-color: var(--color-heading);
+  border-color: var(--color-divider-border);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }

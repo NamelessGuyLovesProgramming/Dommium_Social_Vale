@@ -154,7 +154,7 @@
 .secondary-button {
   background: transparent;
   color: var(--color-heading);
-  border: 2px solid var(--color-heading);
+  border: 2px solid var(--color-divider-border);
 }
 
 .secondary-button:hover {
@@ -200,5 +200,4 @@
     justify-content: center;
   }
 }
-
 

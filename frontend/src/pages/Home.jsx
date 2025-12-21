@@ -106,7 +106,7 @@ const Home = () => {
       title: 'Content Creation',
       subtitle: null,
       icon: Sparkles,
-      route: '/services/content',
+      route: '/content_creation',
       position: 'right', // Wegweiser links → Karte rechts
 
       features: [
@@ -121,7 +121,7 @@ const Home = () => {
       title: 'Social Media Beratung',
       subtitle: 'Strategien, die Ihre Reichweite maximieren',
       icon: MessageCircle,
-      route: '/services/social-media',
+      route: '/services/beratung',
       position: 'left', // Wegweiser rechts → Karte links
 
       features: [
@@ -136,7 +136,7 @@ const Home = () => {
       title: 'Trendanalyse',
       subtitle: 'Datengestützte Insights für Ihren Erfolg',
       icon: TrendingUp,
-      route: '/services/trends',
+      route: '/services/ki_loesungen',
       position: 'right', // Wegweiser links → Karte rechts
 
       features: [

@@ -13,7 +13,7 @@ function FooterV1() {
         </div>
 
         <nav className="footer-nav">
-          <Link to="/services/content" className="footer-link">Leistungen</Link>
+          <Link to="/content_creation" className="footer-link">Leistungen</Link>
           <Link to="/consilium-software" className="footer-link">Consilium Software</Link>
           <Link to="/portfolio" className="footer-link">Portfolio</Link>
           <Link to="/team" className="footer-link">Team</Link>

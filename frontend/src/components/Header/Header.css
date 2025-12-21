@@ -1,4 +1,4 @@
-/* Header - Option B: Gold als Akzent */
+﻿/* Header - Option B: Gold als Akzent */
 
 .header {
   background: var(--color-background);
@@ -7,7 +7,8 @@
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease; /* Schneller: 0.3s → 0.2s */
+  transition: all 0.2s ease; /* Schneller: 0.3s -> 0.2s */
+  overflow: visible;
 }
 
 .header-container {
@@ -17,7 +18,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.2s ease; /* Schneller: 0.3s → 0.2s */
+  transition: all 0.2s ease; /* Schneller: 0.3s -> 0.2s */
+  position: relative;
 }
 
 /* Scrolled State - Minimiert */
@@ -55,7 +57,7 @@
   height: 180px;
   width: auto;
   margin: -40px 0;
-  transition: all 0.2s ease; /* Schneller: 0.3s → 0.2s */
+  transition: all 0.2s ease; /* Schneller: 0.3s -> 0.2s */
 }
 
 /* Navigation */
@@ -161,15 +163,24 @@
 
 .dropdown-menu {
   position: absolute;
-  top: calc(100% + 0.5rem);
+  top: 100%;
   left: 0;
   background: var(--color-background);
-  border: 1px solid var(--color-heading);
+  border: 1px solid var(--color-divider-border);
   border-radius: 8px;
-  min-width: 280px;
-  padding: 0.5rem;
+  padding: 0.75rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   animation: slideDown 0.3s ease;
+  display: flex;
+  gap: 0.75rem;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.header.dropdown-open,
+.header.scrolled.dropdown-open {
+  padding-bottom: 3.2em;
+  border-bottom: 2px solid #000000; /* Linie unter dem Dropdown */
 }
 
 /* Unsichtbare Brücke zwischen Button und Dropdown */
@@ -195,18 +206,22 @@
 
 .dropdown-item {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 0.75rem;
+  padding: 0.9rem 1.05rem;
   color: var(--color-text);
   text-decoration: none;
   border-radius: 6px;
   transition: all 0.2s ease;
+  min-width: 180px;
+  border: 1px solid transparent;
 }
 
 .dropdown-item:hover {
   background: rgba(212, 175, 55, 0.1);
   color: var(--color-heading);
+  border-color: rgba(212, 175, 55, 0.4);
 }
 
 .dropdown-icon {
@@ -222,5 +237,15 @@
 
   .header-container {
     padding: 1rem;
+  }
+
+  .dropdown-menu {
+    flex-direction: column;
+    min-width: 240px;
+  }
+
+  .header.dropdown-open,
+  .header.scrolled.dropdown-open {
+    padding-bottom: 3.2em;
   }
 }

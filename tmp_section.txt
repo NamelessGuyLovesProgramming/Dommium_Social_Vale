@@ -1,0 +1,237 @@
+import { useCart } from '../context/CartContext'
+import { ShoppingCart, Sparkles } from 'lucide-react'
+import LogoLoop from '../components/LogoLoop/LogoLoop'
+import AnimatedBadge from '../components/AnimatedBadge/AnimatedBadge'
+import './SocialMediaConsulting.css'
+import React from 'react'
+
+const HighlightBand = () => (
+  <div className="highlight-bar" aria-hidden="true">
+    <div className="highlight-bar-content">
+      <AnimatedBadge
+        webpSrc="/media/icon.14361827.webp"
+        firstFrame="/media/icon.14361827.webp"
+        width={96}
+        height={96}
+        alt="Content Creation Animated Icon"
+      />
+      <LogoLoop
+        logos={[
+          { src: '', title: 'Beratung', node: <span style={{ fontWeight: 700 }}>Beratung</span> },
+          { src: '', title: 'Beratung', node: <span style={{ fontWeight: 700 }}>Beratung</span> },
+          { src: '', title: 'Beratung', node: <span style={{ fontWeight: 700 }}>Beratung</span> }
+        ]}
+        renderItem={(item, key) => (
+          <div className="highlight-item-node" key={key}>
+            {item.node}
+          </div>
+        )}
+        direction="right"
+        speed={20}
+        hoverSpeed={0}
+        gap={16}
+        logoHeight={28}
+        scaleOnHover={false}
+        style={{ '--logo-offset': '80px' }}
+        ariaLabel="Highlight Marquee"
+      />
+    </div>
+  </div>
+)
+
+const SocialMediaConsulting = () => {
+  const { addToCart } = useCart()
+
+  const consultingPackage = {
+    id: 'social-media-consulting',
+    title: 'Social Media Consulting',
+    price: 299,
+    description: 'Individuelle 1:1 Beratung mit Social Media Experten: Wir analysieren Ihre aktuelle PrÃ¤senz, identifizieren Wachstumspotenziale und entwickeln eine maÃŸgeschneiderte Strategie fÃ¼r messbaren Erfolg.',
+    category: 'Beratung'
+  }
+
+  const handleAddToCart = (e) => {
+    // Item zum Warenkorb hinzufÃ¼gen
+    addToCart(consultingPackage)
+
+    // Animation starten
+    const button = e.currentTarget
+    const buttonRect = button.getBoundingClientRect()
+    const cartIcon = document.querySelector('.cart-link')
+
+    if (cartIcon) {
+      const cartRect = cartIcon.getBoundingClientRect()
+
+      // Fliegendes Icon erstellen
+      const flyingIcon = document.createElement('div')
+      flyingIcon.className = 'flying-cart-icon'
+      flyingIcon.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+      `
+
+      // Startposition (Button-Position)
+      flyingIcon.style.left = `${buttonRect.left + buttonRect.width / 2}px`
+      flyingIcon.style.top = `${buttonRect.top + buttonRect.height / 2}px`
+
+      document.body.appendChild(flyingIcon)
+
+      // Nach kurzer VerzÃ¶gerung zur Zielposition animieren
+      setTimeout(() => {
+        flyingIcon.style.left = `${cartRect.left + cartRect.width / 2}px`
+        flyingIcon.style.top = `${cartRect.top + cartRect.height / 2}px`
+        flyingIcon.style.transform = 'translate(-50%, -50%) scale(0.3)'
+        flyingIcon.style.opacity = '0'
+      }, 10)
+
+      // Nach Animation entfernen
+      setTimeout(() => {
+        flyingIcon.remove()
+      }, 800)
+    }
+  }
+
+  return (
+    <div className="social-media-consulting-page">
+      <HighlightBand />
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-container">
+                    <div className="hero-content">
+            <div className="hero-description">
+              <h1 className="hero-title">
+                Ihr Auftritt Online ist die Kommunikation von dem wer Sie sind und was Sie machen..
+                <br />
+                <br />
+                ohne diese..
+              </h1>
+              <p>Ist diese nicht reflektierend der Qualität die Sie liefern, egal in welchem Ausmaß, werden Sie ebenfalls nur zu diesem Ausmaß wahrgenommen.</p>
+              <p>Gibt es keine Online Präsenz, sind Sie nicht in der Hauptkommunikationssphäre des 21. Jahrhunderts sichtbar.</p>
+              <p>Das sollte geändert werden!</p>
+              <p>Auch wenn Ihre Kunden eventuell nicht auf etwa Social Media scrollen - Ihre Mitarbeiter tun das jedoch sehr wohl! Von dem Kommunizieren ein attraktiver Arbeitgeber zu sein bis hin tatsächliche Neukunden zu generieren - Alles spielt sich heutzutage auf diesen Kanälen ab.</p>
+              <p>Lassen Sie uns gemeinsam das grundlegende Verständnis der modernen Online Welten durchgehen, Sie drauf vorbereiten was wirklich auf Sie zukommt und wie Sie ein Nutzen für Ihr Unternehmen daraus ziehen können.</p>
+            </div>
+          </div>
+          <div className="hero-media">
+            <div className="video-wrapper">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="hero-video"
+              >
+                <source src="/videos/file_example_MP4_1280_10MG.mp4" type="video/mp4" />
+                Ihr Browser unterstÃ¼tzt keine Videos.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Divider */}
+      <div className="section-divider">
+        <div className="divider-line"></div>
+        <div className="divider-content">
+          <Sparkles className="divider-icon" />
+          <span className="divider-text">Social Media Beratung</span>
+          <Sparkles className="divider-icon" />
+        </div>
+        <div className="divider-line"></div>
+      </div>
+
+      {/* Package Section */}
+      <section className="package-section">
+        <div className="package-container">
+          <div className="package-content">
+            <h2 className="package-title">Was Sie erhalten</h2>
+
+            <div className="package-features">
+              <div className="feature-item">
+                <div className="feature-icon">ðŸŽ¯</div>
+                <div className="feature-text">
+                  <h3>Strategische Analyse</h3>
+                  <p>Umfassende Bewertung Ihrer aktuellen Social Media PrÃ¤senz und Wettbewerbsanalyse</p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">ðŸ“Š</div>
+                <div className="feature-text">
+                  <h3>Zielgruppenforschung</h3>
+                  <p>Detaillierte Persona-Entwicklung und Identifikation Ihrer idealen Kunden</p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">ðŸš€</div>
+                <div className="feature-text">
+                  <h3>Content-Strategie</h3>
+                  <p>MaÃŸgeschneiderter Content-Plan mit Posting-Zeitplan und Themen-Roadmap</p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">ðŸ’¡</div>
+                <div className="feature-text">
+                  <h3>Performance-Optimierung</h3>
+                  <p>KPI-Definition, Analytics-Setup und kontinuierliche Verbesserungsstrategien</p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">ðŸŽ¨</div>
+                <div className="feature-text">
+                  <h3>Plattform-Empfehlungen</h3>
+                  <p>Gezielte Auswahl der optimalen Social Media KanÃ¤le fÃ¼r Ihre Zielgruppe</p>
+                </div>
+              </div>
+
+              <div className="feature-item">
+                <div className="feature-icon">ðŸ“±</div>
+                <div className="feature-text">
+                  <h3>Trend-Integration</h3>
+                  <p>Aktuelle Social Media Trends und deren strategische Nutzung fÃ¼r Ihr Business</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Price & CTA */}
+          <div className="package-cta">
+            <div className="price-container">
+              <span className="price-label">Investition</span>
+              <div className="price-wrapper">
+                <span className="price-currency">â‚¬</span>
+                <span className="price-amount">299</span>
+              </div>
+              <span className="price-note">einmalig</span>
+            </div>
+
+            <button
+              className="add-to-cart-btn"
+              onClick={handleAddToCart}
+              aria-label="Zum Warenkorb hinzufÃ¼gen"
+            >
+              <ShoppingCart size={24} />
+              <span>Zum Warenkorb hinzufÃ¼gen</span>
+            </button>
+
+            <p className="cta-note">
+              Nach dem Kauf erhalten Sie innerhalb von 24 Stunden eine persÃ¶nliche
+              Kontaktaufnahme zur Terminvereinbarung.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+export default SocialMediaConsulting
+
+
+

@@ -236,7 +236,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--color-heading);
+  border-color: var(--color-divider-border);
   background: white;
   box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
   transform: translateY(-2px);
@@ -254,7 +254,7 @@
 
 .form-group input.error,
 .form-group textarea.error {
-  border-color: var(--color-heading);
+  border-color: var(--color-divider-border);
   background: #FEF2F2;
 }
 
