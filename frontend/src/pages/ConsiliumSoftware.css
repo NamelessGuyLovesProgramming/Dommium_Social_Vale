@@ -66,8 +66,8 @@
 
 .radar-path {
   fill: none;
-  stroke: var(--color-heading);
-  stroke-width: 8px;
+  stroke: #85fdfc; /* Neue Farbe: Cyan */
+  stroke-width: 8px; /* Richtig dicker Border */
   stroke-linejoin: miter; /* Spitze Ecken */
   stroke-miterlimit: 10; /* Erlaubt längere Spitzen */
   stroke-linecap: round;

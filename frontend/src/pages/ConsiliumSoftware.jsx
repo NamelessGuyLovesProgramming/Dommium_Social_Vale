@@ -59,7 +59,7 @@ function ConsiliumSoftware() {
     { x: "95.59%", y: "41.95%" }, // P47 (Ziel Linie 1)
 
     // --- SCHWEIF 2 (MITTE RECHTS) ---
-    { x: "98.00%", y: "44.00%" }, // P48 Spitze
+    { x: "98.00%", y: "43.50%" }, // P48 Spitze
     { x: "95.59%", y: "41.95%" },  // P49 Rücksprung
 
     // --- RECHTE SEITE TEIL 2 ---
@@ -72,7 +72,7 @@ function ConsiliumSoftware() {
     { x: "89.41%", y: "72.83%" }, // P56 (Ziel Linie 2)
 
     // --- SCHWEIF 3 (UNTEN RECHTS) ---
-    { x: "91.50%", y: "75.00%" }, // P57 Spitze
+    { x: "91.50%", y: "74.00%" }, // P57 Spitze
     { x: "89.41%", y: "72.83%" }, // P58 Rücksprung
 
     // --- RECHTE SEITE TEIL 3 ---
@@ -114,7 +114,7 @@ function ConsiliumSoftware() {
     { x: "34.56%", y: "82.32%" },
     { x: "32.73%", y: "83.05%" },
     { x: "30.97%", y: "83.91%" },
-    { x: "29.21%", y: "85.00%" }, // P95 (war P94 in deiner Anfrage vor den letzten Korrekturen, ich nutze den visuellen Marker 94)
+    { x: "29.21%", y: "85.00%" }, // P95
     { x: "27.53%", y: "85.98%" },
     { x: "25.85%", y: "86.96%" },
     { x: "24.09%", y: "88.18%" },
@@ -132,7 +132,7 @@ function ConsiliumSoftware() {
     { x: "10.59%", y: "72.34%" }, // P108
 
     // --- SCHWEIF 4 (MITTE LINKS) ---
-    { x: "08.50%", y: "74.00%" }, // P109 Spitze
+    { x: "08.50%", y: "73.39%" }, // P109 Spitze
     { x: "10.59%", y: "72.34%" }, // P110 Rücksprung
 
     { x: "09.71%", y: "67.93%" },
@@ -144,7 +144,7 @@ function ConsiliumSoftware() {
     { x: "04.41%", y: "41.46%" }, // P117
 
     // --- SCHWEIF 5 (OBEN LINKS) ---
-    { x: "03.00%", y: "43.00%" }, // P118 Spitze
+    { x: "03.00%", y: "42.35%" }, // P118 Spitze
     { x: "04.41%", y: "41.46%" }, // P119 Rücksprung
 
     { x: "03.53%", y: "37.05%" },
@@ -182,7 +182,6 @@ function ConsiliumSoftware() {
     }).join(' ');
   };
 
-  // Neu: Gerade Linie zwischen zwei Punkten
   const createStraightLine = (idx1, idx2) => {
     const p1 = getPoint(idx1);
     const p2 = getPoint(idx2);
@@ -226,19 +225,19 @@ function ConsiliumSoftware() {
               style={{ overflow: 'visible' }}
             >
               <path className="radar-path" d={outlinePath} />
-              <path className="radar-path inner-line" d={createCurve(117, 47)} style={{ strokeWidth: '8px', opacity: 0.7 }} />
-              <path className="radar-path inner-line" d={createCurve(108, 56)} style={{ strokeWidth: '8px', opacity: 0.7 }} />
+              <path className="radar-path inner-line" d={createCurve(117, 47)} style={{ strokeWidth: '8px' }} />
+              <path className="radar-path inner-line" d={createCurve(108, 56)} style={{ strokeWidth: '8px' }} />
               
-              {/* Vertikale Linien */}
-              <path className="radar-path vertical-line" d={createStraightLine(7, 94)} style={{ strokeWidth: '8px', opacity: 0.7 }} />
-              <path className="radar-path vertical-line" d={createStraightLine(18, 86)} style={{ strokeWidth: '8px', opacity: 0.7 }} />
-              <path className="radar-path vertical-line" d={createStraightLine(30, 76)} style={{ strokeWidth: '8px', opacity: 0.7 }} />
+              <path className="radar-path vertical-line" d={createStraightLine(8, 93)} style={{ strokeWidth: '8px' }} />
+              <path className="radar-path vertical-line" d={createStraightLine(19, 85)} style={{ strokeWidth: '8px' }} />
+              <path className="radar-path vertical-line" d={createStraightLine(30, 76)} style={{ strokeWidth: '8px' }} />
             </svg>
 
-            {/* Debug Marker */}
+            {/* Debug Marker
             {points.map((p, i) => (
               <div key={i} className="debug-marker" style={{ left: p.x, top: p.y }}>{i}</div>
             ))}
+            */}
           </div>
       </div>
     </div>
