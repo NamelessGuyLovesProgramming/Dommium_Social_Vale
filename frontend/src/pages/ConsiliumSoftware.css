@@ -92,3 +92,16 @@
   transform: translate(-50%, -50%);
   font-weight: bold;
 }
+
+/* Interaktive Wörter */
+.cursor-target {
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); /* Smoothe Transition */
+  transform-origin: center center;
+}
+
+.cursor-target:hover {
+  color: #ffd700 !important; /* Goldene Farbe bei Hover */
+  transform: scale(1.15); /* Leichtes Vergrößern */
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Starker Glow */
+  z-index: 30 !important; /* In den Vordergrund */
+}
