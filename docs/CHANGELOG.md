@@ -2,6 +2,30 @@
 
 Alle wichtigen Änderungen werden hier dokumentiert.
 
+## [0.4.0] - 2025-12-23
+
+### 🎨 Radar-System & Interaktives Design (Consilium Software)
+
+**Visual Components**
+- ✅ **Interaktive Wörter**: Draggable Wörter ("Auf", "die", "wichtigen", "Dinge", "fokussieren") fest in das Radar-Gitter integriert.
+- ✅ **Energie-Kugeln (Orbs)**: 4 leuchtende weiße Kugeln mit Glow-Effekt, strategisch im Radar-Feld positioniert.
+- ✅ **Energie-Puls Animation**: Synchronisierter Wellen-Effekt (#e1fefe), der von der Basis-Kugel ausgeht und durch das gesamte System fließt.
+
+**Animationen & Effekte**
+- ✅ **Pop-up Animation**: Stufenweises Erscheinen der Energie-Kugeln mit Spring-Physik (Delay-Sequenz 1-2-3).
+- ✅ **Synchronisierte Welle**: Kombination aus Fill- und Ring-Animationen für einen organischen Energiefluss (4s Dauer).
+- ✅ **SVG-Optimierung**: `pointer-events: none` für die Radar-Outline, um Interaktionen mit den Overlays zu ermöglichen.
+- ✅ **Typography**: Vergrößerung der Schriftart auf 2.5rem mit Text-Shadow für maximale Lesbarkeit im Radar.
+
+**Technische Details**
+- `ConsiliumSoftware.jsx`: Umstellung auf `motion` Komponenten für alle animierten Elemente.
+- `ConsiliumSoftware.css`: Anpassung des SVG-Stylings und der Layer-Hierarchie (z-index).
+- Verwendete Bibliothek: `framer-motion` (alias `motion/react`).
+
+**Dateien geändert**
+- `frontend/src/pages/ConsiliumSoftware.jsx`
+- `frontend/src/pages/ConsiliumSoftware.css`
+
 ## [0.3.0] - 2025-11-03
 
 ### 🎨 Kontaktseite - Premium Split-Screen Design
@@ -192,4 +216,4 @@ src/
 - Backend: FastAPI + Python 3.x
 - Styling: Vanilla CSS (MSP-konform)
 - Icons: Lucide React
-\n## 2025-12-13\n- ContentCreation Seite: Pakete neu strukturiert (Content-Pieces/Community/Performance Blocks) und Karten mit vertikalem Stagger-RiseIn animiert (�hnlich reactbits animated content, direction vertical).\n
+\n## 2025-12-13\n- ContentCreation Seite: Pakete neu strukturiert (Content-Pieces/Community/Performance Blocks) und Karten mit vertikalem Stagger-RiseIn animiert (�hnlich reactbits animated content, direction vertical).\n

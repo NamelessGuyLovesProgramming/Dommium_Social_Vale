@@ -1,4 +1,5 @@
 import "./ConsiliumSoftware.css";
+import { motion } from "motion/react";
 
 function ConsiliumSoftware() {
   // Koordinaten der Punkte
@@ -194,6 +195,19 @@ function ConsiliumSoftware() {
     return `${index === 0 ? 'M' : 'L'} ${x} ${y}`;
   }).join(' ') + ' Z';
 
+  // Definition der Pfade als Komponente oder Array, um Duplizierung im JSX zu vermeiden
+  const RadarPaths = ({ strokeColor = "#85fdfc", strokeWidth = "8px", opacity = 1 }) => (
+    <g style={{ opacity }}>
+        <path className="radar-path" d={outlinePath} style={{ stroke: strokeColor, strokeWidth }} />
+        <path className="radar-path inner-line" d={createCurve(117, 47)} style={{ stroke: strokeColor, strokeWidth }} />
+        <path className="radar-path inner-line" d={createCurve(108, 56)} style={{ stroke: strokeColor, strokeWidth }} />
+        
+        <path className="radar-path vertical-line" d={createStraightLine(8, 93)} style={{ stroke: strokeColor, strokeWidth }} />
+        <path className="radar-path vertical-line" d={createStraightLine(19, 85)} style={{ stroke: strokeColor, strokeWidth }} />
+        <path className="radar-path vertical-line" d={createStraightLine(30, 76)} style={{ stroke: strokeColor, strokeWidth }} />
+    </g>
+  );
+
   return (
     <div className="page consilium-software-page">
       <div className="page-container">
@@ -224,14 +238,114 @@ function ConsiliumSoftware() {
               preserveAspectRatio="none"
               style={{ overflow: 'visible' }}
             >
-              <path className="radar-path" d={outlinePath} />
-              <path className="radar-path inner-line" d={createCurve(117, 47)} style={{ strokeWidth: '8px' }} />
-              <path className="radar-path inner-line" d={createCurve(108, 56)} style={{ strokeWidth: '8px' }} />
-              
-              <path className="radar-path vertical-line" d={createStraightLine(8, 93)} style={{ strokeWidth: '8px' }} />
-              <path className="radar-path vertical-line" d={createStraightLine(19, 85)} style={{ strokeWidth: '8px' }} />
-              <path className="radar-path vertical-line" d={createStraightLine(30, 76)} style={{ strokeWidth: '8px' }} />
+              <defs>
+                <mask id="wave-mask">
+                  {/* Der schwarze Hintergrund versteckt alles */}
+                  <rect x="-50" y="-50" width="200" height="200" fill="black" />
+                  
+                  {/* Der weiße Kreis macht Bereiche sichtbar. Wir animieren ihn als "Welle". */}
+                  {/* Wir nutzen einen radialen Gradienten für weichere Kanten */}
+                  <motion.circle 
+                    cx="42.82" 
+                    cy="86.27" 
+                    r="0"
+                    fill="white"
+                    animate={{ r: [0, 150] }}
+                    transition={{ 
+                      duration: 4, 
+                      repeat: Infinity, 
+                      repeatDelay: 2,
+                      ease: "easeOut" 
+                    }}
+                  />
+                  {/* Ein Ring-Effekt für eine wandernde Linie - JETZT SYNCHRON */}
+                  <motion.circle 
+                    cx="42.82" 
+                    cy="86.27" 
+                    r="0"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="15" 
+                    animate={{ r: [0, 150], strokeWidth: [15, 35], opacity: [1, 0] }}
+                    transition={{ 
+                      duration: 4, 
+                      repeat: Infinity, 
+                      repeatDelay: 2,
+                      ease: "easeOut" 
+                    }}
+                  />
+                </mask>
+              </defs>
+
+              {/* 1. Basis-Layer (Dunkles Cyan) */}
+              <RadarPaths strokeColor="#2a5a5a" strokeWidth="8px" />
+
+              {/* 2. Aktives Layer (Helles Neon Cyan) */}
+              <RadarPaths strokeColor="#85fdfc" strokeWidth="8px" />
+
+              {/* 3. Wellen-Layer (Wunschfarbe #e1fefe, maskiert) */}
+              <g mask="url(#wave-mask)">
+                <RadarPaths strokeColor="#e1fefe" strokeWidth="11px" opacity={0.9} />
+              </g>
+
             </svg>
+
+            {[
+              { text: "Auf", top: "10.93%", left: "31.69%" },
+              { text: "die", top: "14.80%", left: "56.08%" },
+              { text: "wichtigen", top: "39.69%", left: "16.72%" },
+              { text: "Dinge", top: "42.24%", left: "50.87%" },
+              { text: "fokussieren", top: "63.73%", left: "35.71%" }
+            ].map((word, i) => (
+              <div
+                key={i}
+                style={{
+                  position: "absolute",
+                  left: word.left,
+                  top: word.top,
+                  color: "#fff",
+                  fontSize: "2.5rem",
+                  fontWeight: "bold",
+                  zIndex: 20,
+                  textShadow: "0 2px 4px rgba(0,0,0,0.5)",
+                  whiteSpace: "nowrap"
+                }}
+              >
+                {word.text}
+              </div>
+            ))}
+
+            {/* --- 4 WEISSE KUGELN (FINAL ANIMIERT) --- */}
+            {[
+              { size: 40, x: "13.68%", y: "54.27%", delay: 1.2 }, // Ball 2 (Links)
+              { size: 40, x: "83.08%", y: "21.60%", delay: 0.5 }, // Ball 1 (Rechts Oben)
+              { size: 85, x: "42.82%", y: "86.27%", delay: 0 },   // Basis (Unten Mitte) - Sofort da
+              { size: 45, x: "62.78%", y: "71.18%", delay: 1.9 }  // Ball 3 (Rechts Unten)
+            ].map((ball, i) => (
+              <motion.div
+                key={`ball-${i}`}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 260, 
+                  damping: 20, 
+                  delay: ball.delay 
+                }}
+                style={{
+                  position: "absolute",
+                  left: ball.x,
+                  top: ball.y,
+                  width: `${ball.size}px`,
+                  height: `${ball.size}px`,
+                  borderRadius: "50%",
+                  backgroundColor: "#fff",
+                  boxShadow: `0 0 ${ball.size/2}px rgba(255, 255, 255, 0.6), 0 0 ${ball.size}px rgba(133, 253, 252, 0.3)`,
+                  zIndex: 25,
+                  pointerEvents: "none"
+                }}
+              />
+            ))}
 
             {/* Debug Marker
             {points.map((p, i) => (
