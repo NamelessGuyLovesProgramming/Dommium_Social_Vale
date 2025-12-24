@@ -10,10 +10,12 @@ Alle wichtigen Änderungen werden hier dokumentiert.
 - ✅ **Interaktive Wörter**: Draggable Wörter ("Auf", "die", "wichtigen", "Dinge", "fokussieren") fest in das Radar-Gitter integriert.
 - ✅ **Energie-Kugeln (Orbs)**: 4 leuchtende Kugeln mit **Orange-Gold Radial-Gradient** und warmem Glow-Effekt.
 - ✅ **Radar-Scan Impuls**: Wandernder Licht-Ring (Stroke), der als einzelnes Signal durch die Leitungen läuft (Scan-Effekt).
+- ✅ **GSAP Target-Cursor (Orange)**: Rückkehr zur GSAP-basierten Target-Animation für flüssiges magnetisches Snapping, farblich angepasst an das Orange-Gold-Thema.
 
 **Animationen & Effekte**
 - ✅ **Pop-up Animation**: Stufenweises Erscheinen der Energie-Kugeln mit Spring-Physik (Delay-Sequenz 1-2-3).
 - ✅ **Signal-Welle**: Loopender Radar-Scan alle ~2 Sekunden.
+- ✅ **Magnetic Snapping**: Präzise Ausrichtung der Cursor-Ecken an Wort-Containern via GSAP.
 - ✅ **SVG-Optimierung**: `pointer-events: none` für die Radar-Outline.
 - ✅ **Typography**: Vergrößerung der Schriftart auf 2.5rem mit Text-Shadow.
 
