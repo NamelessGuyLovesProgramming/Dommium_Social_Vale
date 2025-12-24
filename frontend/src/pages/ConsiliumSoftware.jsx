@@ -331,19 +331,38 @@ function ConsiliumSoftware() {
             {[
               { size: 40, x: "13.68%", y: "54.27%", delay: 1.2 }, // Ball 2 (Links)
               { size: 40, x: "83.08%", y: "21.60%", delay: 0.5 }, // Ball 1 (Rechts Oben)
-              { size: 85, x: "42.82%", y: "86.27%", delay: 0 },   // Basis (Unten Mitte) - Sofort da
+              { size: 85, x: "42.82%", y: "86.27%", delay: 0, isBase: true },   // Basis (Unten Mitte) - Cyan & Pulsierend
               { size: 45, x: "62.78%", y: "71.18%", delay: 1.9 }  // Ball 3 (Rechts Unten)
             ].map((ball, i) => (
               <motion.div
                 key={`ball-${i}`}
                 initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ 
-                  type: "spring", 
-                  stiffness: 260, 
-                  damping: 20, 
-                  delay: ball.delay 
-                }}
+                animate={ball.isBase 
+                  ? { 
+                      scale: [1, 1.1, 1],
+                      opacity: 1,
+                      boxShadow: [
+                        `0 0 ${ball.size/2}px rgba(133, 253, 252, 0.6), 0 0 ${ball.size}px rgba(133, 253, 252, 0.3)`,
+                        `0 0 ${ball.size/1.5}px rgba(133, 253, 252, 0.8), 0 0 ${ball.size*1.5}px rgba(133, 253, 252, 0.5)`, // Hellerer Glow
+                        `0 0 ${ball.size/2}px rgba(133, 253, 252, 0.6), 0 0 ${ball.size}px rgba(133, 253, 252, 0.3)`
+                      ]
+                    }
+                  : { scale: 1, opacity: 1 }
+                }
+                transition={ball.isBase 
+                  ? { 
+                      duration: 2.3, // Synchron zum Radar-Impuls (1.8s + 0.5s Pause)
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0
+                    }
+                  : { 
+                      type: "spring", 
+                      stiffness: 260, 
+                      damping: 20, 
+                      delay: ball.delay 
+                    }
+                }
                 style={{
                   position: "absolute",
                   left: ball.x,
@@ -351,8 +370,14 @@ function ConsiliumSoftware() {
                   width: `${ball.size}px`,
                   height: `${ball.size}px`,
                   borderRadius: "50%",
-                  background: "radial-gradient(circle at 30% 30%, #ffd700, #ff8c00)", // Gold zu Dark Orange
-                  boxShadow: `0 0 ${ball.size/2}px rgba(255, 140, 0, 0.6), 0 0 ${ball.size}px rgba(255, 69, 0, 0.4)`, // Oranger Glow
+                  // Bedingtes Styling: Cyan für Basis, Orange für Rest
+                  background: ball.isBase 
+                    ? "radial-gradient(circle at 30% 30%, #e0ffff, #00d2ff)" // Eisiges Cyan
+                    : "radial-gradient(circle at 30% 30%, #ffd700, #ff8c00)", // Gold-Orange
+                  // Default Shadow falls Animation noch nicht greift (wird überschrieben)
+                  boxShadow: ball.isBase
+                    ? `0 0 ${ball.size/2}px rgba(133, 253, 252, 0.6)`
+                    : `0 0 ${ball.size/2}px rgba(255, 140, 0, 0.6), 0 0 ${ball.size}px rgba(255, 69, 0, 0.4)`,
                   zIndex: 25,
                   pointerEvents: "none"
                 }}

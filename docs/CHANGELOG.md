@@ -8,8 +8,8 @@ Alle wichtigen Änderungen werden hier dokumentiert.
 
 **Visual Components**
 - ✅ **Interaktive Wörter**: Draggable Wörter ("Auf", "die", "wichtigen", "Dinge", "fokussieren") fest in das Radar-Gitter integriert.
-- ✅ **Energie-Kugeln (Orbs)**: 4 leuchtende Kugeln mit **Orange-Gold Radial-Gradient** und warmem Glow-Effekt.
-- ✅ **Radar-Scan Impuls**: Wandernder Licht-Ring (Stroke), der als einzelnes Signal durch die Leitungen läuft (Scan-Effekt).
+- ✅ **Energie-Kugeln (Orbs)**: 3 Orbs im Orange-Gold Radial-Gradient; **Basis-Orb auf Cyan umgestellt**, passend zum Radar-Gitter.
+- ✅ **Synchronisierte Puls-Animation**: Basis-Orb "atmet" nun visuell durch eine Scale- und Glow-Animation, synchron zum Radar-Scan-Impuls.
 - ✅ **Custom High-Performance Cursor**: 
   - **Direct Mode**: Mausverfolgung ohne rAF/GSAP für 0-Latenz (Input-to-Pixel).
   - **Magnetic Lock-on**: Eigene Implementierung via CSS Variables (`--tl-x` etc.), die Ecken am Wort fixiert, während der Dot weiter der Maus folgt.
