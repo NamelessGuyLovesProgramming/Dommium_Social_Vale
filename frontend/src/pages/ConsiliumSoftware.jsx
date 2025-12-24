@@ -1,7 +1,11 @@
+import { useState } from "react";
 import "./ConsiliumSoftware.css";
 import { motion } from "motion/react";
+import TargetCursor from "../components/TargetCursor/TargetCursor";
 
 function ConsiliumSoftware() {
+  const [isRadarHovered, setIsRadarHovered] = useState(false);
+
   // Koordinaten der Punkte
   // Reihenfolge: Oben -> Schweif -> Rechts -> Unten -> Links
   const points = [
@@ -231,7 +235,12 @@ function ConsiliumSoftware() {
       </div>
 
       <div className="radar-wrapper">
-          <div className="radar-fan-container">
+          <div 
+            className="radar-fan-container"
+            onMouseEnter={() => setIsRadarHovered(true)}
+            onMouseLeave={() => setIsRadarHovered(false)}
+            style={{ cursor: isRadarHovered ? 'none' : 'default' }}
+          >
             <svg 
               className="radar-outline-svg" 
               viewBox="0 0 100 100" 
@@ -249,6 +258,7 @@ function ConsiliumSoftware() {
                     cx="42.82" 
                     cy="86.27" 
                     r="0"
+                    initial={{ r: 0 }}
                     fill="none"
                     stroke="white"
                     strokeWidth="12" /* Dicke des "Glints" auf der Leitung */
@@ -288,6 +298,7 @@ function ConsiliumSoftware() {
             ].map((word, i) => (
               <div
                 key={i}
+                className="cursor-target" // Trigger
                 style={{
                   position: "absolute",
                   left: word.left,
@@ -297,10 +308,22 @@ function ConsiliumSoftware() {
                   fontWeight: "bold",
                   zIndex: 20,
                   textShadow: "0 2px 4px rgba(0,0,0,0.5)",
-                  whiteSpace: "nowrap"
+                  whiteSpace: "nowrap",
+                  cursor: "pointer", // Wieder sichtbar machen
+                  pointerEvents: "auto" // WICHTIG: Damit Events ankommen!
                 }}
               >
                 {word.text}
+                
+                {/* Unsichtbare Hitbox */}
+                <div 
+                  className="cursor-target" // Auch hier Trigger
+                  style={{
+                    position: 'absolute',
+                    inset: '-8px', // Verkleinert von -20px für präziseren Lock-on
+                    cursor: 'pointer',
+                    zIndex: 21
+                }} />
               </div>
             ))}
 
@@ -342,9 +365,10 @@ function ConsiliumSoftware() {
             ))}
             */}
           </div>
-      </div>
-    </div>
-  );
-}
-
+                  </div>
+            
+                  <TargetCursor visible={isRadarHovered} />
+                </div>
+              );
+            }
 export default ConsiliumSoftware;
