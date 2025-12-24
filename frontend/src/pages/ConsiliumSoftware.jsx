@@ -243,35 +243,24 @@ function ConsiliumSoftware() {
                   {/* Der schwarze Hintergrund versteckt alles */}
                   <rect x="-50" y="-50" width="200" height="200" fill="black" />
                   
-                  {/* Der weiße Kreis macht Bereiche sichtbar. Wir animieren ihn als "Welle". */}
-                  {/* Wir nutzen einen radialen Gradienten für weichere Kanten */}
-                  <motion.circle 
-                    cx="42.82" 
-                    cy="86.27" 
-                    r="0"
-                    fill="white"
-                    animate={{ r: [0, 150] }}
-                    transition={{ 
-                      duration: 4, 
-                      repeat: Infinity, 
-                      repeatDelay: 2,
-                      ease: "easeOut" 
-                    }}
-                  />
-                  {/* Ein Ring-Effekt für eine wandernde Linie - JETZT SYNCHRON */}
+                  {/* RADAR IMPULS: Nur ein Ring (Stroke), keine Füllung.
+                      Das erzeugt den Effekt eines wandernden Signals auf den Leitungen. */}
                   <motion.circle 
                     cx="42.82" 
                     cy="86.27" 
                     r="0"
                     fill="none"
                     stroke="white"
-                    strokeWidth="15" 
-                    animate={{ r: [0, 150], strokeWidth: [15, 35], opacity: [1, 0] }}
+                    strokeWidth="12" /* Dicke des "Glints" auf der Leitung */
+                    animate={{ 
+                      r: [0, 160],       /* Von 0 bis ganz nach außen */
+                      opacity: [1, 1, 0] /* Am Ende sanft ausblenden */
+                    }}
                     transition={{ 
-                      duration: 4, 
+                      duration: 1.8, 
                       repeat: Infinity, 
-                      repeatDelay: 2,
-                      ease: "easeOut" 
+                      repeatDelay: 0.5,
+                      ease: "linear" /* Linear für gleichmäßige Scan-Geschwindigkeit */
                     }}
                   />
                 </mask>
@@ -339,8 +328,8 @@ function ConsiliumSoftware() {
                   width: `${ball.size}px`,
                   height: `${ball.size}px`,
                   borderRadius: "50%",
-                  backgroundColor: "#fff",
-                  boxShadow: `0 0 ${ball.size/2}px rgba(255, 255, 255, 0.6), 0 0 ${ball.size}px rgba(133, 253, 252, 0.3)`,
+                  background: "radial-gradient(circle at 30% 30%, #ffd700, #ff8c00)", // Gold zu Dark Orange
+                  boxShadow: `0 0 ${ball.size/2}px rgba(255, 140, 0, 0.6), 0 0 ${ball.size}px rgba(255, 69, 0, 0.4)`, // Oranger Glow
                   zIndex: 25,
                   pointerEvents: "none"
                 }}
