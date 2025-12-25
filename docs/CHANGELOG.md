@@ -10,9 +10,12 @@ Alle wichtigen Änderungen werden hier dokumentiert.
 - ✅ **Interaktive Wörter**: Draggable Wörter ("Auf", "die", "wichtigen", "Dinge", "fokussieren") fest in das Radar-Gitter integriert.
 - ✅ **Energie-Kugeln (Orbs)**: 3 Orbs im Orange-Gold Radial-Gradient; **Basis-Orb auf Cyan umgestellt**, passend zum Radar-Gitter.
 - ✅ **Synchronisierte Puls-Animation**: Basis-Orb "atmet" nun visuell durch eine Scale- und Glow-Animation, synchron zum Radar-Scan-Impuls.
-- ✅ **Custom High-Performance Cursor**: 
-  - **Direct Mode**: Mausverfolgung ohne rAF/GSAP für 0-Latenz (Input-to-Pixel).
-  - **Magnetic Lock-on**: Eigene Implementierung via CSS Variables (`--tl-x` etc.), die Ecken am Wort fixiert, während der Dot weiter der Maus folgt.
+- ✅ **Interaktive Info-Karten (Orbs)**:
+  - Hochwertige Glassmorphism-Overlays bei Hover über die orangen Kugeln.
+  - Zentrierter Score-Display mit prominentem Leuchteffekt.
+  - Minimalistische Sektionen: Details, Sentiment und Inventar.
+- ✅ **Custom High-Performance Cursor**:
+  - **Direct Mode**: Mausverfolgung ohne rAF/GSAP für 0-Latenz (Input-to-Pixel).  - **Magnetic Lock-on**: Eigene Implementierung via CSS Variables (`--tl-x` etc.), die Ecken am Wort fixiert, während der Dot weiter der Maus folgt.
   - **Design**: Orange-Gold-Schema passend zu den Orbs.
 
 **Animationen & Effekte**

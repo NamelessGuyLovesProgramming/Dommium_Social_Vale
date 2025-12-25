@@ -105,3 +105,47 @@
   text-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Starker Glow */
   z-index: 30 !important; /* In den Vordergrund */
 }
+
+/* --- ORB INFO CARD --- */
+.orb-info-card {
+  width: 200px;
+  background: rgba(15, 15, 15, 0.9); /* Noch dunkler für mehr Kontrast */
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 140, 0, 0.4);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+  color: #fff;
+  pointer-events: none;
+}
+
+.orb-info-score-centered {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ff8c00;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+  text-shadow: 0 0 20px rgba(255, 140, 0, 0.3);
+}
+
+.orb-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.orb-info-label-only {
+  text-align: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 4px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  transition: color 0.2s ease;
+}
+
+.orb-info-label-only:hover {
+  color: #ff8c00; /* Subtiles Feedback falls man drüber fährt */
+}

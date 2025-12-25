@@ -1,10 +1,31 @@
 import { useState } from "react";
 import "./ConsiliumSoftware.css";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import TargetCursor from "../components/TargetCursor/TargetCursor";
 
 function ConsiliumSoftware() {
   const [isRadarHovered, setIsRadarHovered] = useState(false);
+  const [activeBall, setActiveBall] = useState(null); // Welcher Ball ist aktiv?
+
+  // Kugel-Daten mit Inhalt
+  const balls = [
+    { 
+      id: 1, size: 40, x: "13.68%", y: "54.27%", delay: 1.2, 
+      data: { score: "8.9", sentiment: "Positiv", desc: "Automobil: Hohe Nachfrage nach E-Mobilität im Q4." }
+    }, // Ball 2 (Links)
+    { 
+      id: 2, size: 40, x: "83.08%", y: "21.60%", delay: 0.5,
+      data: { score: "6.4", sentiment: "Neutral", desc: "Finanzsektor: Abwartende Haltung bei Kleinanlegern." }
+    }, // Ball 1 (Rechts Oben)
+    { 
+      id: 3, size: 85, x: "42.82%", y: "86.27%", delay: 0, isBase: true,
+      data: null // Basis hat kein Info-Fenster (oder doch?) -> Hier erstmal nicht.
+    },   // Basis (Unten Mitte)
+    { 
+      id: 4, size: 45, x: "62.78%", y: "71.18%", delay: 1.9,
+      data: { score: "9.2", sentiment: "Bullish", desc: "Tech: KI-Startups verzeichnen Rekord-Investitionen." }
+    }  // Ball 3 (Rechts Unten)
+  ];
 
   // Koordinaten der Punkte
   // Reihenfolge: Oben -> Schweif -> Rechts -> Unten -> Links
@@ -327,61 +348,94 @@ function ConsiliumSoftware() {
               </div>
             ))}
 
-            {/* --- 4 WEISSE KUGELN (FINAL ANIMIERT) --- */}
-            {[
-              { size: 40, x: "13.68%", y: "54.27%", delay: 1.2 }, // Ball 2 (Links)
-              { size: 40, x: "83.08%", y: "21.60%", delay: 0.5 }, // Ball 1 (Rechts Oben)
-              { size: 85, x: "42.82%", y: "86.27%", delay: 0, isBase: true },   // Basis (Unten Mitte) - Cyan & Pulsierend
-              { size: 45, x: "62.78%", y: "71.18%", delay: 1.9 }  // Ball 3 (Rechts Unten)
-            ].map((ball, i) => (
-              <motion.div
-                key={`ball-${i}`}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={ball.isBase 
-                  ? { 
-                      scale: [1, 1.1, 1],
-                      opacity: 1,
-                      boxShadow: [
-                        `0 0 ${ball.size/2}px rgba(133, 253, 252, 0.6), 0 0 ${ball.size}px rgba(133, 253, 252, 0.3)`,
-                        `0 0 ${ball.size/1.5}px rgba(133, 253, 252, 0.8), 0 0 ${ball.size*1.5}px rgba(133, 253, 252, 0.5)`, // Hellerer Glow
-                        `0 0 ${ball.size/2}px rgba(133, 253, 252, 0.6), 0 0 ${ball.size}px rgba(133, 253, 252, 0.3)`
-                      ]
-                    }
-                  : { scale: 1, opacity: 1 }
-                }
-                transition={ball.isBase 
-                  ? { 
-                      duration: 2.3, // Synchron zum Radar-Impuls (1.8s + 0.5s Pause)
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 0
-                    }
-                  : { 
-                      type: "spring", 
-                      stiffness: 260, 
-                      damping: 20, 
-                      delay: ball.delay 
-                    }
-                }
-                style={{
-                  position: "absolute",
-                  left: ball.x,
-                  top: ball.y,
-                  width: `${ball.size}px`,
-                  height: `${ball.size}px`,
-                  borderRadius: "50%",
-                  // Bedingtes Styling: Cyan für Basis, Orange für Rest
-                  background: ball.isBase 
-                    ? "radial-gradient(circle at 30% 30%, #e0ffff, #00d2ff)" // Eisiges Cyan
-                    : "radial-gradient(circle at 30% 30%, #ffd700, #ff8c00)", // Gold-Orange
-                  // Default Shadow falls Animation noch nicht greift (wird überschrieben)
-                  boxShadow: ball.isBase
-                    ? `0 0 ${ball.size/2}px rgba(133, 253, 252, 0.6)`
-                    : `0 0 ${ball.size/2}px rgba(255, 140, 0, 0.6), 0 0 ${ball.size}px rgba(255, 69, 0, 0.4)`,
-                  zIndex: 25,
-                  pointerEvents: "none"
-                }}
-              />
+            {/* --- 4 WEISSE KUGELN (FINAL ANIMIERT & INTERAKTIV) --- */}
+            {balls.map((ball, i) => (
+              <div key={`ball-wrapper-${i}`}> {/* Wrapper für Positioning Kontext */}
+                <motion.div
+                  key={`ball-${i}`}
+                  className={!ball.isBase ? "cursor-target" : ""} // Nur orange Bälle sind Targets
+                  onMouseEnter={() => !ball.isBase && setActiveBall(ball)}
+                  onMouseLeave={() => !ball.isBase && setActiveBall(null)}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={ball.isBase 
+                    ? { 
+                        scale: [1, 1.1, 1],
+                        opacity: 1,
+                        boxShadow: [
+                          `0 0 ${ball.size/2}px rgba(133, 253, 252, 0.6), 0 0 ${ball.size}px rgba(133, 253, 252, 0.3)`,
+                          `0 0 ${ball.size/1.5}px rgba(133, 253, 252, 0.8), 0 0 ${ball.size*1.5}px rgba(133, 253, 252, 0.5)`,
+                          `0 0 ${ball.size/2}px rgba(133, 253, 252, 0.6), 0 0 ${ball.size}px rgba(133, 253, 252, 0.3)`
+                        ]
+                      }
+                    : { scale: 1, opacity: 1 }
+                  }
+                  transition={ball.isBase 
+                    ? { 
+                        duration: 2.3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 0
+                      }
+                    : { 
+                        type: "spring", 
+                        stiffness: 260, 
+                        damping: 20, 
+                        delay: ball.delay 
+                      }
+                  }
+                  style={{
+                    position: "absolute",
+                    left: ball.x,
+                    top: ball.y,
+                    width: `${ball.size}px`,
+                    height: `${ball.size}px`,
+                    borderRadius: "50%",
+                    background: ball.isBase 
+                      ? "radial-gradient(circle at 30% 30%, #e0ffff, #00d2ff)"
+                      : "radial-gradient(circle at 30% 30%, #ffd700, #ff8c00)",
+                    boxShadow: ball.isBase
+                      ? `0 0 ${ball.size/2}px rgba(133, 253, 252, 0.6)`
+                      : `0 0 ${ball.size/2}px rgba(255, 140, 0, 0.6), 0 0 ${ball.size}px rgba(255, 69, 0, 0.4)`,
+                    zIndex: 25,
+                    pointerEvents: "auto", // Wichtig für Hover
+                    cursor: "pointer"
+                  }}
+                >
+                   {/* Hitbox für leichteres Treffen */}
+                   {!ball.isBase && (
+                      <div style={{ position: 'absolute', inset: '-10px', borderRadius: '50%' }} />
+                   )}
+                </motion.div>
+
+                {/* --- INFO TOOLTIP --- */}
+                <AnimatePresence>
+                  {activeBall && activeBall.id === ball.id && ball.data && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 5, scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                      className="orb-info-card"
+                      style={{
+                        position: "absolute",
+                        left: `calc(${ball.x} + 35px)`, 
+                        top: `calc(${ball.y} - 40px)`, 
+                        zIndex: 100
+                      }}
+                    >
+                      <div className="orb-info-score-centered">
+                        {ball.data.score}
+                      </div>
+                      
+                      <div className="orb-info-content">
+                        <div className="orb-info-label-only">Details</div>
+                        <div className="orb-info-label-only">Sentiment</div>
+                        <div className="orb-info-label-only">Inventar</div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             ))}
 
             {/* Debug Marker
