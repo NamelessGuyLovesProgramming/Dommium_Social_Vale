@@ -187,68 +187,68 @@ const ContentCreation = () => {
 
   const addOns = [
     {
-      id: "addon-imagefilm",
+      id: "addon-imagefilm-v2",
       title: "Imagefilm",
       description: "Ihr Unternehmen, Ihre Person, Ihre Visionen - wir halten Sie im besten Licht fest.",
-      price: 2499,
+      price: 0, // Set to 0 for VB
       icon: Video,
-      category: "Add-On"
+      category: "Content Creation"
     },
     {
-      id: "addon-werbevideo",
+      id: "addon-werbevideo-v2",
       title: "Werbevideo",
       description: "Wir setzen Ihre Werbekampagne um - kreativ und serioes.",
-      price: 1999,
+      price: 0, // Set to 0 for VB
       icon: Video,
-      category: "Add-On"
+      category: "Content Creation"
     },
     {
-      id: "addon-produktvideo",
+      id: "addon-produktvideo-v2",
       title: "Produktvideo",
       description: "Wir kreieren atemberaubende Visuals fuer Ihr Produkt.",
-      price: 1499,
+      price: 0, // Set to 0 for VB
       icon: Video,
-      category: "Add-On"
+      category: "Content Creation"
     },
     {
-      id: "addon-fotoshooting",
+      id: "addon-fotoshooting-v2",
       title: "Fotoshooting",
       description: "Wir knipsen, was Sie moechten - und lassen Sie dabei gut aussehen.",
-      price: 799,
+      price: 0, // Set to 0 for VB
       icon: Camera,
-      category: "Add-On"
+      category: "Content Creation"
     },
     {
-      id: "addon-musikvideo",
+      id: "addon-musikvideo-v2",
       title: "Musikvideo",
       description: "Full Scale Leitung fuer Ihr Musikvideo - Schnittstelle fuer Kunst und Technik.",
-      price: 2999,
+      price: 0, // Set to 0 for VB
       icon: Video,
-      category: "Add-On"
+      category: "Content Creation"
     },
     {
-      id: "addon-interview",
+      id: "addon-interview-v2",
       title: "Interview / Dokumentation",
       description: "Lassen Sie uns Ihre Message festhalten oder Ihr Vorhaben dokumentieren.",
-      price: 1199,
+      price: 0, // Set to 0 for VB
       icon: Video,
-      category: "Add-On"
+      category: "Content Creation"
     },
     {
-      id: "addon-event",
+      id: "addon-event-v2",
       title: "Eventbegleitung",
       description: "Wir begleiten Ihr Event - Stand- oder Bewegtbild oder beides.",
-      price: 1899,
+      price: 0, // Set to 0 for VB
       icon: Calendar,
-      category: "Add-On"
+      category: "Content Creation"
     },
     {
-      id: "addon-newsletter",
+      id: "addon-newsletter-v2",
       title: "Newsletterkreation & Pflege",
       description: "Wir konzipieren und pflegen Ihren Newsletter, damit Sie wirklich ankommen.",
-      price: 899,
+      price: 0, // Set to 0 for VB
       icon: MessageCircle,
-      category: "Add-On"
+      category: "Content Creation"
     },
     {
       id: "addon-coming-soon",
@@ -256,7 +256,7 @@ const ContentCreation = () => {
       description: "Weitere Add-Ons sind in Planung. Bald verfuegbar.",
       price: 0,
       icon: Sparkles,
-      category: "Add-On"
+      category: "Content Creation"
     }
   ]
 
@@ -503,7 +503,7 @@ const ContentCreation = () => {
                               title: addon.title,
                               price: addon.price,
                               description: inquiryNote,
-                              category: addon.category
+                              category: "Content Creation" // Changed from "Add-On"
                             })
                           }
                           aria-label="Zum Warenkorb hinzufuegen"
@@ -528,7 +528,7 @@ const ContentCreation = () => {
 
         <div className="addons-cta-empty">
           <h3>Nichts gefunden?</h3>
-          <a className="addons-cta-button" href="/kontakt">Individuelle Lösung anfragen</a>
+          <a className="addons-cta-button" href="/team">Individuelle Lösung anfragen</a>
         </div>
 
         <div className="section-divider fancy no-text">

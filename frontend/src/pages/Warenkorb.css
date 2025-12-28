@@ -1,81 +1,183 @@
 .warenkorb-page {
   min-height: calc(100vh - 200px);
-  padding: 60px 20px;
+  padding: 3rem 20px 60px; /* Added 3rem top padding */
   background: var(--color-background);
+  overflow-x: hidden;
+}
+
+/* Highlight Bar Header */
+.highlight-bar {
+  position: relative;
+  background: var(--color-highlight);
+  color: #0d0f24;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: -3rem; /* Same offset as Team page */
+  margin-bottom: 4rem;
+  padding: 14px 0;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.highlight-bar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.warenkorb-header-title {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #0d0f24;
 }
 
 .warenkorb-container {
-  max-width: 900px;
+  max-width: 1400px; /* Erhöht für Split-Layout */
   margin: 0 auto;
 }
 
-.warenkorb-title {
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--color-text);
-  margin: 0 0 40px 0;
-  text-align: center;
+.warenkorb-split-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  align-items: center; /* Vertikale Zentrierung der Spalten */
+  min-height: 50vh; /* Mindesthöhe, damit Zentrierung wirkt */
+}
+
+.warenkorb-left-col {
+  flex: 1.2; /* Etwas breiter für die Items */
+  display: flex;
+  flex-direction: column;
+  margin-left: 6rem; /* Abstand vom linken Rand */
+}
+
+.warenkorb-right-col {
+  flex: 0.8;
+  position: sticky;
+  top: 2rem;
+}
+
+.disclaimer-box {
+  background: transparent; /* Kein Hintergrund oder sehr dezent */
+  border: none; /* Rahmen entfernt */
+  padding: 2rem;
+  color: #000000;
+  text-align: center; /* Text zentriert */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Box-Inhalt zentriert */
+  justify-content: center;
+  height: 100%;
+}
+
+.disclaimer-box h3 {
+  margin-top: 0;
+  color: var(--color-heading);
+  font-size: 1.8rem; /* Etwas größer für Fokus */
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.disclaimer-box p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 400px; /* Textbreite begrenzen für bessere Lesbarkeit beim Zentrieren */
+}
+
+.warenkorb-contact-section {
+  margin-top: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .warenkorb-items {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
-/* Warenkorb Zusammenfassung */
+.warenkorb-summary-container {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0;
+}
+
 .warenkorb-summary {
-  background: var(--color-background);
-  border: 2px solid var(--color-border);
-  border-radius: 12px;
+  width: 100%;
+  max-width: 600px; /* Kompakter und zentriert */
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px solid var(--color-divider-border);
+  border-radius: 20px;
   padding: 24px;
-  margin-bottom: 32px;
+  color: #000000;
 }
 
 .summary-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 0;
+  padding: 8px 0;
 }
 
 .summary-label {
   font-size: 16px;
-  color: var(--color-text);
+  color: #000000;
   font-weight: 500;
 }
 
 .summary-value {
   font-size: 18px;
-  color: var(--color-text);
+  color: #000000;
   font-weight: 600;
 }
 
 .summary-note {
   font-size: 14px;
-  color: var(--color-text);
+  color: #000000;
   font-style: italic;
   padding: 8px 0;
-  border-top: 1px solid var(--color-border);
+  opacity: 0.7;
 }
 
 .summary-total {
-  border-top: 2px solid var(--color-border);
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
   margin-top: 8px;
   padding-top: 16px;
 }
 
 .summary-total .summary-label {
   font-size: 20px;
-  color: var(--color-text);
-  font-weight: 700;
+  color: #000000;
+  font-weight: 800;
 }
 
 .summary-total .summary-value {
   font-size: 28px;
-  background: var(--color-heading);
+  background: #000000;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 800;
+  -webkit-text-fill-color: #000000;
+  font-weight: 900;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .warenkorb-split-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .warenkorb-right-col {
+    position: static;
+    width: 100%;
+  }
 }
 
 /* Empty State */

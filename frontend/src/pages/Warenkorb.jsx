@@ -56,46 +56,72 @@ const Warenkorb = () => {
 
   const hasNonPriceItems = cartItems.some(item => !item.price)
 
+  // Group items by category
+  const groupedItems = cartItems.reduce((acc, item) => {
+    const cat = item.category || "Service"
+    if (!acc[cat]) acc[cat] = []
+    acc[cat].push(item)
+    return acc
+  }, {})
+
   return (
     <div className="warenkorb-page">
+      {/* Highlight Header */}
+      <div className="highlight-bar">
+        <div className="highlight-bar-content">
+          <h1 className="warenkorb-header-title">Warenkorb</h1>
+        </div>
+      </div>
+
       <div className="warenkorb-container">
-        <h1 className="warenkorb-title">Ihr Einkaufswagen</h1>
-
-        <div className="warenkorb-items">
-          {cartItems.map((item) => (
-            <CartItem
-              key={item.id}
-              item={item}
-              onRemove={removeFromCart}
-              onUpdateQuantity={updateQuantity}
-            />
-          ))}
-        </div>
-
-        {/* Preissumme */}
-        <div className="warenkorb-summary">
-          <div className="summary-row">
-            <span className="summary-label">Zwischensumme:</span>
-            <span className="summary-value">
-              {totalPrice > 0 ? `${totalPrice.toLocaleString('de-DE')}€` : '0€'}
-            </span>
-          </div>
-          {hasNonPriceItems && (
-            <div className="summary-note">
-              + Artikel mit individueller Preisgestaltung
+        <div className="warenkorb-split-layout">
+          {/* Left Column: Items & Summary */}
+          <div className="warenkorb-left-col">
+            <div className="warenkorb-items">
+              {Object.entries(groupedItems).map(([category, items]) => (
+                <CartItem
+                  key={category}
+                  category={category}
+                  items={items}
+                  onRemove={removeFromCart}
+                />
+              ))}
             </div>
-          )}
-          <div className="summary-row summary-total">
-            <span className="summary-label">Gesamtpreis:</span>
-            <span className="summary-value">
-              {hasNonPriceItems
-                ? 'Auf Anfrage'
-                : `${totalPrice.toLocaleString('de-DE')}€`}
-            </span>
+          </div>
+
+          {/* Right Column: Disclaimer Text */}
+          <div className="warenkorb-right-col">
+            <div className="disclaimer-box">
+              <h3>Wichtiger Hinweis</h3>
+              <p>
+                Die Anfrage ist bis hierhin unverbindlich. Wir werden uns an Ihre angegebenen Daten wenden und dort in Kontakt treten.
+              </p>
+            </div>
           </div>
         </div>
 
-        <ContactForm onSubmit={handleSubmit} isLoading={isLoading} />
+        {/* Preissumme (Now Centered below split layout) */}
+        <div className="warenkorb-summary-container">
+          <div className="warenkorb-summary">
+            {hasNonPriceItems && (
+              <div className="summary-note">
+                + Artikel mit individueller Preisgestaltung
+              </div>
+            )}
+                      <div className="summary-row summary-total">
+                        <span className="summary-label">Gesamtpreis:</span>
+                        <span className="summary-value">
+                          {totalPrice > 0 
+                            ? `${totalPrice.toLocaleString('de-DE')}€${hasNonPriceItems ? ' + Auf Anfrage' : ''}`
+                            : 'Auf Anfrage'}
+                        </span>
+                      </div>          </div>
+        </div>
+
+        {/* Contact Form Section (Bottom) */}
+        <div className="warenkorb-contact-section">
+          <ContactForm onSubmit={handleSubmit} isLoading={isLoading} />
+        </div>
       </div>
     </div>
   )

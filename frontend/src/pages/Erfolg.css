@@ -8,67 +8,61 @@
 }
 
 .erfolg-container {
-  max-width: 700px;
-  background: var(--color-surface);
-  border-radius: 16px;
+  max-width: 800px;
+  background: rgba(0, 0, 0, 0.05); /* Transparent/Dark */
+  border: 2px solid var(--color-divider-border); /* Gold Border */
+  border-radius: 20px;
   padding: 60px 40px;
   text-align: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
   animation: slideUp 0.6s ease-out;
 }
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .erfolg-icon {
   color: var(--color-heading);
-  margin-bottom: 24px;
+  margin-bottom: 2rem;
   animation: scaleIn 0.5s ease-out 0.2s both;
 }
 
 @keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .erfolg-title {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--color-text);
-  margin: 0 0 16px 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
 }
 
 .erfolg-message {
-  font-size: 18px;
+  font-size: 1.2rem;
   color: var(--color-text);
   line-height: 1.6;
-  margin: 0 0 40px 0;
+  margin: 0 0 3rem 0;
+  opacity: 0.9;
 }
 
 .erfolg-info {
-  background: var(--color-surface);
-  border-radius: 12px;
-  padding: 32px;
-  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
   text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .info-item {
-  margin-bottom: 24px;
+  margin-bottom: 2rem;
 }
 
 .info-item:last-child {
@@ -76,10 +70,12 @@
 }
 
 .info-item h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--color-text);
-  margin: 0 0 12px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .info-item ul {
@@ -89,11 +85,11 @@
 }
 
 .info-item li {
-  font-size: 15px;
+  font-size: 1rem;
   color: var(--color-text);
-  padding: 6px 0;
-  padding-left: 24px;
+  padding: 8px 0 8px 28px;
   position: relative;
+  line-height: 1.5;
 }
 
 .info-item li::before {
@@ -101,11 +97,11 @@
   position: absolute;
   left: 0;
   color: var(--color-heading);
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .info-item p {
-  font-size: 15px;
+  font-size: 1rem;
   color: var(--color-text);
   line-height: 1.6;
   margin: 0;
@@ -115,79 +111,66 @@
   color: var(--color-heading);
   text-decoration: none;
   font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
 }
 
 .info-item a:hover {
-  text-decoration: underline;
+  border-bottom-color: var(--color-heading);
 }
 
 .erfolg-actions {
   display: flex;
-  gap: 16px;
+  gap: 1.5rem;
   justify-content: center;
 }
 
 .primary-button,
 .secondary-button {
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .primary-button {
   background: var(--color-heading);
-  color: var(--color-text);
+  color: #000000;
   border: none;
 }
 
 .primary-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(228, 163, 88, 0.4);
 }
 
 .secondary-button {
   background: transparent;
-  color: var(--color-heading);
+  color: var(--color-text);
   border: 2px solid var(--color-divider-border);
 }
 
 .secondary-button:hover {
-  background: var(--color-heading);
-  color: var(--color-text);
-  transform: translateY(-2px);
-}
-
-.primary-button:active,
-.secondary-button:active {
-  transform: translateY(0);
+  background: rgba(228, 163, 88, 0.1);
+  transform: translateY(-3px);
+  border-color: var(--color-heading);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .erfolg-page {
-    padding: 40px 16px;
-  }
-
   .erfolg-container {
-    padding: 40px 24px;
+    padding: 40px 20px;
   }
 
   .erfolg-title {
-    font-size: 26px;
-  }
-
-  .erfolg-message {
-    font-size: 16px;
-  }
-
-  .erfolg-info {
-    padding: 24px;
+    font-size: 2rem;
   }
 
   .erfolg-actions {

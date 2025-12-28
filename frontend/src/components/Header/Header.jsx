@@ -108,7 +108,6 @@ const Header = () => {
           <Link to="/consilium-software" className="nav-link">Consilium Software</Link>
           <Link to="/portfolio" className="nav-link">Portfolio</Link>
           <Link to="/team" className="nav-link">Team</Link>
-          <Link to="/kontakt" className="nav-link">Kontakt</Link>
 
           {/* Cart */}
           <Link to="/warenkorb" className="nav-link cart-link">

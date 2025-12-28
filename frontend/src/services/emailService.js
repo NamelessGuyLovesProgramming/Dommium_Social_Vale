@@ -2,9 +2,9 @@ import emailjs from '@emailjs/browser'
 
 // EmailJS Konfiguration
 const EMAILJS_CONFIG = {
-  serviceId: 'YOUR_SERVICE_ID', // Später durch echten Service-ID ersetzen
-  templateId: 'YOUR_TEMPLATE_ID', // Später durch echten Template-ID ersetzen
-  publicKey: 'YOUR_PUBLIC_KEY' // Später durch echten Public Key ersetzen
+  serviceId: 'service_ams28jc',
+  templateId: 'template_b60rjbn',
+  publicKey: 'bp7i9fr_CoJYWKx4x'
 }
 
 /**
@@ -32,6 +32,8 @@ export const sendCartInquiry = async (formData, cartItems) => {
     timestamp: new Date().toLocaleString('de-DE')
   }
 
+  console.log('📧 Sende Email mit Params:', templateParams) // DEBUG LOG
+
   try {
     const response = await emailjs.send(
       EMAILJS_CONFIG.serviceId,
@@ -54,16 +56,26 @@ export const sendCartInquiry = async (formData, cartItems) => {
 const formatCartItems = (items) => {
   return items
     .map((item, index) => {
-      const subItems = item.items && item.items.length > 0
-        ? item.items.map(sub => `  - ${sub}`).join('\n')
-        : ''
+      // Clean up service name
+      const category = item.category || 'Service'
+      let name = item.title
+      if (name && name.startsWith(`${category} - `)) {
+        name = name.replace(`${category} - `, "")
+      } else if (name && name.startsWith(category)) {
+        name = name.replace(category, "").trim()
+        if (name.startsWith("-") || name.startsWith(":")) name = name.substring(1).trim()
+      }
+      if (!name) name = item.title // Fallback
 
-      return `${index + 1}. ${item.title}
-${subItems}
-   Preis: ${item.price ? `${item.price.toLocaleString('de-DE')}€` : 'Auf Anfrage'}
-`
+      const priceDisplay = item.price > 0 
+        ? `${item.price.toLocaleString('de-DE')}€` 
+        : 'VB (Auf Anfrage)'
+
+      return `[${category.toUpperCase()}]
+• ${name}
+  Preis: ${priceDisplay}`
     })
-    .join('\n---\n')
+    .join('\n\n')
 }
 
 /**

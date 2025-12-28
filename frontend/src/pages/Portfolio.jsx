@@ -74,11 +74,10 @@ const Portfolio = () => {
         </div>
       </div>
 
-      <div className="portfolio-cta">
-        <h2>Bereit für Ihren Erfolg?</h2>
-        <p>Lassen Sie uns gemeinsam Ihre Social Media Präsenz auf das nächste Level heben.</p>
-        <a href="/kontakt" className="cta-button">Jetzt Kontakt aufnehmen</a>
-      </div>
+      <section className="portfolio-cta">
+        <h2>Bereit für Ihr Projekt?</h2>
+        <a href="/team" className="cta-button">Jetzt Kontakt aufnehmen</a>
+      </section>
     </div>
   )
 }

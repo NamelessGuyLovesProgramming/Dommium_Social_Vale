@@ -5,7 +5,6 @@ import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 import Team from './pages/Team'
-import Kontakt from './pages/Kontakt'
 import Warenkorb from './pages/Warenkorb'
 import WarenkorbDemo from './pages/WarenkorbDemo'
 import Erfolg from './pages/Erfolg'
@@ -30,7 +29,6 @@ function AppShell() {
           <Route path="/consilium-software" element={<ConsiliumSoftware />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/team" element={<Team />} />
-          <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/warenkorb" element={<Warenkorb />} />
           <Route path="/warenkorb-demo" element={<WarenkorbDemo />} />
           <Route path="/erfolg" element={<Erfolg />} />

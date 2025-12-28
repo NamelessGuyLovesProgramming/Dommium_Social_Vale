@@ -1,0 +1,46 @@
+<div style="font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+  <div style="background-color: #e4a358; padding: 20px; text-align: center;">
+    <h2 style="color: #000; margin: 0; text-transform: uppercase;">Neue Anfrage</h2>
+  </div>
+  
+  <div style="padding: 20px;">
+    <p><strong>Hallo Team,</strong></p>
+    <p>eine neue unverbindliche Anfrage ist eingegangen:</p>
+    
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+    
+    <h3 style="color: #e4a358; margin-top: 0;">👤 Kundendaten</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 8px 0; width: 100px; font-weight: bold;">Name:</td>
+        <td>{{customer_name}}</td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; font-weight: bold;">Email:</td>
+        <td><a href="mailto:{{customer_email}}" style="color: #666;">{{customer_email}}</a></td>
+      </tr>
+      <tr>
+        <td style="padding: 8px 0; font-weight: bold;">Telefon:</td>
+        <td>{{customer_phone}}</td>
+      </tr>
+    </table>
+    
+    <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 15px;">
+      <strong>Nachricht:</strong><br>
+      <i style="color: #555;">{{customer_message}}</i>
+    </div>
+
+    <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+    <h3 style="color: #e4a358; margin-top: 0;">🛒 Gewählte Leistungen</h3>
+    <pre style="background: #333; color: #fff; padding: 15px; border-radius: 5px; white-space: pre-wrap; font-family: monospace;">{{cart_items}}</pre>
+
+    <div style="text-align: right; margin-top: 20px;">
+      <p style="font-size: 18px; font-weight: bold;">Gesamtpreis: <span style="color: #e4a358;">{{total_price}}</span></p>
+    </div>
+  </div>
+  
+  <div style="background-color: #f1f1f1; padding: 10px; text-align: center; font-size: 12px; color: #888;">
+    Eingegangen am: {{timestamp}}
+  </div>
+</div>

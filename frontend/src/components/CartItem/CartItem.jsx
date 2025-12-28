@@ -1,95 +1,70 @@
-import { Trash2, Plus, Minus } from 'lucide-react'
+import { Trash2 } from 'lucide-react'
 import './CartItem.css'
 
-const CartItem = ({ item, onRemove, onUpdateQuantity }) => {
-  const quantity = item.quantity || 1
-  const totalPrice = item.price ? item.price * quantity : null
+const CartItem = ({ category, items, onRemove }) => {
+  // Calculate category total price
+  const totalPrice = items.reduce((sum, item) => sum + (item.price || 0), 0)
+  const hasInquiryOnly = items.some(item => !item.price || item.price === 0)
 
-  const handleIncrease = () => {
-    onUpdateQuantity(item.id, quantity + 1)
-  }
-
-  const handleDecrease = () => {
-    if (quantity > 1) {
-      onUpdateQuantity(item.id, quantity - 1)
+  // Helper to clean service names
+  const getCleanName = (item) => {
+    let name = item.title
+    if (name && name.startsWith(`${category} - `)) {
+      return name.replace(`${category} - `, "")
     }
+    if (name && name.startsWith(category)) {
+      let cleaned = name.replace(category, "").trim()
+      if (cleaned.startsWith("-") || cleaned.startsWith(":")) {
+        cleaned = cleaned.substring(1).trim()
+      }
+      return cleaned || item.tier || item.title
+    }
+    return name
   }
 
   return (
-    <div className="cart-item">
-      <div className="cart-item-content">
-        <div className="cart-item-left">
-          <div className="cart-item-logo">
-            {item.logo ? (
-              <img src={item.logo} alt={item.title} />
-            ) : (
-              <div className="cart-item-logo-placeholder">
-                {item.title?.charAt(0) || '?'}
+    <div className="cart-item-pill">
+      <div className="pill-content">
+        {/* Category Header */}
+        <h3 className="pill-category">{category}</h3>
+        
+        {/* List of Services in this Category */}
+        <div className="pill-services-list">
+          {items.map((item) => (
+            <div key={item.id} className="pill-service-row">
+              <div className="pill-service-info">
+                <span className="pill-service-name">- {getCleanName(item)}</span>
+                <span className="pill-service-price-inline">
+                  {item.price > 0 ? (
+                    `${item.price.toLocaleString('de-DE')}€`
+                  ) : (
+                    <span className="vb-tooltip-wrapper" title="Verhandlungsbasis: Preis wird im individuellen Gespräch ermittelt">
+                      VB
+                    </span>
+                  )}
+                </span>
               </div>
-            )}
-          </div>
-          <div className="cart-item-details">
-            <h3 className="cart-item-title">{item.title}</h3>
-            {item.tier && (
-              <span className="cart-item-tier">{item.tier} Paket</span>
-            )}
-            {item.description && (
-              <p className="cart-item-description">{item.description}</p>
-            )}
-            {item.items && item.items.length > 0 && (
-              <div className="cart-item-details-section">
-                <h4 className="details-heading">Leistungsumfang:</h4>
-                <ul className="cart-item-list">
-                  {item.items.map((subItem, index) => (
-                    <li key={index}>{subItem}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
+              <button
+                className="remove-item-inline"
+                onClick={() => onRemove(item.id)}
+                aria-label="Entfernen"
+              >
+                <Trash2 size={14} />
+              </button>
+            </div>
+          ))}
         </div>
+        
+        {/* Divider Line */}
+        <div className="cart-divider-line"></div>
 
-        <div className="cart-item-right">
-          <div className="cart-item-quantity-controls">
-            <button
-              className="quantity-btn"
-              onClick={handleDecrease}
-              disabled={quantity <= 1}
-              aria-label="Menge verringern"
-            >
-              <Minus size={16} />
-            </button>
-            <span className="quantity-display">{quantity}</span>
-            <button
-              className="quantity-btn"
-              onClick={handleIncrease}
-              aria-label="Menge erhöhen"
-            >
-              <Plus size={16} />
-            </button>
-          </div>
-
-          <div className="cart-item-price">
-            {totalPrice ? `${totalPrice.toLocaleString('de-DE')}€` : 'Preis auf Anfrage'}
-            {quantity > 1 && item.price && (
-              <span className="price-per-unit">
-                ({item.price.toLocaleString('de-DE')}€ / Stück)
-              </span>
-            )}
-          </div>
-
-          <button
-            className="cart-item-remove"
-            onClick={() => onRemove(item.id)}
-            aria-label="Artikel entfernen"
-          >
-            <Trash2 size={20} />
-          </button>
+        {/* Category Total / Price Tag */}
+        <div className="pill-price-tag">
+          {totalPrice > 0 
+            ? `${totalPrice.toLocaleString('de-DE')}€${hasInquiryOnly ? ' + Auf Anfrage' : ''}`
+            : "Preis auf Anfrage"
+          }
         </div>
-      </div>
-
-      <div className="cart-item-disclaimer">
-        Die Anfrage ist bis hierhin unverbindlich. Wir werden uns an Ihre angegebenen Daten wenden und dort in Kontakt treten.
       </div>
     </div>
   )
