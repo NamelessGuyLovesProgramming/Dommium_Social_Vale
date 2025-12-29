@@ -3,6 +3,11 @@
 ## [Unreleased] - 28.12.2025
 
 ### Added
+- **Consilium Software (Radar):**
+  - **High-End Animation:** SVG-Radar durch Canvas-basierte PNG-Sequenz (275 Frames) ersetzt.
+  - **Kino-Look:** 16:9 Breitbild-Format (responsive, 80% Viewport-Höhe).
+  - **Smart Loop:** Intro-Sequenz (60 FPS) mit nahtlosem Übergang in einen langsameren Loop (24 FPS, "Atmen"-Effekt).
+  - **Dramaturgie:** Interaktive Overlay-Elemente (Wörter/Bälle) erscheinen verzögert (2s) und gestaffelt per Scroll-Trigger.
 - **Animationen & Effekte:**
   - `TextType` Komponente: High-Speed Typewriter-Effekt (8ms) für Dominik & Ekin.
   - `DecryptedText` Komponente: Code-Entschlüsselungs-Animation für Aneeque & Valentino.
